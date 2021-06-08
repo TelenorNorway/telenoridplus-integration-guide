@@ -11,7 +11,7 @@
     + [Access to SDKs on Telenor Norway GitHub for Native Clients](#access-to-sdks-on-telenor-norway-github-for-native-clients)
     + [IBIS URIs in the Staging and Production Environments](#ibis-uris-in-the-staging-and-production-environments)
     + [Debugger](#debugger)
-    + [Help / Questions](#help-questions)
+    + [Help / Questions](#help--questions)
   * [Overview OpenID Connect (OIDC)](#overview-openid-connect-oidc)
     + [Related Articles](#related-articles)
     + [Core Concepts](#core-concepts)
@@ -29,8 +29,8 @@
       - [Preferred Library](#preferred-library-2)
       - [Simple Code Example](#simple-code-example-2)
     + [Example 1 - Step-by-step: Login](#example-1---step-by-step-login)
-    + [Example 2 - Step-by-step: Know Your Customer / BankId](#example-2---step-by-step-know-your-customer-bankid)
-    + [Seamless Login / SSO](#seamless-login-sso)
+    + [Example 2 - Step-by-step: Know Your Customer / BankId](#example-2---step-by-step-know-your-customer--bankid)
+    + [Seamless Login / SSO](#seamless-login--sso)
     + [Token Refresh](#token-refresh)
       - [Get refresh\_token](#get-refresh_token)
       - [Use refresh\_token](#use-refresh_token)
@@ -43,9 +43,9 @@
     + [How it Looks for National Storage End Users](#how-it-looks-for-national-storage-end-users)
     + [How it Looks for Regular End Users](#how-it-looks-for-regular-end-users)
       - [English](#english)
-        * [Buttons and style guide "Manage Telenor ID" / "Sign in with Telenor ID"](#buttons-and-style-guide-manage-telenor-id-sign-in-with-telenor-id)
+        * [Buttons and style guide "Manage Telenor ID" / "Sign in with Telenor ID"](#buttons-and-style-guide-manage-telenor-id--sign-in-with-telenor-id)
       - [Norwegian](#norwegian)
-        * [Buttons and style guide "Endre Telenor ID" / "Logg inn med Telenor ID"](#buttons-and-style-guide-endre-telenor-id-logg-inn-med-telenor-id)
+        * [Buttons and style guide "Endre Telenor ID" / "Logg inn med Telenor ID"](#buttons-and-style-guide-endre-telenor-id--logg-inn-med-telenor-id)
   * [Q & A](#q-a)
   
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
@@ -531,7 +531,7 @@ Article on [Universal links for Android and iOS](https://medium.com/bumble-tech/
 
 [Adding support for universal link on iOS](https://developer.apple.com/library/archive/documentation/General/Conceptual/AppSearch/UniversalLinks.html) (apple.com)
 
-**[TelenorID Plus iOS SDK](https://github.com/TelenorNorway/telenorid-sdk-ios))**
+**[TelenorID Plus iOS SDK](https://github.com/TelenorNorway/telenorid-sdk-ios)**
 
 You configure the SDK with your client credentials and for which environment they are configured, either staging or production.
 
@@ -565,13 +565,13 @@ Important to remember however is that when linking from native clients the app m
 If the client wants to use the "Endre Telenor ID"- button in their UI, see below for button design and style guide.
 
 #### English
-![Manage My TelenorID en](html/DC/attachments/61425370/61425372.png)
+![Manage My TelenorID en](images/IntegrationGuide_ManageMyTelenorID-en.png)
 
 ##### Buttons and style guide "Manage Telenor ID" / "Sign in with Telenor ID"
 [https://telenordigital.invisionapp.com/share/68UNGRPFX7K#/screens/391468481](https://telenordigital.invisionapp.com/share/68UNGRPFX7K#/screens/391468481)
 
 #### Norwegian
-![Manage My TelenorID no](html/DC/attachments/61425370/61425371.png)
+![Manage My TelenorID no](images/IntegrationGuide_ManageMyTelenorID-no.png)
 
 ##### Buttons and style guide "Endre Telenor ID" / "Logg inn med Telenor ID"
 
