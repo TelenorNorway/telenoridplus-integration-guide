@@ -91,18 +91,6 @@ When doing backend calls that require an access token, use the method performAct
 ### UserInfo
 Use the fetchUserInfo method in IbisSdk with a TelenorIdCallback to fetch a userInfo object. The method ensures that valid tokens are being used.
 
-### Line authentication
-To be able to provide line authentication for both personal and non personal users, the SDK first obtains the msisdn, and then decides if it is a personal or non personal number.
-
-#### Personal number, with National Storage:
-No line authentication will be offered, and the user still needs to enter username and password.
-
-#### Personal number
-The TelenorID SDK then starts the SDK provided by Telenor Digital to do line authentication by Telenor Digital. This is required to be able to sign in to TelenorID at Telenor Digital. The SDK then sends an authorize request to IBIS with a session id from the Telenor Digital Line authentication.
-
-#### Non personal number
-The SDK sends an authorize request to IBIS with a session id to identify the user.
-
 ## TelenorID\+ SDK - iOS
     1.  When using the SDK for iOS users should be automatically (line authentication) signed in if on the cellular network, and using an IDP that offers it.
     2.  If the user is on WiFi, the SDK should give the application an option to inform the user to turn off the WiFi to be able to be automatically signed in.
@@ -120,22 +108,3 @@ Line authentication should be done in the background before the user even presse
 When the user presses the sign in button, the SDK must check if the line auth session has expired. 
 If it has, the SDK should do another line auth, this time synchronized, and use the updated sessionId in 
 the authorize request.
-
-![Line authentication](images/Sdk_IosLineAuthentication.png)
-
-The following steps are necessary to do line authentication:
-
-1.  Do a prepare call to the Aloha application. URI: /hr/v1/prepare/<log uuid>
-    1.  The log uuid should be a unique for each prepare request
-2.  The response is a json object with a field "injectPath"
-3.  Send a request to the injectPath (it will be a http request and not https)
-4.  Aloha will respond with a https redirect
-5.  Follow the https redirect once again to Aloha
-6.  The response should contain a sessionId ("uuid") to be used in the authorize request. And also a field "exp". "exp" is for how many seconds the session is valid.
-
-### Authorize request
-When sending the authorize request from SDK to Telenor Id, the additional parameter "aloha\_token" should be added, 
-if line authentication went ok. The value should be the sessionId from the aloha response.
-
-## Login flow
-![SDK Login FLow](images/Sdk_LoginFlow.png)
