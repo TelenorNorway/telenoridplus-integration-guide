@@ -51,6 +51,7 @@
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
 ## Get Started With TelenorID\+
+
 **TelenorID\+ offers login through the OpenID Connect (OIDC) protocol. 
 This article contains only a basic introduction to the protocol. 
 OIDC is a well established industry standard for authentication and authorisation and so tons of material are available;
@@ -89,6 +90,7 @@ If your service only require plain login (and do not need API access on Apigee),
 *   If you are already familiar with the Developer Portal, and your service is already using TelenorID\+, check out [Additional TelenorID\+ Client - IBIS Only (no API Access)](#TelenorID\+OnboardingNewClients-AdditionalTelenorID\+Client-IBISOnly(noAPIAccess)).
 
 ### Client Type - Confidential vs Public Clients
+
 | Client Type   | Description   | Pros & Cons |
 | ------------- | ------------- | ------------|
 | Confidential  | Any client that will run in a secure environment and will store the client credentials in a secure way; | Benefits - can typically access all scopes. |
@@ -135,6 +137,7 @@ Existing api:<apigee\_service> scopes will not change and will remain the same a
 Use **_ui\_locales=no_** to choose Norwegian language.
 
 ### Access to SDKs on Telenor Norway GitHub for Native Clients
+
 If you have native clients and want to use our SDK for Android and/or iOS,
 you need to request access to the Telenor Norway repository (if not already member of TelenorNorway).
 
@@ -142,6 +145,7 @@ Send the github account that require access to **dc\_security@telenor.com**,
 or request access on Slack [#dc-telenorid-integration-support](https://thedoozers.slack.com/archives/C01DHF39NDA).
 
 ### IBIS URIs in the Staging and Production Environments
+
 We URIs have been changed/are about to change, see [TelenorID\+ Switch to new domain id.telenor.no](TelenorID_Plus_-_switch_to_new_domain.md) for more information.
 
 | Endpoint                  | STAGING                                       | PRODUCTION                                |
@@ -152,12 +156,14 @@ We URIs have been changed/are about to change, see [TelenorID\+ Switch to new do
 | Userinfo endpoint         | https://id-test.telenor.no/connect/userinfo   | https://id.telenor.no/connect/userinfo    |
 
 ### Debugger
+
 The debugger is a useful tool to validate that your client is correctly configured and has access to the scopes you accept.  
 All public clients (i.e. "PKCE clients") are configured to work with the debugger.
 
 [https://oidc-test.telenor.no/](https://oidc-test.telenor.no/)
 
 ### Help / Questions
+
 | Integration Support       |
 | ------------------------- |
 | TelenorID integration questions or request for help can be posted on Slack in [#dc-telenorid-integration-support](https://thedoozers.slack.com/archives/C01DHF39NDA) |
@@ -168,6 +174,7 @@ All public clients (i.e. "PKCE clients") are configured to work with the debugge
 | For reporting incidents or problems with TelenorID in production , use the Slack channel [#dc-telenorid-production-support](https://thedoozers.slack.com/archives/C01TK0NV8KW) |
 
 ## Overview OpenID Connect (OIDC)
+
 ### Related Articles
 
 * [OpenID Specifications](https://openid.net/developers/specs/)
@@ -185,6 +192,7 @@ All public clients (i.e. "PKCE clients") are configured to work with the debugge
 * [Free intro training for OAuth 2.0 and OpenID Connect](https://courses.pragmaticwebsecurity.com/courses/take/introduction-to-oauth-2-0-and-openid-connect)
 
 ### Core Concepts
+
 OIDC is a superset of the Oauth protocol. If you've used OAuth (e.g via Apigee), OIDC should be very familiar.
 
 |                           |                      |
@@ -203,9 +211,11 @@ OIDC is a superset of the Oauth protocol. If you've used OAuth (e.g via Apigee),
 |                           | Client secrets are only permitted for clients who will run on back-end servers. These clients typically need to access broader scopes than those running on clients (front-end / mobile apps). This is the recommended flow for **confidential** web clients (with BFFs) |
 
 ### Simplified OpenID Connect Authorization Code Flow
+
 ![OIDC Authorization Code Flow](images/IntegrationGuide_AuthCodeFlow-simplified.png)
 
 ## Web Clients
+
 ### TelenorID\+ OIDC Authorization Code Flow With ClientID and Secret
 
 ![TelenorID Pluss OIDC Authorization Code FLow Client Secret](https://www.websequencediagrams.com/files/render?link=iuABiysNv1svNezK5AJXxSw18XNwkC05MB7EK8dx2PMoN7W33tqbOkg1MejqYkOB)
@@ -213,6 +223,7 @@ OIDC is a superset of the Oauth protocol. If you've used OAuth (e.g via Apigee),
 [Standard OIDC Authorization Code Flow](TelenorID_Plus_-_standard_oidc_flows.md#standard-oidc-authorization-code-flow) for reference.
 
 ### Authentication Using Client ID and Secret
+
 |                           |
 | ------------------------- |
 | **Do NOT store the client id and secret unencrypted in git. Never pass the client secret as a URL parameter.** |
@@ -245,10 +256,13 @@ The [IdentityModel](https://urldefense.proofpoint.com/v2/url?u=https-3A__github.
 | You can find libraries for Java, .NET, JavaScript, TypeScript, PHP, Python, and even Erlang here: [https://openid.net/developers/certified/](https://openid.net/developers/certified/) |
 
 ### JavaScript
+
 #### Preferred Library
+
 [https://github.com/IdentityModel/oidc-client-js](https://github.com/IdentityModel/oidc-client-js)
 
 #### Simple Code Example
+
 Using the client library
 *   Browser client: [https://github.com/IdentityModel/oidc-client-js](https://github.com/IdentityModel/oidc-client-js)
 
@@ -259,6 +273,7 @@ or
 Showing a simple client login and callback:
 
 **[DCSEC / telenor-idpluss-integration-examples / JavaScript / node-openid-client.js](https://prima.corp.telenor.no/bitbucket/projects/DCSEC/repos/telenor-idpluss-integration-examples/browse/JavaScript/node-openid-client.js?at=refs/heads/master)**
+
 ```javascript
 const { Issuer } = require('openid-client');
 const express = require('express');
@@ -345,12 +360,17 @@ app.get('/', (req, res) => {
 ```
 
 ### Java
+
 #### Preferred Library
+
 We will develop our own library. If you cannot wait, use one of the Java-libraries here: [https://openid.net/developers/certified/](https://openid.net/developers/certified/)
+
 #### Simple Code Example
+
 Showing a simple client login and callback:
 
 **[DCSEC / telenor-idpluss-integration-examples / Java / SpringBoot.java](https://prima.corp.telenor.no/bitbucket/projects/DCSEC/repos/telenor-idpluss-integration-examples/browse/Java/SpringBoot.java?at=refs/heads/master)**
+
 ```java
 import dchub.feature.encryptedproperties.EncryptedPropertiesInitializer;
 import org.springframework.beans.factory.annotation.Value;
@@ -427,13 +447,17 @@ public class Application extends WebSecurityConfigurerAdapter {
 ```
 
 ### .NET
+
 #### Preferred Library
+
 [https://identitymodel.readthedocs.io/en/latest/](https://identitymodel.readthedocs.io/en/latest/)
 
 #### Simple Code Example
+
 Coming...
 
 ### Example 1 - Step-by-step: Login
+
 The following example will walk through the common use case for logging in with IBIS. The examples show raw HTTP requests generated using the public debugger (available here: [https://oidc-test.telenor.no/](https://oidc-test.telenor.no/)) and a public demo-client.  
 **Thus this example uses a OpenID Connect Flow with PKCE even though most web clients will be confidential and should use the OpenID Connect Authorization Flow with client id and secret handled in a backend.**
 
@@ -441,7 +465,8 @@ The debugger utilises the **[oidc-client-js](https://github.com/IdentityModel/oi
 
 [End User Login](TelenorID_Plus_-_user_login_-_integration_example_step_by_step.md)
 
-### Example 2 - Step-by-step: Know Your Customer / BankId 
+### Example 2 - Step-by-step: Know Your Customer / BankId
+ 
 The following example is the use case for performing identity verification in with IBIS using BankID. Bank ID cannot be used for logging in, and should only be used for specific use cases that require verifying the identity of a new or existing customer/end user. The examples show raw HTTP requests generated using the public debugger.
 
 The debugger is a useful tool to validate that your (public) client is correctly configured and has access to the scopes you accept.  
@@ -452,6 +477,7 @@ The debugger utilises the **[oidc-client-js](https://github.com/IdentityModel/oi
 [Know Your Customer (KYC) / BankId](TelenorID_Plus_-_kyc_bankid_-_integration_example_step_by_step.md)
 
 ### Seamless Login / SSO
+
 Single Sign-on (SSO) occurs when a user logs in to one application and is then signed in to other applications automatically, regardless of the platform, technology, or domain the user is using. SSO provides a seamless experience for users when using your applications and services.
 
 The OIDC protocol supports a _**prompt=none**_ parameter on the /authorize request that allows applications to indicate that the authorization server (here: IBIS) must not display any user interaction - silent authentication.  
@@ -467,11 +493,13 @@ If the user was not logged in via Single Sign-on (SSO) or their SSO session had 
 If an error are returned, an /authorize request without prompt=none parameter must be sent for the end user to be redirected to the login page.
 
 ### Token Refresh
+
 Refresh tokens are typically longer-lived and can be used to request new access tokens after the shorter-lived access tokens expire. Refresh tokens are often used in native applications on mobile devices in conjunction with short-lived access tokens to provide seamless UX without having to issue long-lived access tokens.
 
 The refresh token is stored in session. Then, when a session needs to be refreshed (for example, a preconfigured timeframe has passed or the user tries to perform a sensitive operation), the client uses the refresh token on the backend to obtain a new set of tokens, using the /oauth/token endpoint with _grant\_type=refresh\_token_.
 
 #### Get refresh\_token
+
 To get a refresh token, you must include the _**offline\_access**_ scope when you initiate an authentication request through the /authorize endpoint.
 
 Once the user authenticates successfully, the application will be redirected to the redirect\_uri, with an authorization code . You can exchange this code with an access token using the /token endpoint.
@@ -481,6 +509,7 @@ The response should contain an access token, id token and a refresh token.
 ![OIDC Authorization Code Flow - Get Refresh Token](https://www.websequencediagrams.com/files/render?link=MA7p4bbC80u1UC3pNhxTgQW6VxfCslFlBOEdVh2jr9h5ejh0WPq7KydLkOTElSkc)
 
 #### Use refresh\_token
+
 You should only ask for a new token if the access\_token has expired or you want to refresh the claims contained in the id\_token.  
 For example, it's bad practice to call the endpoint to get a new access\_token every time you call an API. 
 
@@ -489,7 +518,9 @@ To exchange the refresh\_token you received during authorization for a new acces
 ![OIDC Authorization Code Flow - Use Refresh Token](https://www.websequencediagrams.com/files/render?link=zAFGUc97cQ2vyov0ZhSA6qhSvWvBneegE8bWKv75CsGmYLQZ3lMQVcAmwCe69B84)
 
 ## Native Clients (Android/iOS/..)
+
 ### TelenorID\+ OIDC Authorization Code Flow With PKCE
+
 ![OIDC Authorization Code Flow with PKCE](https://www.websequencediagrams.com/files/render?link=yllAjtTxwQ8X28I7VNazjDm0qU0e1BTYSrAecMtS8PkQA2huVqJDaoFmg5iGhaP4)
 
 [Standard OIDC Authorization Code Flow (PKCE)](TelenorID_Plus_-_standard_oidc_flows.md#standard-oidc-authorization-code-flow-pkce) for reference.
@@ -508,6 +539,7 @@ To exchange the refresh\_token you received during authorization for a new acces
 *   A client is must maintain a session towards the authorization server using tokens and must notice when it has lost authorization (the tokens have become invalid). This can easily be tested by removing access for the client in the Telenor Digital end user self-service solution at [https://connect.telenordigital.com/gui/mypage/manageclientauthorizations](https://connect.telenordigital.com/gui/mypage/manageclientauthorizations), and checking whether the client is considering the end user logged out.
 
 ### Authentication Using Client ID and PKCE
+
 Before the /authorization request, the client app will generate the **code\_verifier**, a cryptographically random string using the characters A-Z, a-z, 0-9, and the punctuation characters -.\_~ (hyphen, period, underscore, and tilde), between 43 and 128 characters long.
 
 The **code\_verifier** is then used to generate the **code\_challenge**. The code\_challenge is a BASE64 URL encoded string of the SHA256 hash of the **code\_verifier**.
@@ -515,6 +547,7 @@ The **code\_verifier** is then used to generate the **code\_challenge**. The cod
 The **code\_challenge** and the **code\_challenge\_method** are sent on the /authorization request along other parameters. The **code\_verifier** is sent on the /token request so the authorization server can verify that the client requesting the tokens are the same that did the /authorization request.
 
 ### Android
+
 Read [Handling Android App Links](https://developer.android.com/training/app-links), and especially [Verify Android App Links](https://developer.android.com/training/app-links/verify-site-associations)
 
 **[TelenorID Plus Android SDK](https://github.com/TelenorNorway/telenorid-sdk-android)**
@@ -526,6 +559,7 @@ You need to [request access](#access-to-sdks-on-telenor-norway-github-for-native
 More information: [TelenorID SDK - Android](TelenorID_Plus_-_telenorid_from_sdk.md#telenorid-sdk---android)
 
 ### iOS
+
 Article on [Universal links for Android and iOS](https://medium.com/bumble-tech/universal-links-for-android-and-ios-1ddb1e70cab0)
 
 [Adding support for universal link on iOS](https://developer.apple.com/library/archive/documentation/General/Conceptual/AppSearch/UniversalLinks.html) (apple.com)
@@ -539,6 +573,7 @@ You need to [request access](#access-to-sdks-on-telenor-norway-github-for-native
 More information: [TelenorID SDK - iOS](TelenorID_Plus_-_telenorid_from_sdk.md#telenorid-sdk---ios)
 
 ## Manage My Telenor ID+
+
 "Manage My Telenor ID" is where end users can administrate their ID account, eg. change password, add a mobile phone number, choose log in method etc.
 
 All sevices with a profile page should link to Manage My TelenorID\+.
@@ -556,20 +591,25 @@ You will get a link back to the TelenorID account administration to use.
 Add **`?locale=no`**  to the link in the response to get Norwegian language.
 
 ### How it Looks for National Storage End Users
+
 TBD screen dump
 
 ### How it Looks for Regular End Users
+
 Important to remember however is that when linking from native clients the app must open in custom tabs, and also to emphasise the last locale parameter in link to ensure Norwegian language as default.
 
 If the client wants to use the "Endre Telenor ID"- button in their UI, see below for button design and style guide.
 
 #### English
+
 ![Manage My TelenorID en](images/IntegrationGuide_ManageMyTelenorID-en.png)
 
 ##### Buttons and style guide "Manage Telenor ID" / "Sign in with Telenor ID"
+
 [https://telenordigital.invisionapp.com/share/68UNGRPFX7K#/screens/391468481](https://telenordigital.invisionapp.com/share/68UNGRPFX7K#/screens/391468481)
 
 #### Norwegian
+
 ![Manage My TelenorID no](images/IntegrationGuide_ManageMyTelenorID-no.png)
 
 ##### Buttons and style guide "Endre Telenor ID" / "Logg inn med Telenor ID"
