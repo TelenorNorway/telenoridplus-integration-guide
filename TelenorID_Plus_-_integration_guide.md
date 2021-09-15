@@ -69,7 +69,7 @@ when obtaining tokens etc.
 These credentials will be different for the different environments (test / prod), and type of client.
 
 It is very important to use the correct client type for your application due to different security considerations. 
-[Single Sign On (SSO)](#seamless-login-sso) and token refresh also differs between the native and web clients.
+[Single Sign On (SSO)](#seamless-login--sso) and token refresh also differs between the native and web clients.
 
 For example, if you have three applications, one web, one native Android and one native iOS,
 you will need to request three TelenorID\+ clients, one for each application. 
@@ -89,11 +89,11 @@ If your service only require plain login (and do not need API access on Apigee),
 *   If you are already familiar with the Developer Portal, and your service is already using TelenorID\+, check out [Additional TelenorID\+ Client - IBIS Only (no API Access)](#TelenorID\+OnboardingNewClients-AdditionalTelenorID\+Client-IBISOnly(noAPIAccess)).
 
 ### Client Type - Confidential vs Public Clients
-|  Client Type  | Description   | Pros & Cons |
+| Client Type   | Description   | Pros & Cons |
 | ------------- | ------------- | ------------|
-| Confidential  | Any client that will run in a secure environment and will store the client credentials in a secure way; | Benefits - can typically access all scopes.
+| Confidential  | Any client that will run in a secure environment and will store the client credentials in a secure way; | Benefits - can typically access all scopes. |
 |               | typically only servers. Examples are traditional back-ends or back-end for front-ends (BFFs) | Can request refresh\_tokens ("offline access") |
-| Public        | Traditional SPAs, Native (desktop or mobile) apps | Drawbacks: Can not get a refresh\_token
+| Public        | Traditional SPAs, Native (desktop or mobile) apps | Drawbacks: Can not get a refresh\_token |
 |               |              | Session refresh must be done through "silent refresh" |
 
 ### Scopes
@@ -107,7 +107,7 @@ _**The most commonly used scopes and which claims they return.**_
 Each scope returns a set of user attributes which are called claims. The scopes an application should request depend on which user attributes the application needs.  
 Claims are returned either directly in the id\_token or can be fetched via the /userinfo endpoint.  
 
-|  Scope            | Where         | Description/Returned Claims   |
+| Scope             | Where         | Description/Returned Claims   |
 | ----------------- | ------------- | ----------------------------- |
 | openid            |  /token       | To indicate that the application intends to use OIDC to verify the user's identity Returns the **sub** claim which uniquely identifies the end user. Returns an ID Token in addition to the Access Token |   
 | ial2              |               | Identity Assurance Level 2    |
@@ -144,7 +144,7 @@ or request access on Slack [#dc-telenorid-integration-support](https://thedoozer
 ### IBIS URIs in the Staging and Production Environments
 We URIs have been changed/are about to change, see [TelenorID\+ Switch to new domain id.telenor.no](TelenorID_Plus_-_switch_to_new_domain.md) for more information.
 
-|  Endpoint                 | STAGING                                       | PRODUCTION                                |
+| Endpoint                  | STAGING                                       | PRODUCTION                                |
 | ------------------------- | --------------------------------------------- | ----------------------------------------- |
 |                           | https://id-test.telenor.no/.well-known/openid-configuration | https://id.telenor.no/.well-known/openid-configuration |
 | Authorization endpoint    | https://id-test.telenor.no/connect/authorize  | https://id.telenor.no/connect/authorize   |
@@ -155,19 +155,17 @@ We URIs have been changed/are about to change, see [TelenorID\+ Switch to new do
 The debugger is a useful tool to validate that your client is correctly configured and has access to the scopes you accept.  
 All public clients (i.e. "PKCE clients") are configured to work with the debugger.
 
-We are planning to add support for confidential clients (using clientid and secret).
-
-[https://idp.telenorid-staging.com/ui/debugger](https://idp.telenorid-staging.com/ui/debugger)
+[https://oidc-test.telenor.no/](https://oidc-test.telenor.no/)
 
 ### Help / Questions
-|  Integration Support      |
+| Integration Support       |
 | ------------------------- |
 | TelenorID integration questions or request for help can be posted on Slack in [#dc-telenorid-integration-support](https://thedoozers.slack.com/archives/C01DHF39NDA) |
 
 
-|  Incidents or Problems in Production     |
+| Incidents or Problems in Production      |
 | ---------------------------------------- |
-| For reporting incidents or problems with TelenorID in production , use the Slack channel [#dc-telenorid-production-support](https://thedoozers.slack.com/archives/C01TK0NV8KW) | 
+| For reporting incidents or problems with TelenorID in production , use the Slack channel [#dc-telenorid-production-support](https://thedoozers.slack.com/archives/C01TK0NV8KW) |
 
 ## Overview OpenID Connect (OIDC)
 ### Related Articles
@@ -196,8 +194,8 @@ OIDC is a superset of the Oauth protocol. If you've used OAuth (e.g via Apigee),
 |                           | The application that needs access to the protected resource |
 | Authorisation Server (AS) / Identity Provider (IDP)  | The system whom you delegate your applications trust to provide authentication- and authorisation information about an end user or system. For Telenor Norway this system is "IBIS". IBIS is a federated gateway and delegates authentication of end users to other Identity Providers (e.g. Telenor Digital's "Connect"). |
 | id\_token                 | A JSON web token (JWT) containing claims about the end user who logged in, typically their name and address. What claims are available in the id\_token is dependent on which scopes are requested by your client. |
-|                           | _**Note**_: Unlike the access\_token, the id\_token shall not be sent as a proof of authentication. The id\_token is solely designed to be consumed (used) on the receiving client (the token contains an "issued to" claim which must be validated; "is this token issued to me?") - do **not** use ID tokens to gain access to an API | 
-| access\_token||           | The token used for authorisation purposes, e.g. "can this client access this API?". The access\_tokens issued by IBIS can also contain identifiers for the current end user, e.g "KurtId" and/or "TnuId". |
+|                           | _**Note**_: Unlike the access\_token, the id\_token shall not be sent as a proof of authentication. The id\_token is solely designed to be consumed (used) on the receiving client (the token contains an "issued to" claim which must be validated; "is this token issued to me?") - do **not** use ID tokens to gain access to an API |
+| access\_token             | The token used for authorisation purposes, e.g. "can this client access this API?". The access\_tokens issued by IBIS can also contain identifiers for the current end user, e.g "KurtId" and/or "TnuId". |
 |                           | The access token has short expiration time and will have to be refreshed frequently: The OAuth protocol does not contain the concept of "log out", instead it relies on all sessions being short lived. When a end user wants to log out we simply stop to refresh the access token. |
 | refresh\_token            | As the name implies this token is used to refresh (prolong) the end user's session. The refresh\_token is exchanged at the auth. server which will issue a new access and refresh\_token. Note that a refresh will fail if the end user has terminated their session (logged out). |
 | Flows                     | While the oauth protocol originally contained numerous flows. All but two are now considered insecure and not recommended. The two remaining flows are "authorisation code with PKCE" and "authorisation code with client secret". |
@@ -215,16 +213,16 @@ OIDC is a superset of the Oauth protocol. If you've used OAuth (e.g via Apigee),
 [Standard OIDC Authorization Code Flow](TelenorID_Plus_-_standard_oidc_flows.md#standard-oidc-authorization-code-flow) for reference.
 
 ### Authentication Using Client ID and Secret
-|                           | 
-| ------------------------- | 
+|                           |
+| ------------------------- |
 | **Do NOT store the client id and secret unencrypted in git. Never pass the client secret as a URL parameter.** |
 
 [Creating a Shared Secret](https://docs.identityserver.io/en/release/topics/secrets.html)
 
 You can either send the client id/secret combination as part of the POST body:
 
-| POST Body                           | 
-| ----------------------------------- | 
+| POST Body                           |
+| ----------------------------------- |
 | POST /connect/token <br/> client\_id=client1& <br/> client\_secret=secret& <br/> ... |
 
 ..or as a basic authentication header:
@@ -285,10 +283,10 @@ var client = null;
 Issuer.discover('https://idp.telenorid-staging.com') // => Promise
     .then(issuer => {
         client = new issuer.Client({
-            client\_id: config.client\_id,
-            client\_secret: config.client\_secret,
-            redirect\_uris: \[\`${config.host}${config.callbackUrl}\`\],
-            response\_types: \['code'\]
+            client_id: config.client_id,
+            client_secret: config.client_secret,
+            redirect_uris: [`${config.host}${config.callbackUrl}`],
+            response_types: ['code']
         });
         app.listen(config.port, () => {
             console.log("It's configured. Listening on " + config.port);
@@ -298,7 +296,7 @@ Issuer.discover('https://idp.telenorid-staging.com') // => Promise
 app.get('/authorize', (req, res) => {
     let url = client.authorizationUrl({
         scope: config.scopes.join(' '),
-        redirect\_uri: \`${config.host}${config.callbackUrl}\`
+        redirect_uri: `${config.host}${config.callbackUrl}`
     });
     res.setHeader('Location', url);
     res.status(302)
@@ -307,9 +305,9 @@ app.get('/authorize', (req, res) => {
 
 app.get(config.callbackUrl, (req, res) => {
     const params = client.callbackParams(req);
-    client.callback(\`${config.host}${config.callbackUrl}\`, params) // => Promise
+    client.callback(`${config.host}${config.callbackUrl}`, params) // => Promise
         .then(function (tokenSet) {
-            req.session\["access\_token"\] = tokenSet.access\_token;
+            req.session["access_token"] = tokenSet.access_token;
             req.session.save(() => {
                 res.status(302);
                 res.setHeader('Location', '/');
@@ -319,13 +317,13 @@ app.get(config.callbackUrl, (req, res) => {
 });
 
 app.get('/userinfo', (req, res) => {
-    let access\_token = req.session\["access\_token"\];
-    if (!access\_token) {
+    let access_token = req.session["access_token"];
+    if (!access_token) {
         res.status(401)
         return res.end("You are not logged in.");
     }
 
-    client.userinfo(access\_token) // => Promise
+    client.userinfo(access_token) // => Promise
         .then(function (userinfo) {
             console.log(userinfo);
             res.end(JSON.stringify(userinfo));
@@ -334,7 +332,7 @@ app.get('/userinfo', (req, res) => {
 
 app.get('/', (req, res) => {
     res.setHeader('Content-Type', 'text/html');
-    res.end(\`   
+    res.end(`   
         <p>Hello world <a href="/authorize">login</a></p>
         <div id="hola"></div>
         <script>
@@ -342,7 +340,7 @@ app.get('/', (req, res) => {
             .then(d => d.json())
             .then(d => document.getElementById('hola').innerText = JSON.stringify(d))
         </script>
-    \`);
+    `);
 });
 ```
 
@@ -384,7 +382,7 @@ public class Application extends WebSecurityConfigurerAdapter {
 
 
 
-    public static void main(String\[\] args) {
+    public static void main(String[] args) {
 
         SpringApplication application = new SpringApplication(Application.class);
 
@@ -403,7 +401,7 @@ public class Application extends WebSecurityConfigurerAdapter {
                         .clientSecret(clientSecret)
                         .scope(oidcScopes)
                         .redirectUriTemplate("{baseUrl}" + redirectPath)
-                        .authorizationGrantType(AuthorizationGrantType.AUTHORIZATION\_CODE)
+                        .authorizationGrantType(AuthorizationGrantType.AUTHORIZATION_CODE)
                         .build()
         );
 
@@ -436,7 +434,7 @@ public class Application extends WebSecurityConfigurerAdapter {
 Coming...
 
 ### Example 1 - Step-by-step: Login
-The following example will walk through the common use case for logging in with IBIS. The examples show raw HTTP requests generated using the public debugger (available here: [https://idp.telenorid-staging.com/ui/debugger](https://idp.telenorid-staging.com/ui/debugger)) and a public demo-client.  
+The following example will walk through the common use case for logging in with IBIS. The examples show raw HTTP requests generated using the public debugger (available here: [https://oidc-test.telenor.no/](https://oidc-test.telenor.no/)) and a public demo-client.  
 **Thus this example uses a OpenID Connect Flow with PKCE even though most web clients will be confidential and should use the OpenID Connect Authorization Flow with client id and secret handled in a backend.**
 
 The debugger utilises the **[oidc-client-js](https://github.com/IdentityModel/oidc-client-js)** client. As can be seen by the parameters in the example there are several parameters which must be securely generated and later validated; we once again stress that you should not try to "hand craft" oauth / oidc requests.
@@ -497,11 +495,12 @@ To exchange the refresh\_token you received during authorization for a new acces
 [Standard OIDC Authorization Code Flow (PKCE)](TelenorID_Plus_-_standard_oidc_flows.md#standard-oidc-authorization-code-flow-pkce) for reference.
 
 |                              | 
-| ---------------------------- | 
+| ---------------------------- |
 | We **strongly encourage** the use of our SDKs for the integration. |
 | This will simplify the integration, help avoid common pitfalls/bugs, and ease upgrading to newer versions of the protocol. | 
 | When using our SDKs you will also automatically get **line authentication** when on a cellular network. |
 | More information on our SDKs for both Android and iOS can be found here: [TelenorID\+ integration using SDK](TelenorID_Plus_-_telenorid_from_sdk.md) |
+
 
 *   A native app must not wrap a login flow implemented in a web application. This violates security requirements since it offers login in an unidentified window (without displaying the domain of the authorization server in a browser).  
     The proof of authorization, which for OAuth is the auhorization code, should be delivered directly to the app code, not via some web application. Use Android App Links or Apple Universal Links to do this in the most secure way.
@@ -585,14 +584,14 @@ If the client wants to use the "Endre Telenor ID"- button in their UI, see below
     1.  We recommend keeping the backend and using "[Authorization Code Flow With ClientID and Secret](https://prima.corp.telenor.no/confluence/pages/viewpage.action?pageId=61425370#TelenorIDPlusIntegrationGuide-TelenorIDPlusOIDCAuthorizationCodeFlowWithClientIDandSecret)" and a confidential web client.
 3.  The Telenor Chat application currently runs i.a. in my telenor and on [telenor.no](http://telenor.no). Can we log the customer into the chat client without page refresh when the customer is already on one of these services and is logged in?
     1.  Yes, it should be possible by adding the parameter "prompt=none" i /authorize call.  
-        Please note that some client libraries will automatically have a "fallback" to normal login, but this can largely be overridden (see [Seamless Login / SSO](https://prima.corp.telenor.no/confluence/pages/viewpage.action?pageId=61425370#TelenorIDPlusIntegrationGuide-SeamlessLogin/SSO))
-4.  At [https://idp.telenorid-staging.com/.well-known/openid-configuration](https://idp.telenorid-staging.com/.well-known/openid-configuration) the following scopes are supported: "scopes\_supported":\["ial3","ial2","ial1","profile","openid","email","phone","tnn.legacy","saml","tnn.ids","tnn.profile.attributes","offline\_access"\]  
+        Please note that some client libraries will automatically have a "fallback" to normal login, but this can largely be overridden (see [Seamless Login / SSO](#seamless-login--sso))
+4.  At [https://id-test.telenor.no/.well-known/openid-configuration](https://id-test.telenor.no/.well-known/openid-configuration) the following scopes are supported: "scopes\_supported":\["ial3","ial2","ial1","profile","openid","email","phone","tnn.legacy","saml","tnn.ids","tnn.profile.attributes","offline\_access"\]  
     
     How will this be regarding scopes against Apigee? Will one scope per client be created (eg tnn.smartansatt) that has all the scopes this client has access to? Or will each auth flow have to ask for scopes for the different services to be used?  
     1.  Each client must explicitly request the scopes it needs in each /authorize call. If you gradually see that there are very many, it is up to the developer / designer of api to create "scope collections", eg "invoice.read, invoice.write, invoice.delete" may quickly have to be collected as "invoice". (see [Scopes](https://prima.corp.telenor.no/confluence/pages/viewpage.action?pageId=61425370#TelenorIDPlusIntegrationGuide-Scopes))  
         API scopes (scopes for Apigee) will not be visible on IBIS well-known as they are located and managed on the Apigee / developer portal. This works by IBIS taking all scopes starting with "api:" and sending them to Apigee for lookup. In practice, a client is stored at both IBIS and Apigee, but we make sure to keep it in sync. Existing _**api:<apigee\_service>**_ scopes will not change and for example these will still be valid:  
-        **_api:mobile-product-v2  
-        _****_api:mobile-subscription-v1_**
+        **_api:mobile-product-v2_**  
+        **_api:mobile-subscription-v1_**
 5.  The "integration guide" states the following for public clients: _Drawbacks: Can not get a refresh\_token_ _Session refresh must be done through "silent refresh".  
     _Does "silent refresh" mean that you should use /authorize with "prompt = none"?
     1.  Correct, but typically you do it in an iframe that is transparent to the user (hence the name, "silent refresh")

@@ -16,15 +16,15 @@
 
 ## User Login
 The following example will walk through the common use case for logging in with TelenorID\+ (IBIS).
-The examples show raw HTTP requests generated using the public debugger (available here: [https://idp.telenorid-staging.com/ui/debugger](https://idp.telenorid-staging.com/ui/debugger)) and a *public* demo-client.  
+The examples show raw HTTP requests generated using the public debugger (available here: [https://oidc-test.telenor.no/](https://oidc-test.telenor.no/)) and a *public* demo-client.  
 
 **Thus this example uses a OpenID Connect Flow with PKCE even though most web clients will be confidential and should use the OpenID Connect Authorization Flow with client id and secret.**
 
 The debugger utilises the **[oidc-client-js](https://github.com/IdentityModel/oidc-client-js)** client. As can be seen by the parameters in the example there are several parameters which must be securely generated and later validated; we once again stress that you should not try to "hand craft" oauth / oidc requests.
 
 ### Debugger Start Page
-* https://idp.telenorid-staging.com/ui/debugger
-    * https://idp.telenorid-staging.com/ui/debugger/callback
+* https://oidc-test.telenor.no/
+    * https://oidc-test.telenor.no//callback
     * openid profile ial2 tnn.ids
     * 99957009
     * Choose no.telenor.id.proxy.demo-client, or use mainflow-client to skip this choice
@@ -47,7 +47,7 @@ response\_mode=query&amr=&ui\_locales=no%20en&context=login
 | GET           | Http Verb     | The authorise request is done as an HTTP GET |
 | https://id-test.telenor.no/connect/authorize | URI | The endpoint to start the authorise handshake |
 | client\_id=mainflow-client    | String | Plain and simple, the client Id. |
-| redirect\_uri=https://idp.telenorid-staging.com/ui/debugger/callback | URI | Where should the user to redirected after the "authorise handshake" is completed, i.e. the user has successfully logged in. In this case the Debugger. |
+| redirect\_uri=https://oidc-test.telenor.no//callback | URI | Where should the user to redirected after the "authorise handshake" is completed, i.e. the user has successfully logged in. In this case the Debugger. |
 | response\_type=code | String  | Indicates what response type you want from the authorisation server (IBIS), in this is instance we want an authorisation code. |
 | scope=openid profile ial2     | Space-separated strings | Which scopes you are requesting on behalf of your client and user. |
 | state=ab1dbd3b963840b5b72a1bf76945053c | String, Nonce | A nonce to prevent replay-attacks (a state should only be seen once, and must match on both ends of the transaction). |
@@ -262,7 +262,7 @@ After IBIS has exchanged tokens with the external IDP it is time to redirect the
 | ----------- |
 
 ```HTTP
-https://idp.telenorid-staging.com/ui/debugger/callback?code=2E686206E5F07FF20338EC93F5C630A24E1BA4B2FE1F931ED206C88CED68DAD6&  
+https://oidc-test.telenor.no//callback?code=2E686206E5F07FF20338EC93F5C630A24E1BA4B2FE1F931ED206C88CED68DAD6&  
 scope=openid%20profile%20ial2&state=7e4f397b7cc94717bd57ce65d1daa1e6&  
 session\_state=ohX8CT0saGEyBpDWgtHPEqi1mio\_HxIWEeC5LVTap1g.28D0EA52A8BE49912DDE6437B8B1EC55
 ```
@@ -270,7 +270,7 @@ session\_state=ohX8CT0saGEyBpDWgtHPEqi1mio\_HxIWEeC5LVTap1g.28D0EA52A8BE49912DDE
 | Parameter     | Type          | What / why    |
 | ------------- | ---------     | ---------     |
 | GET           | Http Verb     | The request is done as an HTTP GET |
-| https://idp.telenorid-staging.com/ui/debugger/callback | URI | The address to redirect the user to, sent in as a parameter (redirect\_uri) in [Step 1:: Start Authorization: /authorize](#step-1-start-authorization-authorize). In this case, the Debugger. |
+| https://oidc-test.telenor.no//callback | URI | The address to redirect the user to, sent in as a parameter (redirect\_uri) in [Step 1:: Start Authorization: /authorize](#step-1-start-authorization-authorize). In this case, the Debugger. |
 | code=04E9BD43396A20EE04BD13CC6D46B0A9B43E4CC7E6F5E2797CD07670C9DB2E22 | String | **The Authentication Code.** To be used in exchange for tokens. *This is a very sensitive parameter.* |
 | scope=openid%20profile%20ial2 |  | The scopes the client has been granted access to. _Note: The accepted scopes may differ from those you requested; the user may not have given consent to all scopes_ |
 | state=ab1dbd3b963840b5b72a1bf76945053c |  | The same state parameter seen in [Step 1:: Start Authorization: /authorize](#step-1-start-authorization-authorize). |
