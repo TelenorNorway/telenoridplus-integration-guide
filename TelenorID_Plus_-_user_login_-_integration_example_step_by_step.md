@@ -15,6 +15,7 @@
   * [TelenorID\+ User Login Sequence Diagram](#telenorid-user-login-sequence-diagram)
 
 ## User Login
+
 The following example will walk through the common use case for logging in with TelenorID\+ (IBIS).
 The examples show raw HTTP requests generated using the public debugger (available here: [https://oidc-test.telenor.no/](https://oidc-test.telenor.no/)) and a *public* demo-client.  
 
@@ -23,6 +24,7 @@ The examples show raw HTTP requests generated using the public debugger (availab
 The debugger utilises the **[oidc-client-js](https://github.com/IdentityModel/oidc-client-js)** client. As can be seen by the parameters in the example there are several parameters which must be securely generated and later validated; we once again stress that you should not try to "hand craft" oauth / oidc requests.
 
 ### Debugger Start Page
+
 * https://oidc-test.telenor.no/
     * https://oidc-test.telenor.no//callback
     * openid profile ial2 tnn.ids
@@ -32,6 +34,7 @@ The debugger utilises the **[oidc-client-js](https://github.com/IdentityModel/oi
 ![Debugger start page](images/UserLogin_DebuggerStartPage.png)
 
 ## Step 1:: Start Authorization: /authorize
+
 | GET request |
 | ----------- |
 
@@ -59,6 +62,7 @@ response\_mode=query&amr=&ui\_locales=no%20en&context=login
 | lang=no en    | String        | Which language to use on IDP selection screen, options are "no" (Norsk bokmål) and "en" (English) |
 | context=login | String        | Tells IBIS which help text to show the user at the IDP selection screen |
 
+
 | response 302 Found    |       |
 | ------------------    | ----  |
 | | In this step IBIS has verified that the ClientId is correct (found) and that the provided redirect URI is configured on the client. |
@@ -72,7 +76,9 @@ code\_challenge\_method=S256&response\_mode=query&amr&ui\_locales=no%20en&contex
 ```
 
 ### /Account/login
+
 IBIS finner utav hvilken IDP man har lov til å logge inn med. Elvis/TelenorID.
+
 | GET request |
 | ----------- |
 
@@ -88,6 +94,7 @@ code\_challenge\_method%3DS256%26response\_mode%3Dquery%26amr%26ui\_locales%3Dno
 | GET           | Http Verb     | The request is done as an HTTP GET |
 | https://id-test.telenor.no/Account/Login  | URI | The endpoint to contact |
 | ReturnUrl=%2Fconnect%2Fauthorize%2Fcallback... | String | The URI to return to after login |
+
 
 | response 302 Found    |       |
 | ------------------    | ----  |
@@ -109,6 +116,7 @@ HBsdXM6c3RkIiwiZXJyb3JDb2RlIjowfSwiZXJyb3JDb2RlIjowfQ
 ```
 
 ## Step 2:: Redirect to TelenorID Login
+
 IBIS will perform its own /authorize call (similar to [Step 1:: Start Authorization: /authorize](#step-1-start-authorization-authorize) towards the selected IDP, in this case TelenorID.  
 This time however the ClientId will be IBIS and the redirect URI will point back to IBIS.
 
@@ -159,12 +167,12 @@ HByIjpmYWxzZSwibnByIjpmYWxzZSwiZXNjIjpbImVtYWlsIiwicGhvbmVfbnVtYmVyIl0sIm5sciI6Z
 kqfY0-NasiMqsixW0ZW41widc
 ```
 ## Step 3:: User Login: Telenor ID Sign-in
+
 The user will log in at the selected IDP, here Telenor ID at Telenor Digital
 
 | GET request |
 | ----------- |
-
-```HTTP
+| ```HTTP
 https://signin.telenorid-staging.com/v2/signin?authentication\_request=eyJraWQiOiIxIiwiYWxnIjoiUlMyNTYifQ.eyJsb2MiOiJubyIsImxzaSI6ImYxN2IxMzRjLWY1ZWYtNGUyZi1iZjUxL  
 ThiM2I5ODQzN2ZmYiIsImxvaCI6WyIrNDc5OTk1NzAwOSJdLCJzZHYiOm51bGwsInB1bCI6ZmFsc2UsInN1aSI6bnVsbCwiYWFoIjpudWxsLCJoZWUiOnRydWUsInN1biI6bnVsbCwicHV  
 0IjoibXNpc2RuIiwiYWNyIjpbIjIiXSwiYnJkIjoidGVsZW5vcmlkIiwiaGV0IjpudWxsLCJzZW4iOm51bGwsInNhbSI6W10sInJlcyI6Inc3c3VVaVNzU0kwWnJkMkJ2aXk5MjJNVnZsMSIsInNhcC  
@@ -172,7 +180,7 @@ I6IndlYiIsImFwdCI6IndlYiIsInNhdCI6bnVsbCwic2xhIjpudWxsLCJ0YXUiOmZhbHNlLCJhdWMiOi
 dGhlbnRpY2F0aW9uX2NhbGxiYWNrIiwibHByIjpmYWxzZSwibnByIjpmYWxzZSwiZXNjIjpbImVtYWlsIiwicGhvbmVfbnVtYmVyIl0sIm5sciI6ZmFsc2UsInNscyI6dHJ1ZSwic2x1Ijp0cnVlLCJ  
 kaWQiOm51bGwsImNpZCI6InRubi1pYmlzdGVzdHR3by13ZWIifQ.E\_NEaIbLxnK02TbkTr-Ajl4Zwk3fT3pPCkwmrzOYOFKEprT49E7htbZKjQfqMn7IHF8TJKWcI2VI\_9HbU99dvHBjTVUGG  
 zIg91\_5KHlwpty7Ntk9JrhNtZcseVAvHI05cr9vOaRWnoVxixztEEkqfY0-NasiMqsixW0ZW41widc
-```
+``` |
 
 | Parameter     | Type          | What / why    |
 | ------------- | ---------     | ---------     |
@@ -186,6 +194,7 @@ zIg91\_5KHlwpty7Ntk9JrhNtZcseVAvHI05cr9vOaRWnoVxixztEEkqfY0-NasiMqsixW0ZW41widc
 ![Login with TelenorID: mobile](images/UserLogin_LoginTelenorIDmsisdn.png)
 
 ### Next Page
+
 | POST request |
 | ------------ |
 | https://signin.telenorid-staging.com/v2/api/next |
@@ -221,6 +230,7 @@ zIg91\_5KHlwpty7Ntk9JrhNtZcseVAvHI05cr9vOaRWnoVxixztEEkqfY0-NasiMqsixW0ZW41widc
 | ------------------ | ----- |
 
 ## Step 4:: IBIS Callback: Redirect from TelenorID to IBIS
+
 Once the user has logged in they will be redirected back to IBIS. In the callback is IBIS's authentication code which IBIS will use to receive tokens (id\_token, access\_tokens) from the external IDP (here Telenor ID at Telenor Digital).  
 This whole process is transparent to the user; they will only see the browser "flash" (between redirects).
 
@@ -280,6 +290,7 @@ session\_state=ohX8CT0saGEyBpDWgtHPEqi1mio\_HxIWEeC5LVTap1g.28D0EA52A8BE49912DDE
 | ------------------ | ----- |
 
 ## Step 6:: Fetch Tokens: /token
+
 | POST request |
 | ------------ |
 | https://id-test.telenorid.no/connect/token |
@@ -305,6 +316,7 @@ session\_state=ohX8CT0saGEyBpDWgtHPEqi1mio\_HxIWEeC5LVTap1g.28D0EA52A8BE49912DDE
 |                                                                               |               | Eg. `curl -H 'Accept: application/json' -H "Authorization: Bearer ${TOKEN}" https://{hostname}/api/myresource` |
 
 ## Step 7:: Get User Info: /userinfo
+
 | GET request                               |
 | ----------------------------------------- |
 | https://id-test.telenor.no/connect/userinfo    | 
@@ -325,6 +337,7 @@ session\_state=ohX8CT0saGEyBpDWgtHPEqi1mio\_HxIWEeC5LVTap1g.28D0EA52A8BE49912DDE
 | sub: "920a05cc-0a3f-48b9-8d7d-df978bd2cc9f" |
 
 ## Step 8:: Check Session: /Checksession
+
 | GET request                               |
 | ----------------------------------------- |
 | https://id-test.telenor.no/connect/checksession    | 
