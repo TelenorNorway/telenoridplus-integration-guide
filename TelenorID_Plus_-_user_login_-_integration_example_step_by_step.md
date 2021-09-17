@@ -37,6 +37,7 @@ The debugger utilises the **[oidc-client-js](https://github.com/IdentityModel/oi
 
 | GET request |
 | ----------- |
+| https://id-test.telenor.no/connect/authorize |
 
 ```HTTP
 https://id-test.telenor.no/connect/authorize?client\_id=mainflow-client&
@@ -53,7 +54,7 @@ response\_mode=query&amr=&ui\_locales=no%20en&context=login
 | redirect\_uri=https://oidc-test.telenor.no//callback | URI | Where should the user to redirected after the "authorise handshake" is completed, i.e. the user has successfully logged in. In this case the Debugger. |
 | response\_type=code | String  | Indicates what response type you want from the authorisation server (IBIS), in this is instance we want an authorisation code. |
 | scope=openid profile ial2     | Space-separated strings | Which scopes you are requesting on behalf of your client and user. |
-| state=ab1dbd3b963840b5b72a1bf76945053c | String, Nonce | A nonce to prevent replay-attacks (a state should only be seen once, and must match on both ends of the transaction). |
+| state=ab1dbd3b9638... | String, Nonce | A nonce to prevent replay-attacks (a state should only be seen once, and must match on both ends of the transaction). |
 | code\_challenge=qRD6s8ULvmiNvCcmnImCOhMRVH3Uwdm\_1YBAd78nc18 | String, PKCE | Hash of a securely, randomly generated number on the client. |
 | code\_challenge\_method=S256  | String | Indications which hashing algorithm was used for the code\_challenge |
 | login\_hint=  | String        | Tells IBIS which MSISDN to login with |
@@ -65,8 +66,9 @@ response\_mode=query&amr=&ui\_locales=no%20en&context=login
 
 | response 302 Found    |       |
 | ------------------    | ----  |
-| | In this step IBIS has verified that the ClientId is correct (found) and that the provided redirect URI is configured on the client. |
-| | IBIS will also record the state and code\_challenge parameters. |
+|  | In this step IBIS has verified that the ClientId is correct (found) and that the provided redirect URI is configured on the client. |
+|  | IBIS will also record the state and code\_challenge parameters. |
+
 ```HTTP
 Location:
 https://id-test.telenor.no/Account/Login?returnUrl=/connect/authorize/callback?client\_id=mainflow-client&  
@@ -81,6 +83,7 @@ IBIS finner utav hvilken IDP man har lov til å logge inn med. Elvis/TelenorID.
 
 | GET request |
 | ----------- |
+| https://id-test.telenor.no/Account/Login |
 
 ```HTTP
 https://id-test.telenor.no/Account/Login?returnUrl=%2Fconnect%2Fauthorize%2Fcallback%3Fclient\_id%3Dmainflow-client%26  
@@ -95,10 +98,12 @@ code\_challenge\_method%3DS256%26response\_mode%3Dquery%26amr%26ui\_locales%3Dno
 | https://id-test.telenor.no/Account/Login  | URI | The endpoint to contact |
 | ReturnUrl=%2Fconnect%2Fauthorize%2Fcallback... | String | The URI to return to after login |
 
+.
 
 | response 302 Found    |       |
 | ------------------    | ----  |
 | | The user is redirected to the internal controller which filters which IDPs are to be shown on the next screen. |   
+
 
 ```HTTP
 Location: 
@@ -122,6 +127,8 @@ This time however the ClientId will be IBIS and the redirect URI will point back
 
 | GET request |
 | ----------- |
+| https://signin.telenorid-staging.com/oauth/authorize |
+
 
 ```HTTP
 https://signin.telenorid-staging.com/oauth/authorize?client\_id=tnn-ibistesttwo-web&redirect\_uri=https%3A%2F%2Fid-test.telenor.no%2Fsignin-tnn-ibistesttwo-web&response\_type=code&  
@@ -153,8 +160,11 @@ U1okl\_mQSavPYedHi\_m0JZZcjXxVbmAgsQZPG1Sc
 | login\_hint=%2B4799957008 | String | Tells Telenor ID which MSISDN to prompt the user for at login |
 | state=CfDJ8KA\_0MCpmkxDr6\_f25p5Z6N\_gpjS6K4IRqCn\_YuIDIDS58MN... | String, Nonce | A nonce to prevent replay-attacks (a state should only be seen once, and must match on both ends of the transaction). |
 
+
 | response 303 See Other    |       |
 | ------------------------- | ----- |
+| https://signin.telenorid-staging.com/v2/signin |   |
+
 
 ```HTTP
 Location:
@@ -172,7 +182,10 @@ The user will log in at the selected IDP, here Telenor ID at Telenor Digital
 
 | GET request |
 | ----------- |
-| ```HTTP
+| https://signin.telenorid-staging.com/v2/signin |
+
+
+```HTTP
 https://signin.telenorid-staging.com/v2/signin?authentication\_request=eyJraWQiOiIxIiwiYWxnIjoiUlMyNTYifQ.eyJsb2MiOiJubyIsImxzaSI6ImYxN2IxMzRjLWY1ZWYtNGUyZi1iZjUxL  
 ThiM2I5ODQzN2ZmYiIsImxvaCI6WyIrNDc5OTk1NzAwOSJdLCJzZHYiOm51bGwsInB1bCI6ZmFsc2UsInN1aSI6bnVsbCwiYWFoIjpudWxsLCJoZWUiOnRydWUsInN1biI6bnVsbCwicHV  
 0IjoibXNpc2RuIiwiYWNyIjpbIjIiXSwiYnJkIjoidGVsZW5vcmlkIiwiaGV0IjpudWxsLCJzZW4iOm51bGwsInNhbSI6W10sInJlcyI6Inc3c3VVaVNzU0kwWnJkMkJ2aXk5MjJNVnZsMSIsInNhcC  
@@ -180,13 +193,14 @@ I6IndlYiIsImFwdCI6IndlYiIsInNhdCI6bnVsbCwic2xhIjpudWxsLCJ0YXUiOmZhbHNlLCJhdWMiOi
 dGhlbnRpY2F0aW9uX2NhbGxiYWNrIiwibHByIjpmYWxzZSwibnByIjpmYWxzZSwiZXNjIjpbImVtYWlsIiwicGhvbmVfbnVtYmVyIl0sIm5sciI6ZmFsc2UsInNscyI6dHJ1ZSwic2x1Ijp0cnVlLCJ  
 kaWQiOm51bGwsImNpZCI6InRubi1pYmlzdGVzdHR3by13ZWIifQ.E\_NEaIbLxnK02TbkTr-Ajl4Zwk3fT3pPCkwmrzOYOFKEprT49E7htbZKjQfqMn7IHF8TJKWcI2VI\_9HbU99dvHBjTVUGG  
 zIg91\_5KHlwpty7Ntk9JrhNtZcseVAvHI05cr9vOaRWnoVxixztEEkqfY0-NasiMqsixW0ZW41widc
-``` |
+```
 
 | Parameter     | Type          | What / why    |
 | ------------- | ---------     | ---------     |
 | GET           | Http Verb     | The request is done as an HTTP GET |
 | https://connect.staging.telenordigital.com/id/signin | URI | The endpoint at Telenor Digital to contact |
 | authentication\_request=eyJraWQiOiIxIiwiYWxnIjoiUlMyNTYifQ.e.... | String | |
+
 
 | response 200 OK    |       |
 | ------------------ | ----- |
@@ -208,12 +222,14 @@ zIg91\_5KHlwpty7Ntk9JrhNtZcseVAvHI05cr9vOaRWnoVxixztEEkqfY0-NasiMqsixW0ZW41widc
 | nounce=03b066f3-d805-42d7-a7ea-592fd0634a91 | String, nonce | |
 | stay\_signed\_in=false | | |
 
+
 | response 200 OK    |       |
 | ------------------ | ----- |
 
 ![Login with TelenorID: otp](images/UserLogin_LoginTelenorIDotp.png)
 
 ### Next Page
+
 | POST request |
 | ------------ |
 | https://signin.telenorid-staging.com/v2/api/next |
@@ -236,6 +252,8 @@ This whole process is transparent to the user; they will only see the browser "f
 
 | GET request |
 | ----------- |
+| https://id-test.telenor.no/signin-tnn-ibistesttwo-web |
+
 
 ```HTTP
 https://id-test.telenor.no/signin-tnn-ibistesttwo-web?code=tsWOTDhdHxM3XLrZqPbpLECqBRU&state=CfDJ8KA\_0MCpmkxDr6\_f25p5Z6N\_gpjS6K4IRqCn\_YuIDIDS58MNzIDZ\_pVG  
@@ -253,12 +271,14 @@ avPYedHi\_m0JZZcjXxVbmAgsQZPG1Sc
 | ------------- | ---------     | ---------     |
 | GET           | Http Verb     | The request is done as an HTTP GET |
 | https://idp.telenorid-staging.com/signin-tnn-ibistesttwo-web | URI | The endpoint to contact |
-| code=tsWOTDhdHxM3XLrZqPbpLECqBRU | String | authentication code |
-| state=CfDJ8KA\_0MCpmkxDr6\_f25p5Z6N\_gpjS6K4IR... | String | |
+| code=tsWOTDhdHxM3... | String | authentication code |
+| state=CfDJ8KA_0MCp... | String | |
+
 
 | response 302 Found    |       |
 | ------------------    | ----  |
 | | The user is redirected to the internal controller which filters which IDPs are to be shown on the next screen. |   
+
 
 ```HTTP
 Location: 
@@ -266,10 +286,13 @@ Location:
 ```
 
 ## Step 5:: Client Callback: Redirect from IBIS to Client Application
+
 After IBIS has exchanged tokens with the external IDP it is time to redirect the user back to the original client (i.e. your app) - here the demo debugger 
 
 | GET request |
 | ----------- |
+| https://oidc-test.telenor.no//callback |
+
 
 ```HTTP
 https://oidc-test.telenor.no//callback?code=2E686206E5F07FF20338EC93F5C630A24E1BA4B2FE1F931ED206C88CED68DAD6&  
@@ -281,10 +304,11 @@ session\_state=ohX8CT0saGEyBpDWgtHPEqi1mio\_HxIWEeC5LVTap1g.28D0EA52A8BE49912DDE
 | ------------- | ---------     | ---------     |
 | GET           | Http Verb     | The request is done as an HTTP GET |
 | https://oidc-test.telenor.no//callback | URI | The address to redirect the user to, sent in as a parameter (redirect\_uri) in [Step 1:: Start Authorization: /authorize](#step-1-start-authorization-authorize). In this case, the Debugger. |
-| code=04E9BD43396A20EE04BD13CC6D46B0A9B43E4CC7E6F5E2797CD07670C9DB2E22 | String | **The Authentication Code.** To be used in exchange for tokens. *This is a very sensitive parameter.* |
+| code=04E9BD43396A... | String | **The Authentication Code.** To be used in exchange for tokens. *This is a very sensitive parameter.* |
 | scope=openid%20profile%20ial2 |  | The scopes the client has been granted access to. _Note: The accepted scopes may differ from those you requested; the user may not have given consent to all scopes_ |
-| state=ab1dbd3b963840b5b72a1bf76945053c |  | The same state parameter seen in [Step 1:: Start Authorization: /authorize](#step-1-start-authorization-authorize). |
-| session\_state=0fi9HY43J9W8HcnWFhyKR5ywyx72kmEPwmySwPnnQow.83403AEBA2CFB1315539B3B35166F82D | | The IBIS reference to the newly created user session |
+| state=ab1dbd3b9638... |  | The same state parameter seen in [Step 1:: Start Authorization: /authorize](#step-1-start-authorization-authorize). |
+| session\_state=0fi9HY43J9W8HcnW... | | The IBIS reference to the newly created user session |
+
 
 | response 200 OK    |       |
 | ------------------ | ----- |
@@ -295,15 +319,17 @@ session\_state=ohX8CT0saGEyBpDWgtHPEqi1mio\_HxIWEeC5LVTap1g.28D0EA52A8BE49912DDE
 | ------------ |
 | https://id-test.telenorid.no/connect/token |
 
+
 | Parameter     | Type          | What / why    |
 | ------------- | ---------     | ---------     |
 | POST          | Http Verb     | The request is done as an HTTP POST |
 | https://id-test.telenorid.no/connect/token | URI | The endpoint to contact |
 | client\_id=mainflow-client | String | The client ID, same as in [Step 1:: Start Authorization: /authorize](#step-1-start-authorization-authorize). |
-| code=04E9BD43396A20EE04BD13CC6D46B0A9B43E4CC7E6F5E2797CD07670C9DB2E22 | String | **The Authentication Code.** Received in [Step 5:: Client Callback: Redirect from IBIS to Client Application](#step-5-client-callback-redirect-from-ibis-to-client-application). |
+| code=04E9BD43396A... | String | **The Authentication Code.** Received in [Step 5:: Client Callback: Redirect from IBIS to Client Application](#step-5-client-callback-redirect-from-ibis-to-client-application). |
 | redirect\_uri=https%3A%2F%2Fidp.telenorid-staging.com%2Fui%2Fdebugger%2Fcallback | URI | The client's redirect URI from [Step 1:: Start Authorization: /authorize](#step-1-start-authorization-authorize). |
 | code\_verifier=5d3c6ab1d5d346b38cf0223c4c1fb96f9f10a782956a40a885f9e19f277b6608955b3b0677f64eada2a0e86d56070213 | String, PKCE | The PKCE. Note that this time we send the actual code, not the hash. IBIS will not attempt to recreate the hash seen in [Step 1:: Start Authorization: /authorize](#step-1-start-authorization-authorize) - they must match. |
 | grant\_type=authorization\_code | String | How we request tokens, again we are using the authorization\_code flow. |
+
 
 | response 200 OK    |       |          |
 | :----------------- | ----- | -------- |
@@ -321,11 +347,13 @@ session\_state=ohX8CT0saGEyBpDWgtHPEqi1mio\_HxIWEeC5LVTap1g.28D0EA52A8BE49912DDE
 | ----------------------------------------- |
 | https://id-test.telenor.no/connect/userinfo    | 
 
+
 | Parameter     | Type          | What / why    |
 | ------------- | ---------     | ---------     |
 | GET           | Http Verb     | The request is done as an HTTP GET |
 | https://id.telenor.no/connect/userinfo    | URI   | The endpoint to contact using **The Access Token** Received in [Step 6:: Fetch Tokens: /token](#step-6-fetch-tokens-token) |
 |               |               | Eg. `curl "https://id-test.telenor.no/connect/userinfo" -H "Authorization: Bearer ${TOKEN}"` |
+
 
 | response 200 OK    |
 | :----------------- |
@@ -342,78 +370,81 @@ session\_state=ohX8CT0saGEyBpDWgtHPEqi1mio\_HxIWEeC5LVTap1g.28D0EA52A8BE49912DDE
 | ----------------------------------------- |
 | https://id-test.telenor.no/connect/checksession    | 
 
+
 | Parameter     | Type          | What / why    |
 | ------------- | ---------     | ---------     |
 | GET           | Http Verb     | The request is done as an HTTP GET |
 | https://id-test.telenor.no/connect/checksession   | URI   | The endpoint to contact |
 |                                           |       | Eg. `curl "https://id-test.telenor.no/connect/userinfo" -H "Authorization: Bearer ${TOKEN}"` |
 
-| response 200 OK    |
-| :----------------- |
+
+| response 200 OK  |
+| ---------------- |
+
 
 ![Debugger end page - successful login](images/UserLogin_DebuggerEndPage.png)
 
 ```javascript
 {
     userinfo:{
-        s\_hash:"xgBOLuZLNi2vC\_FkIHDQdw"
+        s_hash:"xgBOLuZLNi2vC_FkIHDQdw"
         sid:"B1109E72ADE59E49EA79CB610FF43C8F"
         sub:"920a05cc-0a3f-48b9-8d7d-df978bd2cc9f"
-        auth\_time:1620638797
+        auth_time:1620638797
         idp:"no.telenor.id.proxy.demo-client"
-        given\_name:"Ulv"
-        family\_name:"Telenormobilno"
+        given_name:"Ulv"
+        family_name:"Telenormobilno"
         ial:"telenor.identity.ial2"
-        amr:\[
+        amr:[
             "urn:tnidplus:std"
-        \]
+        ]
         kurtid:"6501333"
         birthdate:"1971-01-23"
     }
-    jwt\_access\_token:{
+    jwt_access_token:{
         nbf:1620638798
         exp:1620642398
         iss:"https://idp.telenorid-staging.com"
-        client\_id:"mainflow-client"
+        client_id:"mainflow-client"
         sub:"920a05cc-0a3f-48b9-8d7d-df978bd2cc9f"
-        auth\_time:1620638797
+        auth_time:1620638797
         idp:"no.telenor.id.proxy.demo-client"
         ibis.sid:"c9a06300-4781-4d23-a1e7-8276ba4280fc"
         jti:"11E9EFC0532F87D689A55F7BD3A23E0B"
         sid:"B1109E72ADE59E49EA79CB610FF43C8F"
         iat:1620638798
-        scope:\[
+        scope:[
             "openid"
             "profile"
             "ial2"
-        \]
-        amr:\[
+        ]
+        amr:[
             "urn:tnidplus:std"
-        \]
+        ]
     }
-    jwt\_id\_token:{
+    jwt_id_token:{
         nbf:1620638798
         exp:1620639098
         iss:"https://idp.telenorid-staging.com"
         aud:"mainflow-client"
         iat:1620638798
-        at\_hash:"\_s441y6TALsgsnvFX2kZ4w"
-        s\_hash:"xgBOLuZLNi2vC\_FkIHDQdw"
+        at_hash:"_s441y6TALsgsnvFX2kZ4w"
+        s_hash:"xgBOLuZLNi2vC_FkIHDQdw"
         sid:"B1109E72ADE59E49EA79CB610FF43C8F"
         sub:"920a05cc-0a3f-48b9-8d7d-df978bd2cc9f"
-        auth\_time:1620638797
+        auth_time:1620638797
         idp:"no.telenor.id.proxy.demo-client"
-        given\_name:"Ulv"
-        family\_name:"Telenormobilno"
+        given_name:"Ulv"
+        family_name:"Telenormobilno"
         ial:"telenor.identity.ial2"
-        amr:\[
+        amr:[
             "urn:tnidplus:std"
-        \]
+        ]
     }
 }
 copy
 {
-    access\_token:"eyJhbGciOiJSUzI1NiIsImtpZCI6IjQ3ZmQ4MzE0LTZhOGEtNDcxNS1iNGJiLWM4NzRhMDc0ZTM4MCIsInR5cCI6ImF0K2p3dCJ9.eyJuYmYiOjE2MjA2Mzg3OTgsImV4cCI6MTYyMDY0MjM5OCwiaXNzIjoiaHR0cHM6Ly9pZHAudGVsZW5vcmlkLXN0YWdpbmcuY29tIiwiY2xpZW50X2lkIjoibWFpbmZsb3ctY2xpZW50Iiwic3ViIjoiOTIwYTA1Y2MtMGEzZi00OGI5LThkN2QtZGY5NzhiZDJjYzlmIiwiYXV0aF90aW1lIjoxNjIwNjM4Nzk3LCJpZHAiOiJuby50ZWxlbm9yLmlkLnByb3h5LmRlbW8tY2xpZW50IiwiaWJpcy5zaWQiOiJjOWEwNjMwMC00NzgxLTRkMjMtYTFlNy04Mjc2YmE0MjgwZmMiLCJqdGkiOiIxMUU5RUZDMDUzMkY4N0Q2ODlBNTVGN0JEM0EyM0UwQiIsInNpZCI6IkIxMTA5RTcyQURFNTlFNDlFQTc5Q0I2MTBGRjQzQzhGIiwiaWF0IjoxNjIwNjM4Nzk4LCJzY29wZSI6WyJvcGVuaWQiLCJwcm9maWxlIiwiaWFsMiJdLCJhbXIiOlsidXJuOnRuaWRwbHVzOnN0ZCJdfQ.cT0h5s8MKXPLfB\_5YsUMxcZdFdJXbM0WAbc1yc33lMarCveqqIG35vM82Its-fLZBSd8v2eWqSl8lkk\_VgFMCNp8nbwL0M1i9WtlrG9rD25KSOdezpGsF8FMBmPkhtVUFPh242-i0yJAJUChEMu4518zpyF6xzsJ4Gp5z78VUJ5KtFmjnENanEFG1b0RzcfvT27HWYwAuEZa0cI7zaPx3XtP7ZYjlcQ9yEjibxTXTkV4WkIX0Mbxq2bsOvhHlv\_EynlX0\_\_7wBfUk8EgqukjqbyTtywSt\_LrYK7XmxcN2Z8I9qCTQwLS-EMpbW5JoZV94nU8Ho6jsQnGBMCk-BDDPA"
+    access_token:"eyJhbGciOiJSUzI1NiIsImtpZCI6IjQ3ZmQ4MzE0LTZhOGEtNDcxNS1iNGJiLWM4NzRhMDc0ZTM4MCIsInR5cCI6ImF0K2p3dCJ9.eyJuYmYiOjE2MjA2Mzg3OTgsImV4cCI6MTYyMDY0MjM5OCwiaXNzIjoiaHR0cHM6Ly9pZHAudGVsZW5vcmlkLXN0YWdpbmcuY29tIiwiY2xpZW50X2lkIjoibWFpbmZsb3ctY2xpZW50Iiwic3ViIjoiOTIwYTA1Y2MtMGEzZi00OGI5LThkN2QtZGY5NzhiZDJjYzlmIiwiYXV0aF90aW1lIjoxNjIwNjM4Nzk3LCJpZHAiOiJuby50ZWxlbm9yLmlkLnByb3h5LmRlbW8tY2xpZW50IiwiaWJpcy5zaWQiOiJjOWEwNjMwMC00NzgxLTRkMjMtYTFlNy04Mjc2YmE0MjgwZmMiLCJqdGkiOiIxMUU5RUZDMDUzMkY4N0Q2ODlBNTVGN0JEM0EyM0UwQiIsInNpZCI6IkIxMTA5RTcyQURFNTlFNDlFQTc5Q0I2MTBGRjQzQzhGIiwiaWF0IjoxNjIwNjM4Nzk4LCJzY29wZSI6WyJvcGVuaWQiLCJwcm9maWxlIiwiaWFsMiJdLCJhbXIiOlsidXJuOnRuaWRwbHVzOnN0ZCJdfQ.cT0h5s8MKXPLfB\_5YsUMxcZdFdJXbM0WAbc1yc33lMarCveqqIG35vM82Its-fLZBSd8v2eWqSl8lkk\_VgFMCNp8nbwL0M1i9WtlrG9rD25KSOdezpGsF8FMBmPkhtVUFPh242-i0yJAJUChEMu4518zpyF6xzsJ4Gp5z78VUJ5KtFmjnENanEFG1b0RzcfvT27HWYwAuEZa0cI7zaPx3XtP7ZYjlcQ9yEjibxTXTkV4WkIX0Mbxq2bsOvhHlv\_EynlX0\_\_7wBfUk8EgqukjqbyTtywSt\_LrYK7XmxcN2Z8I9qCTQwLS-EMpbW5JoZV94nU8Ho6jsQnGBMCk-BDDPA"
 }
 ```
 ## TelenorID\+ User Login Sequence Diagram
