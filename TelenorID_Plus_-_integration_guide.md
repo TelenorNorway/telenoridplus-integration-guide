@@ -34,6 +34,7 @@
     + [Token Refresh](#token-refresh)
       - [Get refresh\_token](#get-refresh_token)
       - [Use refresh\_token](#use-refresh_token)
+    + [Logout](#logout)
   * [Native Clients (Android/iOS/..)](#native-clients-androidios)
     + [TelenorID\+ OIDC Authorization Code Flow With PKCE](#telenorid-oidc-authorization-code-flow-with-pkce)
     + [Authentication Using Client ID and PKCE](#authentication-using-client-id-and-pkce)
