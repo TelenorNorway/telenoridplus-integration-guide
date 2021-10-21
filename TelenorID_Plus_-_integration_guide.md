@@ -154,6 +154,8 @@ We URIs have been changed/are about to change, see [TelenorID\+ Switch to new do
 | Authorization endpoint    | https://id-test.telenor.no/connect/authorize  | https://id.telenor.no/connect/authorize   |
 | Token endpoint            | https://id-test.telenor.no/connect/token      | https://id.telenor.no/connect/token       |
 | Userinfo endpoint         | https://id-test.telenor.no/connect/userinfo   | https://id.telenor.no/connect/userinfo    |
+| Check session endpoint    | https://id-test.telenor.no/connect/checksession | https://id.telenor.no/connect/checksession |
+| Logout endpoint           | https://id-test.telenor.no/connect/endsession | https://id.telenor.no/connect/endsession  |
 
 ### Debugger
 
@@ -496,7 +498,7 @@ If an error are returned, an /authorize request without prompt=none parameter mu
 
 Refresh tokens are typically longer-lived and can be used to request new access tokens after the shorter-lived access tokens expire. Refresh tokens are often used in native applications on mobile devices in conjunction with short-lived access tokens to provide seamless UX without having to issue long-lived access tokens.
 
-The refresh token is stored in session. Then, when a session needs to be refreshed (for example, a preconfigured timeframe has passed or the user tries to perform a sensitive operation), the client uses the refresh token on the backend to obtain a new set of tokens, using the /oauth/token endpoint with _grant\_type=refresh\_token_.
+The refresh token is stored in session. Then, when a session needs to be refreshed (for example, a preconfigured timeframe has passed or the user tries to perform a sensitive operation), the client uses the refresh token on the backend to obtain a new set of tokens, using the /token endpoint with _grant\_type=refresh\_token_.
 
 #### Get refresh\_token
 
@@ -516,6 +518,18 @@ For example, it's bad practice to call the endpoint to get a new access\_token e
 To exchange the refresh\_token you received during authorization for a new access\_token, make a POST request to the /token endpoint using _**grant\_type=refresh\_token**_
 
 ![OIDC Authorization Code Flow - Use Refresh Token](https://www.websequencediagrams.com/files/render?link=zAFGUc97cQ2vyov0ZhSA6qhSvWvBneegE8bWKv75CsGmYLQZ3lMQVcAmwCe69B84)
+
+### Logout
+
+Use the /endsession endpoint to end the user session. This endpoint takes an ID token and logs the user out.
+A post_logout_redirect_uri may be specified to redirect the browser after the logout is performed. Otherwise, the browser will show a plain white page with something like "You have now been logged out".
+
+| Parameter | Description | Type | Required |
+| id_token_hint | The valid ID token received from authentication | String | True |
+| post_logout_redirect_uri	| Location to redirect to after the logout is performed. This must match the value configured for the current clientid. | String | False |
+| state | This will be returned back to the client as a query string parameter. Typically ussed by clients to round-trip state across the redirect |
+
+Related article: https://identityserver4.readthedocs.io/en/latest/endpoints/endsession.html#refendsession
 
 ## Native Clients (Android/iOS/..)
 
