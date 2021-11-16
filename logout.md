@@ -10,10 +10,10 @@
 ## Get Started
 
 Use this endpoint to end the user session. This endpoint takes an ID token and logs the user out.
-The Telenor service using the TelenorID\+ endpoint has the role as [https://en.wikipedia.org/wiki/Relying_party](Relying Party(RP))
+The Telenor service using the TelenorID\+ endpoint has the role as [Relying Party(RP)](https://en.wikipedia.org/wiki/Relying_party)
 
-* The service endpoint for logout can be retrieved  here: [https://id.telenor.no/.well-known/openid-configuration](Telenor ID\+ discovery endpoint "end_session_endpoint")
-* The logout API follows the specification: [https://openid.net/specs/openid-connect-rpinitiated-1_0.html](OpenID Connect RP-Initiated Logout 1.0)
+* The service endpoint for logout can be retrieved  here: [Telenor ID\+ discovery endpoint "end_session_endpoint"](https://id.telenor.no/.well-known/openid-configuration)
+* The logout API follows the specification: [OpenID Connect RP-Initiated Logout 1.0](https://openid.net/specs/openid-connect-rpinitiated-1_0.html)
 
 
 ## Logout flow
@@ -44,7 +44,7 @@ The response can contain the following parameter:
 | state | The value spacificed by the client on the request | String | False | 
 
 
-More information can be found her: [https://identityserver4.readthedocs.io/en/latest/endpoints/endsession.html#refendsession](API doc for the framework used by TelenorID\+)
+More information can be found her: [API doc for the framework used by TelenorID\+](https://identityserver4.readthedocs.io/en/latest/endpoints/endsession.html#refendsession)
 
 ## Error handling
 
