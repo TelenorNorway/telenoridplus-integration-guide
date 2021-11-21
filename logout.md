@@ -18,7 +18,7 @@ The Telenor service using the TelenorID\+ endpoint has the role as [Relying Part
 
 ## Logout flow
 
-![Telenor IDpluss logoutflow](TelenorIDpluss_logout.png)
+![Telenor IDpluss logoutflow](images/TelenorIDpluss_Logout.png)
 
 The TelenorID\+ logout flow has the following requirements for the RP extending the OpenID Connect standard:
 
