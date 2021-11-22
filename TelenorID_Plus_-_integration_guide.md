@@ -49,13 +49,13 @@
         * [Buttons and style guide "Endre Telenor ID" / "Logg inn med Telenor ID"](#buttons-and-style-guide-endre-telenor-id--logg-inn-med-telenor-id)
   * [Q & A](#q-a)
   
-<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
 
 ## Get Started With TelenorID\+
 
 **TelenorID\+ offers login through the OpenID Connect (OIDC) protocol. 
 This article contains only a basic introduction to the protocol. 
-OIDC is a well established industry standard for authentication and authorisation and so tons of material are available;
+OIDC is a well established industry standard for authentication and authorisation and so material are available;
 check the [related articles](#related-articles).**
 
 Functionally the TelenorID\+ solution is almost identical to FellesID.
@@ -522,15 +522,7 @@ To exchange the refresh\_token you received during authorization for a new acces
 
 ### Logout
 
-Use the /endsession endpoint to end the user session. This endpoint takes an ID token and logs the user out.
-A post_logout_redirect_uri may be specified to redirect the browser after the logout is performed. Otherwise, the browser will show a plain white page with something like "You have now been logged out".
-
-| Parameter | Description | Type | Required |
-| id_token_hint | The valid ID token received from authentication | String | True |
-| post_logout_redirect_uri	| Location to redirect to after the logout is performed. This must match the value configured for the current clientid. | String | False |
-| state | This will be returned back to the client as a query string parameter. Typically ussed by clients to round-trip state across the redirect |
-
-Related article: https://identityserver4.readthedocs.io/en/latest/endpoints/endsession.html#refendsession
+ * [Read about the TelenorID\+ Logout flow](TelenorID_Plus_-_logout.md)
 
 ## Native Clients (Android/iOS/..)
 
