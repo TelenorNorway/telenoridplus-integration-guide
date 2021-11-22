@@ -1,18 +1,19 @@
 # TelenorID\+ Logout
 
-- [TelenorID\+ Logout](#telenorid---logout)
-  * [Get Started](#get-started)
-  * [Logout flow](#logout-flow)
-  * [Input/output](#input-output)
-  * [Error handling](#error-handling)
+- [TelenorID\+ Logout](#telenorid-logout)
+  - [Get Started](#get-started)
+  - [Logout flow](#logout-flow)
+  - [Input/output](#inputoutput)
+  - [Error handling](#error-handling)
   
 
 ## Get Started
 
-Use this endpoint to end the user session. This endpoint takes an ID token and logs the user out.
+Use this endpoint to end the user session. 
+This endpoint takes an ID token as input and logs the user out.
 The Telenor service using the TelenorID\+ endpoint has the role as [Relying Party(RP)](https://en.wikipedia.org/wiki/Relying_party)
 
-* The service endpoint for logout can be retrieved  here: [Telenor ID\+ discovery endpoint "end_session_endpoint"](https://id.telenor.no/.well-known/openid-configuration)
+* The service endpoint URL for logout can be retrieved here: [Telenor ID\+ discovery endpoint "end_session_endpoint"](https://id.telenor.no/.well-known/openid-configuration)
 * The logout API follows the specification: [OpenID Connect RP-Initiated Logout 1.0](https://openid.net/specs/openid-connect-rpinitiated-1_0.html)
 
 
@@ -31,7 +32,7 @@ The endpoint supports both HTTP GET and POST.
 
 | Parameter | Description | Type | Required |
 | ------------- |:-------------:|:-------------:|:-------------:|
-| id_token_hint | The valid ID token received from authentication | String | True |
+| id_token_hint | The valid ID token received from authentication | String | False |
 | post_logout_redirect_uri	| Location to redirect to after the logout is performed. This must match the value configured for the current clientid. | String | False |
 | state | This will be returned back to the client as a query string parameter. Typically used by clients to round-trip state across the redirect | String | False |
 
@@ -41,7 +42,7 @@ The response can contain the following parameter:
 
 | Parameter | Description | Type | Required |
 | ------------- |:-------------:|:-------------:|:-------------:|
-| state | The value spacificed by the client on the request | String | False | 
+| state | The value specificed by the client on the request | String | False | 
 
 
 More information can be found her: [API doc for the framework used by TelenorID\+](https://identityserver4.readthedocs.io/en/latest/endpoints/endsession.html#refendsession)
@@ -63,5 +64,5 @@ For several of the cases the RP can't do much. We recommend the following errorh
 * Some RP has the possibility to handle a missing response from TelenorID\+, for these types of clients we recommand that the RP implements a timout and that the end-user is given the same information
 
 
-![TelenorIDpluss Errorhandling](TelenorIDpluss_logout_rp_errorhandling.png)
+![TelenorIDpluss Errorhandling](images/TelenorIDpluss_logout_rp_errorhandling.png)
 

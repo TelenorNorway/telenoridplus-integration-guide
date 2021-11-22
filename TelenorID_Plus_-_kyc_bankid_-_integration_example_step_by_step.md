@@ -12,8 +12,16 @@
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
-## Know Your Customer / BankId
-The following example is the use case for logging in with TelenorID+ \(IBIS\) using BankID.
+
+### Example 2 - Step-by-step: Know Your Customer / BankId
+ 
+The following example is the use case for performing identity verification in with IBIS using BankID. Bank ID cannot be used for logging in, and should only be used for specific use cases that require verifying the identity of a new or existing customer/end user. The examples show raw HTTP requests generated using the public debugger.
+
+The debugger is a useful tool to validate that your (public) client is correctly configured and has access to the scopes you accept.  
+All public clients (i.e. "PKCE clients") are configured to work with the debugger.
+
+The debugger utilises the **[oidc-client-js](https://github.com/IdentityModel/oidc-client-js)** client. As can be seen by the parameters below there are several parameters which must be securely generated and later validated; we once again stress that you should not try to "hand craft" oauth / oidc requests.
+
 The examples  show raw HTTP requests generated using the public debugger.
 
 The debugger is a useful tool to validate that your client is correctly configured 

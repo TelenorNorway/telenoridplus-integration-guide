@@ -3,7 +3,6 @@
   * [Standard OIDC Authorization Code Flow](#standard-oidc-authorization-code-flow)
   * [Standard OIDC Authorization Code Flow \(PKCE\)](#standard-oidc-authorization-code-flow-pkce)
 
-<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
 ## Standard OIDC Authorization Code Flow
 From [https://christianlydemann.com/creating-an-openid-connect-system-with-angular-8-and-identityserver4-oidc-part-1/](https://christianlydemann.com/creating-an-openid-connect-system-with-angular-8-and-identityserver4-oidc-part-1/)
