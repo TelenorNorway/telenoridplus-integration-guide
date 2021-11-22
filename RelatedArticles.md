@@ -1,0 +1,15 @@
+### Related Articles
+
+* [OpenID Specifications](https://openid.net/developers/specs/)
+* [Creating a Shared Secret](https://docs.identityserver.io/en/release/topics/secrets.html)
+* [Implicit Flow vs. Code Flow with PKCE](https://christianlydemann.com/implicit-flow-vs-code-flow-with-pkce/)
+* [OpenID Connect vs OAuth vs SAML 2](https://www.hackedu.com/blog/analysis-of-common-federated-identity-protocols-openid-connect-vs-oauth-2.0-vs-saml-2.0)
+* [OpenID Connect Protocol](https://auth0.com/docs/protocols/openid-connect-protocol)
+    + [Single Sign-On](https://auth0.com/docs/sso)
+    + [Tokens](https://auth0.com/docs/tokens)
+    + [Refresh Tokens](https://auth0.com/docs/tokens/refresh-tokens)
+* [Authorize Endpoint](https://identityserver4.readthedocs.io/en/latest/endpoints/authorize.html)
+* [Token Endpoint](https://identityserver4.readthedocs.io/en/latest/endpoints/token.html)
+* [UserInfo Endpoint](https://identityserver4.readthedocs.io/en/latest/endpoints/userinfo.html)
+* [End Session Endpoint - Logout](https://identityserver4.readthedocs.io/en/latest/endpoints/endsession.html#refendsession)
+* [Free intro training for OAuth 2.0 and OpenID Connect](https://courses.pragmaticwebsecurity.com/courses/take/introduction-to-oauth-2-0-and-openid-connect)
