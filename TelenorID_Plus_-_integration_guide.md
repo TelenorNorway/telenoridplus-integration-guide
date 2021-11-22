@@ -522,7 +522,7 @@ To exchange the refresh\_token you received during authorization for a new acces
 
 ### Logout
 
- * [Read about the TelenorID\+ Logout flow](TelenorID_Plus_-_logout.md)
+ * [Read about the TelenorID\+ Logout flow](TelenorID_Plus_-_logout.html)
 
 ## Native Clients (Android/iOS/..)
 
