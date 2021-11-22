@@ -2,14 +2,15 @@
 
 __Introduction to OIDC__
 
-* [OIDC Basic concepts](OIDC_basics.md)
+* [OpenID Connect (OIDC) Basic concepts](OIDC_basics.md)
 * [Introduction to standard OIDC flows](TelenorID_Plus_-_standard_oidc_flows.md)
 
 __Introduction to TelenorID\+__
 
 * [TelenorID\+ Integration Guide](TelenorID_Plus_-_integration_guide.md)
-* [TelenorID\+ Logout](TelenorID_Plus_-_logout.md)
+* [TelenorID\+ Token refresh](TelenorID_Plus_-_token_refresh.md)
 * [TelenorID\+ Single Sign On (SS)](TelenorID_Plus_-_SSO.md)
+* [TelenorID\+ Logout](TelenorID_Plus_-_logout.md)
 * [TelenorID\+ Manage my Telenor](TelenorID_Plus_-_ManageMyTelenor.md)
 
 
