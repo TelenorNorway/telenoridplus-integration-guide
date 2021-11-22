@@ -10,7 +10,7 @@ __Introduction to TelenorID\+__
 * [TelenorID\+ Integration Guide](TelenorID_Plus_-_integration_guide.md)
 * [TelenorID\+ Logout](TelenorID_Plus_-_logout.md)
 * [TelenorID\+ Single Sign On (SS)](TelenorID_Plus_-_SSO.md)
-* [TelenorID\+ Manage my Telenor](TelenorID_Plus_-TelennorID_Plus_-_ManageMyTelenor.md)
+* [TelenorID\+ Manage my Telenor](TelenorID_Plus_-_ManageMyTelenor.md)
 
 
 
