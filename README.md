@@ -2,26 +2,24 @@
 
 ## Introduction
 
-__Introduction to OIDC__
-
-* [OpenID Connect (OIDC) Basic concepts](OIDC_basics.md)
-* Single Sign On Basic concepts
-* [Introduction to standard OIDC flows](TelenorID_Plus_-_standard_oidc_flows.md)
-
-## Technical doc
-
-
 __Introduction to TelenorID\+__
 
-
 * [TelenorID\+ overarching introduction](TelenorID_Plus_-_intro.md)
+
+__Introduction to OpenID Connect (OIDC)__
+
+* [OpenID Connect (OIDC) Basic concepts](OIDC_basics.md)
+* [Introduction to standard OIDC flows](TelenorID_Plus_-_standard_oidc_flows.md)
+
+## TelenorID\+ Technical doc
+
 * [TelenorID\+ Integration Guide](TelenorID_Plus_-_integration_guide.md) (page will be updated) 
 * TelenorID\+ API's
   * [TelenorID\+ authorize with no prompt](TelenorID_Plus_-_SSO.md) (page will be updated) 
   * [TelenorID\+ Token refresh](TelenorID_Plus_-_token_refresh.md)
   * [TelenorID\+ end session / Logout](TelenorID_Plus_-_logout.md)
   * [TelenorID\+ Manage my Telenor](TelenorID_Plus_-_ManageMyTelenor.md)
-* [TelenorID\+ Single Sign On (SSO)](TelenorID_Plus_-_SSO.md) (page will be updated) 
+* [TelenorID\+ Seamless Single Sign On (SSO)](TelenorID_Plus_-_SSO.md) (page will be updated) 
   *  describe SSO in web browser, Who will get SSO and Who will not get SSO
   
 __Client integration help__
