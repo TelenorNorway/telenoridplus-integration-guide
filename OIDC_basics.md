@@ -1,5 +1,7 @@
 ## Overview OpenID Connect (OIDC)
 
+OpenID is an open standard and decentralized authentication protocol. It allows users to be authenticated by Telenor Norway services (known as relying parties, or RP) using a third-party identity provider (IDP) service, TelenorID\+, eliminating the need for each service to provide their own ad hoc login systems, and allowing users to log into multiple Telenor Norway services without having to have a separate identity and password for each.
+
 
 ## Introduction to tokens
 There are three types of tokens in the [OpenID connect standard](https://openid.net/specs/openid-connect-core-1_0.html), two of them is defined by the [OAuth 2.0 Authorization Framework](https://datatracker.ietf.org/doc/html/rfc6749#section-1.4) and the last one is defined by [OpenID connect standard](https://openid.net/specs/openid-connect-core-1_0.html) it self.

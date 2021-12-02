@@ -1,6 +1,34 @@
-### Seamless Login / SSO
+# Seamless Login / SSO
 
-Single Sign-on (SSO) occurs when a user logs in to one application and is then signed in to other applications automatically, regardless of the platform, technology, or domain the user is using. SSO provides a seamless experience for users when using your applications and services.
+## Single Sign On
+
+[Single sign-on (SSO)](https://en.wikipedia.org/wiki/Single_sign-on) is an authentication scheme that allows a user to log in with a single ID and password to any of several related, yet independent, software systems. The [OIDC](OIDC_basics.md) api provided by Telenor\+ enables SSO for all Telenor services.
+
+In addition to this TelenorID\+ provides several solutions for a more Seamless Single sign-on process where the user can experience a efficient and seamless switch between Telenor services.
+And TelenorID\+ provides Telenor services the possibility to disable the reuse of a establish Single sign-on session if needed.
+
+
+## TelenorID\+ session cookie
+
+TelenorID\+ stores a [web cookie](https://en.wikipedia.org/wiki/HTTP_cookie) in the end-user browser when the user is authenticated.
+This cookie is used to recognize the end-user when a new login request is sent and simplify the login process.
+
+Default web application logins will create a cookie that is temporarly stored in the end-user browser as long as the browser is open.
+For login request from Mobile app clients or when the end-user explist requests to be remembered the cookie will be persisted, even if the browser is closed.
+
+
+## One Telenor 
+
+One Telenor is a strategy that shall ensure that the Telenor Norway channels are perceived as coherent.
+In TelenorID\+ a client/RP can choose to be part of “One Telenor” or not. A normal client (outside of One Telenor) will generate an isolated TelenorID+ session and have a unique clientID towards Telenor ID (TD).
+For the One Telenor clients all clients will share the same TelenorID+ session and have the same ClientID towards TelenorID (TD). 
+This will result in a more seamless login experience between the One Telenor clients then the normal clients.
+
+
+## Silent SSO
+
+
+## Check if user has Session
 
 The OIDC protocol supports a _**prompt=none**_ parameter on the /authorize request that allows applications to indicate that TelenorID\+ must not display any user interaction - silent authentication.  
 TelenorID\+ will either return the requested response back to the application (access\_token), or return an error if the user is not already authenticated or if some type of consent or prompt is required before proceeding.  
