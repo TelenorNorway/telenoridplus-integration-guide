@@ -28,12 +28,13 @@ TelenorID\+ is a [OpenID Connect provider (OIDC)](OIDC_basics.md) providing Tele
 In TelenorID\+ we recognise three distinct identity assurance levels (IAL) as defined in the standard [NIST SP 800-63-3 Digital Identity Guidelines](https://pages.nist.gov/800-63-3/):
 
 | Level | Description | Examples |
-| :-------------: |:-------------:|:-------------:|
+| :-------------: | :-------------: | :-------------: |
 | IAL1 | A self asserted identity with no effort made to ensure that the identity is real. | Telenor ID, Facebook, Apple, Google | 
 | IAL2 | It has been established that the asserted identity is in fact a real identity, and some effort has been made to ensure that the identity belongs to the entity claiming it. | Telenor ID\+. |
-| IAL3 | It has been established that the asserted identity is in fact a real identity. Documentation proving the relationship between the identity and the entity claiming it has been provided and verified by a competent entity.|  Bank ID.
-T
-he IALs can be required as scopes from TelenorID\+ if your service needs to know. In principle an IAL0 also exists for so-called "non personal users" or "service phones." This is an IAL suitable to perform actions anyone with access to the handset should be able to, regardless of who that person is, and that handset is not dedicated to any specific user.
+| IAL3 | It has been established that the asserted identity is in fact a real identity. Documentation proving the relationship between the identity and the entity claiming it has been provided and verified by a competent entity.|  Bank ID. |
+
+
+The IALs can be required as scopes from TelenorID\+ if your service needs to know. In principle an IAL0 also exists for so-called "non personal users" or "service phones." This is an IAL suitable to perform actions anyone with access to the handset should be able to, regardless of who that person is, and that handset is not dedicated to any specific user.
 
 By having the right IAL for a given service, we can make first-time sign-up as easy or hard as it needs to be. Signing up to an IAL1-service would be very simple and non-intrusive, whereas signing up to an IAL3 service will require a lot more effort from the end-user. IAL2 is a compromise for services that require some certainty as to the identity of the end users, such as Mitt Telenor.
 
