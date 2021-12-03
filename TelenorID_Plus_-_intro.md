@@ -14,7 +14,7 @@
 
 ## TelenorID\+ and TelenorID
 [TelenorID](https://docs.telenordigital.com/connect/) is the main authentication provider used by TelenorID\+ (but not the only one). TelenorID is a service provided by [Telenor Digital](https://www.telenordigital.com/).
-TelenorID\+ is only a technical component and not branded or visible for end-users, the brandname for authentication is TelenorID.
+TelenorID\+ is only a name for a collection of technical microservices and not branded or visible for end-users, the brandname for authentication is TelenorID.
 
 ## TelenorID\+ overarching architecture
 

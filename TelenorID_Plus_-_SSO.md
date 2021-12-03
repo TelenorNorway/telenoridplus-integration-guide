@@ -11,11 +11,18 @@ And TelenorID\+ provides Telenor services the possibility to disable the reuse o
 ## TelenorID\+ session cookie
 
 TelenorID\+ stores a [web cookie](https://en.wikipedia.org/wiki/HTTP_cookie) in the end-user browser when the user is authenticated.
-This cookie is used to recognize the end-user when a new login request is sent and simplify the login process.
+This cookie is used to recognize the end-user when a new login request in the same browser is sent and enables a simplified login process.
 
-Default web application logins will create a cookie that is temporarly stored in the end-user browser as long as the browser is open.
-For login request from Mobile app clients or when the end-user explist requests to be remembered the cookie will be persisted, even if the browser is closed.
+How long and if the cookie is persisted depends on the usecase:
 
+| Usecase | Cookie expires | Description |
+| ------------- |:-------------:|:-------------:|
+|If TelenorID returns the attribute td_sls=TRUE | session | This is the default usecase for login to web clients |
+|TelenorID+ client is a web application and<br>If TelenorID returns the attribute td_sls=FALSE | 14 days | user chooses to be remembered |
+|TelenorID+ client is a MobileApp and<br>If TelenorID returns the attribute td_sls=FALSE | 90 days | The cookie is always created for users using a MobileApps. The assumption is that apps is used on private devices |
+
+For more information about TelenorID attribute td_sls: https://docs.telenordigital.com/connect/id/id_token.html
+When the Cookie expires is set to session, it means that the webbrowser will delete the cookie when the browser is closed.
 
 ## One Telenor 
 
@@ -30,14 +37,5 @@ This will result in a more seamless login experience between the One Telenor cli
 
 ## Check if user has Session
 
-The OIDC protocol supports a _**prompt=none**_ parameter on the /authorize request that allows applications to indicate that TelenorID\+ must not display any user interaction - silent authentication.  
-TelenorID\+ will either return the requested response back to the application (access\_token), or return an error if the user is not already authenticated or if some type of consent or prompt is required before proceeding.  
-If the user was already logged in, TelenorID\+ will respond exactly as if the user had authenticated manually through the login page.  
-
-Be aware that some client libraries will automatically have a "fallback" to normal login, but this can largely be overridden.
-
-If the user was not logged in via Single Sign-on (SSO) or their SSO session had expired, TelenorID\+ will redirect to the specified redirect\_uri (callback URL) with an error:
-
-*   login\_required - The user was not logged in at TelenorID\+, so silent authentication is not possible. TelenorID\+ requires end user authentication.
-
-If an error are returned, an /authorize request without prompt=none parameter must be sent for the end user to be redirected to the login page.
+A client can check if a user has a existing session or not.
+This is done with the [API call /autorize](TelenorID_Plus_-_authorize.md) using the parameter _**prompt=none**_

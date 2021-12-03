@@ -15,12 +15,12 @@ __Introduction to OpenID Connect (OIDC)__
 
 * [TelenorID\+ Integration Guide](TelenorID_Plus_-_integration_guide.md) (page will be updated) 
 * TelenorID\+ API's
-  * [TelenorID\+ authorize with no prompt](TelenorID_Plus_-_SSO.md) (page will be updated) 
+  * [TelenorID\+ authorize](TelenorID_Plus_-_authorize.md) (page will be updated) 
   * [TelenorID\+ Token refresh](TelenorID_Plus_-_token_refresh.md)
   * [TelenorID\+ end session / Logout](TelenorID_Plus_-_logout.md)
   * [TelenorID\+ Manage my Telenor](TelenorID_Plus_-_ManageMyTelenor.md)
-* [TelenorID\+ Seamless Single Sign On (SSO)](TelenorID_Plus_-_SSO.md) (page will be updated) 
-  *  describe SSO in web browser, Who will get SSO and Who will not get SSO
+* [TelenorID\+ Seamless Single Sign On (SSO)](TelenorID_Plus_-_SSO.md)
+
   
 __Client integration help__
 
