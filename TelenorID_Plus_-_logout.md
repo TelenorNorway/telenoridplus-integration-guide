@@ -1,30 +1,34 @@
 # TelenorID\+ Logout
 
-- [TelenorID\+ Logout](#telenorid-logout)
-  - [Get Started](#get-started)
-  - [Logout flow](#logout-flow)
-  - [Input/output](#inputoutput)
-  - [Error handling](#error-handling)
-  
-
 ## Get Started
 
 Use this endpoint to end the user session. 
 This endpoint takes an ID token as input and logs the user out.
-The Telenor service using the TelenorID\+ endpoint has the role as [Relying Party(RP)](https://en.wikipedia.org/wiki/Relying_party)
 
 * The service endpoint URL for logout can be retrieved here: [Telenor ID\+ discovery endpoint "end_session_endpoint"](https://id.telenor.no/.well-known/openid-configuration)
 * The logout API follows the specification: [OpenID Connect RP-Initiated Logout 1.0](https://openid.net/specs/openid-connect-rpinitiated-1_0.html)
+  * The Telenor service using the TelenorID\+ endpoint has the role as [Relying Party(RP)](https://en.wikipedia.org/wiki/Relying_party)
 
 
-## Logout flow
+## The logout flow
 
 ![Telenor IDpluss logoutflow](images/TelenorIDpluss_Logout.png)
 
-The TelenorID\+ logout flow has the following requirements for the RP extending the OpenID Connect standard:
+
+### Recommandations 
+
+The TelenorID\+ logout flow has the following recommendations for the RP extending the OpenID Connect standard:
 
 * We recommend logging out of the local session before sending the logout request to TelenorID\+
-* We recommend that the end-user is given information after the logout process about how to manage all tokens and logout of all Telenor services
+* The logout redirect url should not be to a page where the user is logged in automatically.
+* We recommend that the end-user is given information after the logout process about how to manage all tokens and logout of all Telenor services. See more information: [TelenorID\+ Manage my Telenor](TelenorID_Plus_-_ManageMyTelenor.md)
+*  We recommend that the end-user is given information on error pages about how to manage all tokens and logout of all Telenor services. See more information: [TelenorID\+ Manage my Telenor](TelenorID_Plus_-_ManageMyTelenor.md)
+
+We recommand this, but Clients can diviate from this if they require it.
+
+The logout flow is complex with many involved parties and a logout locally first will ensure a more robust system then if the logout locally is dependent on all other moving parts. By informing the end-user about [Manage my Telenor](TelenorID_Plus_-_ManageMyTelenor.md) after logout and on error pages the end-user can follow-up on errors that occur and  make sure that the logout is complete after logging out locally. The logout page presented to the end-user after logout shouldn't try to log in the user automatically again because this can break the logout process if errors occur.
+
+
 
 ## Input/output
 
