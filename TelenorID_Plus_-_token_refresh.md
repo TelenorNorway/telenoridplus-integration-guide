@@ -2,7 +2,7 @@
 # TelenorID\+ Token Refresh
 
 Refresh tokens are typically longer-lived and can be used to request new access tokens after the shorter-lived access tokens expire.
-
+It is only specific [client types](TelenorID_Plus_-_clienttypes.md) that can get Refresh tokens.
 The client will only get a new refresh token if the SSO session still is active. 
 
 ### Refresh token lifetime
@@ -12,17 +12,16 @@ The Client can, if the policy allows it, retrieve new refresh tokens through the
 
 ### TelenorID\+ Refresh policies
 
-| Policy | Description | Sliding* | Lifetime |
-| ------------- | ------------- | ------------| ------------|
-| NoRefresh	| Can't refresh, no refresh token is provided to client | N/A | N/A |
-| Confidential | The refresh token can only be used for 14 days, new token must be collected through a login | NO | 14 days |
-| Mobile | The token can be refreshed and a new 90'days token will be provided | YES | 90 days |
-| PublicWeb | The token can be refreshed and a new 10 min token will be provided | YES | 10 min |
-| Web |same as PublicWeb | YES | 10 min |
+| Policy       | Description                                                                                 | Sliding* | Lifetime | [Client type](TelenorID_Plus_-_clienttypes.md) |
+|--------------|---------------------------------------------------------------------------------------------|----------|----------|------------------------------------------------|
+| NoRefresh    | Can't refresh, no refresh token is provided to client                                       | N/A      | N/A      | Public                                         |
+| Confidential | The refresh token can only be used for 14 days, new token must be collected through a login | NO       | 14 days  | Confidential                                   |
+| Mobile       | The token can be refreshed and a new 90'days token will be provided                         | YES      | 90 days  | MobileApp                                      |
+| PublicWeb    | The token can be refreshed and a new 10 min token will be provided                          | YES      | 10 min   | PublicWithRefresh                              |
+| Web          | same as PublicWeb                                                                           | YES      | 10 min   | PublicWithRefresh                              |
 
  * *Sliding = YES → when refreshing the token, the lifetime of the refresh token will be renewed
  * *Sliding = NO → the refresh token will expire on a fixed point in time
-
 
 
 #### Get refresh\_token

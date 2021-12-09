@@ -4,6 +4,13 @@
 
 more info to come
 
+
+### Language
+
+Use **_ui\_locales=no_** to choose Norwegian language.
+
+More information can be found here: [API doc for the framework used by TelenorID\+]](https://identityserver4.readthedocs.io/en/latest/endpoints/authorize.html)
+
 ## Check if user has Session
 
 The OIDC protocol supports a _**prompt=none**_ parameter on the /authorize request that allows applications to indicate that TelenorID\+ must not display any user interaction - silent authentication.  

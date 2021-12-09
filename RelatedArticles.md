@@ -13,3 +13,7 @@
 * [UserInfo Endpoint](https://identityserver4.readthedocs.io/en/latest/endpoints/userinfo.html)
 * [End Session Endpoint - Logout](https://identityserver4.readthedocs.io/en/latest/endpoints/endsession.html#refendsession)
 * [Free intro training for OAuth 2.0 and OpenID Connect](https://courses.pragmaticwebsecurity.com/courses/take/introduction-to-oauth-2-0-and-openid-connect)
+* [RFC6819: Oauth2 threat model](https://tools.ietf.org/html/rfc6819)
+* [RFC8252: OAuth 2.0 for Native Apps](https://tools.ietf.org/html/rfc8252)
+* [Draft RFC: OAuth 2.0 for Browser-Based Apps](https://tools.ietf.org/html/draft-ietf-oauth-browser-based-apps-03)
+* [Draft RFC: OAuth 2.0 Security Best Current Practice](https://tools.ietf.org/html/draft-ietf-oauth-security-topics-13)

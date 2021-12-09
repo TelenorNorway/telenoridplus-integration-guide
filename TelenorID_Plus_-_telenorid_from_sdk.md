@@ -1,31 +1,23 @@
 # TelenorID\+ Integration Guide: Integrate from SDK
-AppSec provides SDKs to integrate Android and iOS applications with TelenorID.
 
-   * [Benefits](#benefits)
-   * [Prerequisite](#prerequisite)
-   * [TelenorID\+ SDK - Android](#telenorid-sdk---android)
-     + [Example](#example)
-       - [Configuration](#configuration)
-       - [Login](#login)
-       - [Tokens](#tokens)
-     + [UserInfo](#userinfo)
-     + [Line authentication](#line-authentication)
-       - [Personal number, with National Storage:](#personal-number-with-national-storage)
-       - [Personal number](#personal-number)
-       - [Non personal number](#non-personal-number)
-   * [TelenorID\+ SDK - iOS](#telenorid-sdk---ios)
-     + [Line authentication](#line-authentication-1)
-     + [Authorize request](#authorize-request)
-   * [Login flow](#login-flow)
- 
- <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+We provide SDKs to integrate Android and iOS applications with TelenorID\+.
+
 
 ## Benefits
     1. Line authentication when on cellular network
     2. Easier to use than to do it all from scratch
 
 ## Prerequisite
-    1. Obtain a client from the AppSec team
+
+### Access to SDKs on Telenor Norway GitHub for Native Clients
+
+If you have native clients and want to use our SDK for Android and/or iOS,
+you need to request access to the Telenor Norway repository (if not already member of TelenorNorway).
+
+Send the github account that require access to **dc\_security@telenor.com**, 
+or request access on Slack [#dc-telenorid-integration-support](https://thedoozers.slack.com/archives/C01DHF39NDA).
+
+
 
 ## TelenorID\+ SDK - Android
 The Android SDK wraps the TelenorID SDK \(from Telenor Digital\) to be able to use line authentication from Telenor Digital, as well as from TelenorID\+.

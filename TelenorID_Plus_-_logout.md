@@ -49,7 +49,7 @@ The response can contain the following parameter:
 | state | The value specificed by the client on the request | String | False | 
 
 
-More information can be found her: [API doc for the framework used by TelenorID\+](https://identityserver4.readthedocs.io/en/latest/endpoints/endsession.html#refendsession)
+More information can be found here: [API doc for the framework used by TelenorID\+](https://identityserver4.readthedocs.io/en/latest/endpoints/endsession.html#refendsession)
 
 ## Error handling
 
