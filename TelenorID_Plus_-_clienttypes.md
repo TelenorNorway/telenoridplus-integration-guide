@@ -24,7 +24,6 @@ If your service only require plain login (and do not need API access on Apigee),
 In TelenorID\+ we have defined the following client types.
 
 
-
 | ID\+ Client Type  | [oAuth Client type](OIDC_basics.md) | [Refresh policy](TelenorID_Plus_-_token_refresh.md) | Description                                    |
 |-------------------|-------------------------------------|-----------------------------------------------------|------------------------------------------------|
 | Undefined         | N/A                                 | N/A                                                 | not in use                                     |
