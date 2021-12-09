@@ -14,7 +14,7 @@ __Introduction to OpenID Connect (OIDC)__
 ## TelenorID\+ Technical doc
 
 * TelenorID\+ technical introduction
-  * [Client types](TelenorID_Plus_-TelenorID_Plus_-_clienttypes.md)
+  * [Client types](TelenorID_Plus_-_clienttypes.md)
   * [Scopes](TelenorID_Plus_-_scopes.md)
   * [TelenorID\+ Seamless Single Sign On (SSO)](TelenorID_Plus_-_SSO.md)
 * TelenorID\+ API's
