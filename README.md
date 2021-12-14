@@ -36,6 +36,7 @@ __Examples__
 
 __Releated Articles__
 
+ * [TelenorID api doc](https://docs.telenordigital.com/connect/id)
  * [Related links](RelatedArticles.md)
 
 ## More help needed?
