@@ -30,7 +30,7 @@ In TelenorID\+ we recognise three distinct identity assurance levels (IAL) as de
 |:-----:|:-------------------------------:|:-----------------------------------:|
 | IAL1  | A self asserted identity with no effort made to ensure that the identity is real.                                                                      | Telenor ID, Facebook, Apple, Google |
 | IAL2  |  It has been established that the asserted identity is in fact a real identity, and some effort has been made to ensure that the identity belongs to the entity claiming it.                         |            Telenor ID\+.            |
-| IAL3  | It has been established that the asserted identity is in fact a real identity. Documentation proving the relationship between the identity and the entity claiming it has been provided and verified by a competent entity. |              Bank ID.               |
+| IAL3  | It has been established that the asserted identity is in fact a real identity. Documentation proving the relationship between the identity and the entity claiming it has been provided and verified by a competent entity. |              BankID.               |
 
 
 The IALs can be required as scopes from TelenorID\+ if your service needs to know. In principle an IAL0 also exists for so-called "non personal users" or "service phones." This is an IAL suitable to perform actions anyone with access to the handset should be able to, regardless of who that person is, and that handset is not dedicated to any specific user.
@@ -63,7 +63,7 @@ Under the [eIDAS Regulation (EU)](http://eur-lex.europa.eu/legal-content/EN/TXT/
 | Substantial | for instance, enrolment is performed by providing and verifying identity information, and authentication by using a user name and a password and a one-time password sent to your mobile phone |
 |    High     |                         for instance, enrolment is performed by registering in person in an office, and authentication by using a smartcard, like a National ID Card.                          |
 
-This law is regulated through the Norwegian law [lov om elektroniske tillitstjenester LOV-2018-06-15-44](https://lovdata.no/dokument/LTI/lov/2018-06-15-44) and is assumed required for Telenor in a updated ekom law in the future: https://www.regjeringen.no/no/dokumenter/horing-forslag-til-ny-ekomlov-ny-ekomforskrift-og-endringer-i-nummerforskriften/id2864853/
+This law is regulated through the Norwegian law [lov om elektroniske tillitstjenester LOV-2018-06-15-44](https://lovdata.no/dokument/LTI/lov/2018-06-15-44) and is assumed required for Telenor in a updated ekom law in the future: [Høring - Forslag til ny ekomlov](https://www.regjeringen.no/no/dokumenter/horing-forslag-til-ny-ekomlov-ny-ekomforskrift-og-endringer-i-nummerforskriften/id2864853/)
 
 ## Mapping between IAL, AAL, eidas LoA
 

@@ -17,21 +17,8 @@ __Introduction to OpenID Connect (OIDC)__
   * [Client types](TelenorID_Plus_-_clienttypes.md)
   * [Scopes](TelenorID_Plus_-_scopes.md)
   * [TelenorID\+ Seamless Single Sign On (SSO)](TelenorID_Plus_-_SSO.md)
-* TelenorID\+ API's
-  * [Discovery endpoint](TelenorID_Plus_-_discovery.md)
-  * [Authorize endpoint](TelenorID_Plus_-_authorize.md)
-  * Token endpoint
-    * [Access Tokens](TelenorID_Plus_-_accesstokens.md)
-    * [TelenorID\+ Token refresh](TelenorID_Plus_-_token_refresh.md)
-  * [Userinfo endpoint](https://identityserver4.readthedocs.io/en/latest/endpoints/userinfo.html)
-  * [End session endpoint (Logout)](TelenorID_Plus_-_logout.md)
-  * revocation_endpoint (todo)
-  * introspection_endpoint (todo)
-  * device_authorization_endpoint (todo)
-  * [selfservice endpoint (Manage my Telenor)](TelenorID_Plus_-_ManageMyTelenor.md)
+* [TelenorID\+ API docs](TelenorID_Plus_-_api.md)
 
-
-  
 __Client integration help__
 
 * [Info for webclients](TelenorID_Plus_-_WebClients.md)

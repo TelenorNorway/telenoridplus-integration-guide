@@ -21,7 +21,7 @@ How long and if the cookie is persisted depends on the usecase:
 | TelenorID+ client is a web application and<br>If TelenorID returns the attribute td_sls=FALSE |    14 days     |                                           user chooses to be remembered                                           |
 | TelenorID+ client is a MobileApp and<br>If TelenorID returns the attribute td_sls=FALSE       |    90 days     | The cookie is always created for users using a MobileApps. The assumption is that apps is used on private devices |
 
-For more information about TelenorID attribute td_sls: https://docs.telenordigital.com/connect/id/id_token.html
+For more information about TelenorID attribute td_sls: [TelenorID api doc](https://docs.telenordigital.com/connect/id/id_token.html)
 When the Cookie expires is set to session, it means that the webbrowser will delete the cookie when the browser is closed.
 
 ## One Telenor 
