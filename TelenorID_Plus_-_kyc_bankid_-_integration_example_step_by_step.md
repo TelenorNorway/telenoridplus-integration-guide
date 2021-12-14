@@ -1,16 +1,5 @@
 # TelenorID\+ Know Your Customer / BankId - Integration Example Step-by-step
 
-  * [Know Your Customer / BankId](#know-your-customer-bankid)
-  * [Step 1:: Start Authorization: /authorize](#step-1-start-authorization-authorize)
-  * [Step 2:: IDP Selection](#step-2-idp-selection)
-  * [Step 3:: Redirect to IDP](#step-3-redirect-to-idp)
-  * [Step 4:: User login](#step-4-user-login)
-  * [Step 5:: IBIS Callback](#step-5-ibis-callback)
-  * [Step 6:: Client Callback](#step-6-client-callback)
-  * [Step 7:: Fetch Tokens: /token](#step-7-fetch-tokens-token)
-  * [Step 8:: Token validation and consumption](#step-8-token-validation-and-consumption)
-
-<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
 
 ### Example 2 - Step-by-step: Know Your Customer / BankId
