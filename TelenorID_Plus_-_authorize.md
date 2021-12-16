@@ -23,6 +23,8 @@ The endpoint supports HTTP GET
 | ```login_hint``` | Can be used to prefill the MSISDN | String | False |
 | ```ui_locales``` | Use  value ```no``` to choose Norwegian language. | String | False |
 | ```acr_values``` | Use  value ```urn:tnidplus:kyc``` to start BankID login, see more information [here](TelenorID_Plus_-_kyc_bankid_-_integration_example_step_by_step.md). | String | False |
+| ```context``` | Default ```login``` Use value ```kyc``` to get a ID\+ customized for confirmation of identity and not authentication | String | False |
+
 
 
 __response_type__

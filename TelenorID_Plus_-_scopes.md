@@ -12,6 +12,8 @@ Claims are returned either directly in the id\_token or can be fetched via the /
 | Scope             | Where         | Description/Returned Claims   |
 | ----------------- | ------------- | ----------------------------- |
 | openid            |  /token       | To indicate that the application intends to use OIDC to verify the user's identity Returns the **sub** claim which uniquely identifies the end user. Returns an ID Token in addition to the Access Token |   
+| ial0              |               | Identity Assurance Level 0    |
+| ial1              |               | Identity Assurance Level 1    |
 | ial2              |               | Identity Assurance Level 2    |
 | profile           | /userinfo     | name (given\_name, middle\_name, family\_name), birthdate, kurtid |
 | email             | /userinfo     | email address                 |

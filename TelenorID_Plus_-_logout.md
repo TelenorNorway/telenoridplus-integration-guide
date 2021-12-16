@@ -2,20 +2,25 @@
 
 ## Get Started
 
-Use this endpoint to end the user session. 
-This endpoint takes an ID token as input and logs the user out.
+Use one of these endpoints to end the user session. 
+This endpoints takes an ID token as input and logs the user out.
 
-* The service endpoint URL for logout can be retrieved here: [Telenor ID\+ discovery endpoint "end_session_endpoint"](https://id.telenor.no/.well-known/openid-configuration)
-* The logout API follows the specification: [OpenID Connect RP-Initiated Logout 1.0](https://openid.net/specs/openid-connect-rpinitiated-1_0.html)
-  * The Telenor service using the TelenorID\+ endpoint has the role as [Relying Party(RP)](https://en.wikipedia.org/wiki/Relying_party)
+* The service endpoint URL for logout can be retrieved here: [Telenor ID\+ discovery endpoint](https://id.telenor.no/.well-known/openid-configuration),
+* there is two endpoint for logout:
 
+| Endpoint | description | status |
+| ------------- |:-------------:|:-------------:|
+| ```end_session_endpoint``` | This API follows the specification: [OpenID Connect RP-Initiated Logout 1.0](https://openid.net/specs/openid-connect-rpinitiated-1_0.html) | Implemented |
+| ```end_session_custom_endpoint``` | This API is a custom API created to support native apps without a userbrowser | Only design draft, not implemented |
 
-## The logout flow
+## API descriptions
+
+### OIDC end_session_endpoint
 
 ![Telenor IDpluss logoutflow](images/TelenorIDpluss_Logout.png)
 
 
-### Recommandations 
+#### Recommandations 
 
 The TelenorID\+ logout flow has the following recommendations for the RP extending the OpenID Connect standard:
 
@@ -28,9 +33,7 @@ We recommand this, but Clients can diviate from this if they require it.
 
 The logout flow is complex with many involved parties and a logout locally first will ensure a more robust system then if the logout locally is dependent on all other moving parts. By informing the end-user about [Manage my Telenor](TelenorID_Plus_-_ManageMyTelenor.md) after logout and on error pages the end-user can follow-up on errors that occur and  make sure that the logout is complete after logging out locally. The logout page presented to the end-user after logout shouldn't try to log in the user automatically again because this can break the logout process if errors occur.
 
-
-
-## Input/output
+#### Input/output
 
 The endpoint supports both HTTP GET and POST.
 
@@ -40,8 +43,6 @@ The endpoint supports both HTTP GET and POST.
 | post_logout_redirect_uri	| Location to redirect to after the logout is performed. This must match the value configured for the current clientid. | String | False |
 | state | This will be returned back to the client as a query string parameter. Typically used by clients to round-trip state across the redirect | String | False |
 
-
-
 The response can contain the following parameter:
 
 | Parameter | Description | Type | Required |
@@ -50,6 +51,25 @@ The response can contain the following parameter:
 
 
 More information can be found here: [API doc for the framework used by TelenorID\+](https://identityserver4.readthedocs.io/en/latest/endpoints/endsession.html#refendsession)
+
+### TelenorID\+ custom endpoint for native apps
+
+#### Input/output
+
+The endpoint supports only HTTP POST.
+
+| Parameter | Description | Type | Required |
+| ------------- |:-------------:|:-------------:|:-------------:|
+| id_token_hint | The valid ID token received from authentication | String | True |
+| state | This will be returned back to the client as a query string parameter. Typically used by clients to round-trip state across the redirect | String | False |
+
+The response can contain the following parameter:
+
+| Parameter | Description | Type | Required |
+| ------------- |:-------------:|:-------------:|:-------------:|
+| state | The value specificed by the client on the request | String | False | 
+
+
 
 ## Error handling
 
