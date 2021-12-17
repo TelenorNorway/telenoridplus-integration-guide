@@ -8,6 +8,8 @@ See: [TelenorID\+ introduction](README.md)
 
 * [Discovery endpoint](TelenorID_Plus_-_discovery.md)
 * [Authorize endpoint](TelenorID_Plus_-_authorize.md)
+  * [Check session](TelenorID_Plus_-_authorize.md#check-if-user-has-session)
+  * [Force authentication](TelenorID_Plus_-_authorize.md#force-authentication-and-ignore-sso)
 * Token endpoint
   * [Access Tokens](TelenorID_Plus_-_accesstokens.md)
   * [TelenorID\+ Token refresh](TelenorID_Plus_-_token_refresh.md)
