@@ -8,13 +8,13 @@
 
 
 * TelenorID+ is a hub between all Telenor Norway end-users services and the different authentication services in use.
+* TelenorID+ provides identification of Telenor Norway end-users.
 * TelenorID+ enriches the authentication with data about the users Telenor Norway account.
-* TelenorID+ keeps track of all user sessions, and authorization tokens provided to the different end-user services. 
+* TelenorID+ keeps track of all user sessions, and authorization tokens provided to the different end-user services.
 * TelenorID+ simplifies the authentication process by providing single sign on between services
 
 ## TelenorID\+ and TelenorID
-[TelenorID](https://docs.telenordigital.com/connect/) is the main authentication provider used by TelenorID\+ (but not the only one). TelenorID is a service provided by [Telenor Digital](https://www.telenordigital.com/).
-TelenorID\+ is only a name for a collection of technical microservices and not branded or visible for end-users, the brandname for authentication is TelenorID.
+Read more about the difference between TelenorID and TelenorID\+ [here](TelenorID_TelenorID_Plus_-_term.md).
 
 ## TelenorID\+ overarching architecture
 

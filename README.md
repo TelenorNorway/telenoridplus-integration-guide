@@ -4,6 +4,7 @@
 
 __Introduction to TelenorID\+__
 
+* [The difference between TelenorID and TelenorID\+](TelenorID_Plus_-_intro.md)
 * [TelenorID\+ overarching introduction](TelenorID_Plus_-_intro.md)
 
 __Introduction to OpenID Connect (OIDC)__
