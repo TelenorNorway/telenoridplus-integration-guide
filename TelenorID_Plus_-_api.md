@@ -10,7 +10,7 @@ See: [TelenorID\+ introduction](README.md)
 * [Authorize endpoint](TelenorID_Plus_-_authorize.md)
   * [Check session](TelenorID_Plus_-_authorize.md#check-if-user-has-session)
   * [Force authentication](TelenorID_Plus_-_authorize.md#force-authentication-and-ignore-sso)
-* Token endpoint
+* [Token endpoint](TelenorID_Plus_-_token.md)
   * [Access Tokens](TelenorID_Plus_-_accesstokens.md)
   * [TelenorID\+ Token refresh](TelenorID_Plus_-_token_refresh.md)
 * [Userinfo endpoint](https://identityserver4.readthedocs.io/en/latest/endpoints/userinfo.html)
