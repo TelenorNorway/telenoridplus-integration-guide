@@ -93,10 +93,8 @@ Use the fetchUserInfo method in IbisSdk with a TelenorIdCallback to fetch a user
 ### Line authentication
 To be able to do line authentication the SDK needs to do some requests on the cellular network. 
 On iOS there is currently not possible to force a request on the cellular network, if the user is on WiFi. 
-But there is a way of detecting if the cellular network is being used or not, which gives a possibility of informing 
-the user to turn off WiFi just for a moment to be able to be signed in automatically.
+But there is a way of detecting if the cellular network is being used or not, which gives a possibility of informing the user to turn off WiFi just for a moment to be able to be signed in automatically.
 
 Line authentication should be done in the background before the user even presses any sign in button. 
 When the user presses the sign in button, the SDK must check if the line auth session has expired. 
-If it has, the SDK should do another line auth, this time synchronized, and use the updated sessionId in 
-the authorize request.
+If it has, the SDK should do another line auth, this time synchronized, and use the updated sessionId in the authorize request.
