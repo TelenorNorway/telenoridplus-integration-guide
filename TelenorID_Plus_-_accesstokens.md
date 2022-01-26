@@ -32,7 +32,7 @@ The token is a JWT with the following structure:
 | ```sid```       |                                                                              | 70A6B33AB0D906BC3D203AE946CCC63B         |
 | ```iat```       | Timestamp when this token was issued.                                        | 1639039167                               |
 | ```scope```     | A list of scopes the access_token is bound to.                               | `["openid","profile","ial2"]`            |
-| ```amr```       |                                                                              | `["urn:tnidplus:std"]`                   |
+| ```amr```       | Extended [Authentication Methods References](https://datatracker.ietf.org/doc/html/rfc8176)    | `["urn:tnidplus:std"]` or `["urn:tnidplus:kyc"]`  |
 
 ## Access token validation
 

@@ -22,7 +22,6 @@ __Introduction to OpenID Connect (OIDC)__
 
 __Client integration help__
 
-* [Info for webclients](TelenorID_Plus_-_WebClients.md)
 * [Info for native applications](TelenorID_Plus_-_NativeClients.md)
   * [Integrating Native Apps Using Our SDK](TelenorID_Plus_-_telenorid_from_sdk.md)
 
