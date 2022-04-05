@@ -39,6 +39,10 @@ __Releated Articles__
  * [TelenorID api doc](https://docs.telenordigital.com/connect/id)
  * [Related links](RelatedArticles.md)
 
+## Historic topics
+
+* [2021 - TelenorID\+ switch to new domain](TelenorID_Plus_-_switch_to_new_domain.md)
+
 ## More help needed?
 
  * [Questions & Answers](TelenorID_Plus_-_QandA.md)
