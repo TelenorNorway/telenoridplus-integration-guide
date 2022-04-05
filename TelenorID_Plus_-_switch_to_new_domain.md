@@ -40,7 +40,7 @@ Replace old URI with New URI.
 
 |Endpoint                |   NEW URI   |   OLD URI |
 | ------------           | ------------| ------------|
-|                        | https://id.telenor.no/.well-known/openid-configuration | https://idp.telenorid-staging.com/.well-known/openid-configuration |
+|                        | https://id.telenor.no/.well-known/openid-configuration | https://idp.telenorid.com/.well-known/openid-configuration |
 | Authorization endpoint | https://id.telenor.no/connect/authorize  | https://idp.telenorid.com/connect/authorize |
 | Token endpoint         | https://id.telenor.no/connect/token      | https://idp.telenorid.com/connect/token |
 | Userinfo endpoint      | https://id.telenor.no/connect/userinfo\) | https://idp.telenorid.com/connect/userinfo |
