@@ -21,7 +21,7 @@ Read more about the difference between TelenorID and TelenorID\+ [here](TelenorI
 
 ![Telenor IDpluss overarching](images/TelenorIDpluss_overarching_consept.png)
 
-TelenorID\+ is a [OpenID Connect provider (OIDC)](OIDC_basics.md) providing Telenor Norway services with ID and Access Tokens. End-user [single sign on](TelenorID_Plus_-_SSO.md) is implemented with a web browser cookie managed by  TelenorID\+.  TelenorID\+ keeps track of all sessions and tokens in a centralized session storage. TelenorID\+ integates toward several authentication provider, where [TelenorID](https://docs.telenordigital.com/connect/) is the most important and most used provider. TelenorID and TelenorID\+ is tightly integrated to keep track of sessions between the two services.
+TelenorID\+ is a [OpenID Connect provider (OIDC)](OIDC_basics.md) providing Telenor Norway services with ID and Access Tokens. End-user [single sign on](TelenorID_Plus_-_SSO.md) is implemented with a web browser cookie managed by  TelenorID\+.  TelenorID\+ keeps track of all sessions and tokens in a centralized session storage. TelenorID\+ integates toward several [authentication providers](@todo), where [TelenorID](https://docs.telenordigital.com/connect/) is the most important and most used provider. TelenorID and TelenorID\+ is tightly integrated to keep track of sessions between the two services.
 
 ## TelenorID\+ assuarance levels
 

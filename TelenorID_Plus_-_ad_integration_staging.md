@@ -26,17 +26,17 @@ Open a blank text file in your favourite editor. You will need to write down cer
     * Redirect URI
       * For staging this is: https://id-test.telenor.no/signin-{company-name}
       * Note: Company name can only contain lower case letters and hyphens. E.g: https://id-test.telenor.no/signin-real-power-tools-inc
-write down the URI you've chosen
+      * <img src="images/ad/note.png" width="20" height="20"> write down the URI you've chosen
 1. After completing the initial registration you should be redirected to the newly created client's Overview page.
-    * Copy "Application (client) ID"and paste them in the text file.
-    * Copy "Directory (tenant) ID"and paste them in the text file.
+    * <img src="images/ad/note.png" width="20" height="20"> Copy "Application (client) ID"and paste them in the text file.
+    * <img src="images/ad/note.png" width="20" height="20"> Copy "Directory (tenant) ID"and paste them in the text file.
 1. Go to "Certificates & secrets", Click "New client secret".
     * These steps are specific for staging
     * Fill in an appropriate description
     * Set:"Expires"  to  "24 months".
-    * Copy the client secret and put it in the same file as your client- and tenant ids. Prefix it with "Secret:"
-    * Add the expiration date to the text file
-1. Save the text file as "telenorid-staging-{company-name}.txt".
+    * <img src="images/ad/note.png" width="20" height="20"> Copy the client secret and put it in the same file as your client- and tenant ids. Prefix it with "Secret:"
+    * <img src="images/ad/note.png" width="20" height="20"> Add the expiration date to the text file
+1. <img src="images/ad/note.png" width="20" height="20"> Save the text file as "telenorid-staging-{company-name}.txt".
     * The text file should be something like this:
 
 > Redirect url: https://id-test.telenor.no/signin-real-power-tools-inc
