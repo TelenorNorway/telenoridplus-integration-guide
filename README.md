@@ -1,51 +1,12 @@
 # TelenorID\+ Integration Guide
 
-## Introduction
+![Telenor IDpluss onepager](images/TelenorIDpluss_onepager.png)
 
-__Introduction to TelenorID\+__
+Start by reading our [Introduction to TelenorID\+](TelenorID_Plus_-_intro.md)
+Then read more about our Technical documentation and our API's [here](TelenorID_Plus_-_technicaldocs.md).
 
-* [The difference between TelenorID and TelenorID\+](TelenorID_TelenorID_Plus_-_term.md)
-* [TelenorID\+ overarching introduction](TelenorID_Plus_-_intro.md)
+If you have any questions look at our [Q&A](TelenorID_Plus_-_QandA.md) or look up how to get in contact with us [here](TelenorID_Plus_-_help.md).
 
-__Introduction to OpenID Connect (OIDC)__
 
-* [OpenID Connect (OIDC) Basic concepts](OIDC_basics.md)
-* [Introduction to standard OIDC flows](TelenorID_Plus_-_standard_oidc_flows.md)
-
-## TelenorID\+ Technical doc
-
-* TelenorID\+ technical introduction
-  * [Client types](TelenorID_Plus_-_clienttypes.md)
-  * [Scopes](TelenorID_Plus_-_scopes.md)
-  * [TelenorID\+ Seamless Single Sign On (SSO)](TelenorID_Plus_-_SSO.md)
-* [TelenorID\+ API docs](TelenorID_Plus_-_api.md)
-
-__Client integration help__
-
-* [Info for native applications](TelenorID_Plus_-_NativeClients.md)
-  * [Integrating Native Apps Using Our SDK](TelenorID_Plus_-_telenorid_from_sdk.md)
-
-The debugger is a useful tool to validate that your client is correctly configured and has access to the scopes you accept.  
-All public clients (i.e. "PKCE clients") are configured to work with the debugger.
-* [https://oidc-test.telenor.no/](https://oidc-test.telenor.no/)  
-
-__Examples__
-
- * [Simple User Login Example using the open TelenorID\+ debugger](TelenorID_Plus_-_user_login_-_integration_example_step_by_step.md)
- * [TelenorID\+ BankId / "Know Your Customer (KYC)" example](TelenorID_Plus_-_kyc_bankid_-_integration_example_step_by_step.md)
-
-__Releated Articles__
-
- * [TelenorID api doc](https://docs.telenordigital.com/connect/id)
- * [Related links](RelatedArticles.md)
-
-## Historic topics
-
-* [2021 - TelenorID\+ switch to new domain](TelenorID_Plus_-_switch_to_new_domain.md)
-
-## More help needed?
-
- * [Questions & Answers](TelenorID_Plus_-_QandA.md)
- * [Need support?](TelenorID_Plus_-_help.md)
 
 

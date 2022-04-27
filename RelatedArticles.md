@@ -1,4 +1,4 @@
-### Related Articles
+### Related external articles on OIDC
 
 * [OpenID Specifications](https://openid.net/developers/specs/)
 * [Creating a Shared Secret](https://docs.identityserver.io/en/release/topics/secrets.html)
@@ -8,10 +8,6 @@
     + [Single Sign-On](https://auth0.com/docs/sso)
     + [Tokens](https://auth0.com/docs/tokens)
     + [Refresh Tokens](https://auth0.com/docs/tokens/refresh-tokens)
-* [Authorize Endpoint](https://identityserver4.readthedocs.io/en/latest/endpoints/authorize.html)
-* [Token Endpoint](https://identityserver4.readthedocs.io/en/latest/endpoints/token.html)
-* [UserInfo Endpoint](https://identityserver4.readthedocs.io/en/latest/endpoints/userinfo.html)
-* [End Session Endpoint - Logout](https://identityserver4.readthedocs.io/en/latest/endpoints/endsession.html#refendsession)
 * [Free intro training for OAuth 2.0 and OpenID Connect](https://courses.pragmaticwebsecurity.com/courses/take/introduction-to-oauth-2-0-and-openid-connect)
 * [RFC6819: Oauth2 threat model](https://tools.ietf.org/html/rfc6819)
 * [RFC8252: OAuth 2.0 for Native Apps](https://tools.ietf.org/html/rfc8252)

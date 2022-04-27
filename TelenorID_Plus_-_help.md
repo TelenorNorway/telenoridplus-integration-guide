@@ -1,8 +1,9 @@
-### Help / Questions
+# Help / Questions
 
 | Integration Support       |
 | ------------------------- |
 | TelenorID integration questions or request for help can be posted on Slack in [#dc-telenorid-integration-support](https://thedoozers.slack.com/archives/C01DHF39NDA) |
+| For external parties that doesn't have access to our slack support channel contact us on e-mail: dc_security@telenor.no |
 
 
 | Incidents or Problems in Production      |
