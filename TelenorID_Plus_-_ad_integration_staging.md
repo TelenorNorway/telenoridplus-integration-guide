@@ -48,11 +48,12 @@ Open a blank text file in your favourite editor. You will need to write down cer
 ## Example file
 The content of your text file (*telenorid-staging-{company-name}.txt*) should be something like this:
 
- > Company: My company name
+```
+  Company: My company name
   Contact information: persistantemail@company.no
   Redirect url: https://id-test.telenor.no/signin-real-power-tools-inc
   Application (client) ID:  3ffebade-dd8f-460d-bee9-b82e8a4edae7
   Directory (tenant) ID: 3a238dd1-86d1-49ce-9beb-3f8453b0cb21
   Client secret: Secret:b82e8ab82e8a4edae74edae7
   Client secret expiration date: 2025-02-12 12:23:23
-
+```
