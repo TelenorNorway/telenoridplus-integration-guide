@@ -37,20 +37,22 @@ Open a blank text file in your favourite editor. You will need to write down cer
     * Set:Expires to *24 months*.
     * <img src="images/ad/note.png" width="20" height="20"> Copy the client secret and put it in the same file as your client- and tenant ids. Prefix it with "Secret:"
     * <img src="images/ad/note.png" width="20" height="20"> Add the expiration date to the text file
-1. <img src="images/ad/note.png" width="20" height="20"> Save the text file as *"telenorid-staging-{company-name}.txt"*.
-    * The text file should be something like this:
-
- > Company: My company name
- > Contact information: persistantemail@company.no
- > Redirect url: https://id-test.telenor.no/signin-real-power-tools-inc
- > Application (client) ID:  3ffebade-dd8f-460d-bee9-b82e8a4edae7
- > Directory (tenant) ID: 3a238dd1-86d1-49ce-9beb-3f8453b0cb21
- > Client secret: Secret:b82e8ab82e8a4edae74edae7
- > Client secret expiration date: 2025-02-12 12:23:23
-
+1. <img src="images/ad/note.png" width="20" height="20"> Save the text file as *telenorid-staging-{company-name}.txt*.
+    * The text file should be something like the example below
 8. Exchange the file with the client information and client secret
    * [See details below on how to exchange sensitive information with us](TelenorID_Plus_sensitive_data_exchange.md)
 9. Set up a reminder in approx 23 months reminding you to create a new client secret
     * Take contact with us before the client secret expires to coordinate the renewal process
 
+
+## Example file
+The content of your text file (*telenorid-staging-{company-name}.txt*) should be something like this:
+
+ > Company: My company name
+  Contact information: persistantemail@company.no
+  Redirect url: https://id-test.telenor.no/signin-real-power-tools-inc
+  Application (client) ID:  3ffebade-dd8f-460d-bee9-b82e8a4edae7
+  Directory (tenant) ID: 3a238dd1-86d1-49ce-9beb-3f8453b0cb21
+  Client secret: Secret:b82e8ab82e8a4edae74edae7
+  Client secret expiration date: 2025-02-12 12:23:23
 
