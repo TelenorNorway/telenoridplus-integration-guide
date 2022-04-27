@@ -30,7 +30,7 @@ The API doc for Telenor Digital Telenor ID can be found [here](https://docs.tele
 * [Info for native applications](TelenorID_Plus_-_NativeClients.md)
 * [Integrating Native Apps Using Our SDK](TelenorID_Plus_-_telenorid_from_sdk.md)
 * [How-to setup Azure AD integration towards TelenorID - staging](TelenorID_Plus_-_ad_integration_staging.md)
-* [How-to setup Azure AD integration towards TelenorID - production](TelenorID_Plus_-_ad_integration_production.md)
+* [How-to setup Azure AD integration towards TelenorID - production](TelenorID_Plus_-_ad_integration_prod.md)
 * [Need support?](TelenorID_Plus_-_help.md)
   
 The debugger is a useful tool to validate that your client is correctly configured and has access to the scopes you accept.  
