@@ -17,7 +17,8 @@ The API doc for Telenor Digital Telenor ID can be found [here](https://docs.tele
 * [How-to send us sensitive data](TelenorID_Plus_sensitive_data_exchange.md)
 * [How-to setup Azure AD integration towards TelenorID - staging](TelenorID_Plus_-_ad_integration_staging.md)
 * [How-to setup Azure AD integration towards TelenorID - production](@todo)
-
+* [Need support?](TelenorID_Plus_-_help.md)
+  
 The debugger is a useful tool to validate that your client is correctly configured and has access to the scopes you accept.  
 All public clients (i.e. "PKCE clients") are configured to work with the debugger.
 * [https://oidc-test.telenor.no/](https://oidc-test.telenor.no/)  

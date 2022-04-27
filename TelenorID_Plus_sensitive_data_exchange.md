@@ -10,7 +10,7 @@ For both methods make sure that you [notify us](TelenorID_Plus_-_help.md) before
 Contact details can be found [here](TelenorID_Plus_-_help.md).
 
 ## Yopass
-We use Telenor Digitals dedicated yopass installation that you can find here: https://pass.skunk-works.no/#/
+We use Telenor Digital's dedicated yopass installation that you can find here: [https://pass.skunk-works.no/](https://pass.skunk-works.no/#/)
 
 This solution supports both sending of small files and sending of the text content.
 
@@ -18,9 +18,9 @@ __Send text content step-by-step instruction__
 
 1. copy your content into the "secret message" form
 1. choose:
-    * The encrypted message will be deleted automatically after: One Week
-    * One-time download: Checked
-    * Generate decryption key: Checked
+    * The encrypted message will be deleted automatically after: *One Week*
+    * One-time download: *Checked*
+    * Generate decryption key: *Checked*
 1. Encrypt message
     * copy the: *One-click link*
 1. Send us the secret URL using contact details can be found [here](TelenorID_Plus_-_help.md).
@@ -29,18 +29,18 @@ __Send a small file step-by-step instruction__
 
 1. choose UPLOAD in the upper right corner
 1. choose:
-    * The encrypted message will be deleted automatically after: One Week
-    * One-time download: Checked
-    * Generate decryption key: Checked
+    * The encrypted message will be deleted automatically after: *One Week*
+    * One-time download: *Checked*
+    * Generate decryption key: *Checked*
 1. choose the file to upload
-1. copy the: One-click link
+1. copy the: *One-click link*
 1. Send us the secret URL using contact details can be found [here](TelenorID_Plus_-_help.md).
 
 
 ## PGP encryption
-Using GPG/PGP encrypt your content with our key and email the encrypted file to: dc_security@telenor.no
+Using GPG/PGP encrypt your content with our key and email the encrypted file to: [dc_security@telenor.no](mailto:dc_security@telenor.no)
 
-PGP Public Key for dc_security@telenor.no
+__PGP Public Key for dc_security@telenor.no__
 
     -----BEGIN PGP PUBLIC KEY BLOCK-----
     mQINBF7zHogBEADKdJ+TgRG96UO27tXxD5wg39J27t45Pgzvm/fO6ssREFpRUqb6
