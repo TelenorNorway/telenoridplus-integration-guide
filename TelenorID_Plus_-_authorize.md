@@ -26,7 +26,6 @@ The endpoint supports HTTP GET
 | ```context``` | Default ```login``` Use value ```kyc``` to get a ID\+ customized for confirmation of identity and not authentication | String | False |
 
 
-
 __response_type__
 
 The ```response_type``` can have one of the following values:

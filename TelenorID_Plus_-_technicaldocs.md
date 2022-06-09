@@ -15,6 +15,7 @@
   * [Access Token](TelenorID_Plus_-_accesstokens.md)
   * ID Token
   * [TelenorID\+ Token refresh](TelenorID_Plus_-_token_refresh.md)
+  * [TelenorID\+ Token exchange](TelenorID_Plus_-_token_exchange.md)
 * [Userinfo endpoint](TelenorID_Plus_-_userinfo.md)
 * [End session endpoint (Logout)](TelenorID_Plus_-_logout.md)
 * revocation_endpoint (todo)
