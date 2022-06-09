@@ -20,7 +20,7 @@ Claims are returned either directly in the id\_token or can be fetched via the /
 | phone             | /userinfo     | phone number                  |
 | tnn.ids           | access\_token | kurtid, tnuid                 |
 | offline\_access   |               | to get a refresh token        |
-| account.profiles  | /userinfo     | Gives access to all profiles associated with the given Account |
+| account.profiles  | /userinfo     | Gives access to all profiles associated with the given Account. Only needed if you use [token exchange](TelenorID_Plus_-_token_exchange.md) |
 
 ### API Scopes
 
