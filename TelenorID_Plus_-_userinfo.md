@@ -1,6 +1,7 @@
 ## Userinfo endpoint
 
-The ```userinfo_endpoint```  can be used to retrieve identity information about a user (see [spec](http://openid.net/specs/openid-connect-core-1_0.html#UserInfo)).
+The ```userinfo_endpoint```  can be used to retrieve updated identity information about a user (see [spec](http://openid.net/specs/openid-connect-core-1_0.html#UserInfo).
+The information in this endpoint has overlap with the userinformation found in the ID Token. See more information here.
 
 The endpoint supports ```HTTP GET``` and ```HTTP POST```
 
