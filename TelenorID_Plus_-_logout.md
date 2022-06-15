@@ -12,27 +12,15 @@ This endpoints takes an ID token as input and logs the user out.
 | ```end_session_endpoint``` | This API follows the specification: [OpenID Connect RP-Initiated Logout 1.0](https://openid.net/specs/openid-connect-rpinitiated-1_0.html) | Implemented |
 | ```custom_logout_endpoint``` | This API is a custom API created to support native apps without a userbrowser | Only design draft, not implemented |
 
-* The service endpoint URLs  can be retrieved from the [Telenor ID\+ discovery endpoint](https://id.telenor.no/.well-known/openid-configuration).
+* The service endpoint URLs can be retrieved from the [Discovery endpoint](TelenorID_Plus_-_discovery.md).
 
 ## API Descriptions
 
 ### 1. OIDC end_session_endpoint
 
+#### 1.1 Flow diagram
+
 ![Telenor IDpluss logoutflow](images/TelenorIDpluss_Logout.png)
-
-
-#### 1.1 Recommandations 
-
-The TelenorID\+ logout flow has the following recommendations for the RP extending the OpenID Connect standard:
-
-* We recommend logging out of the local session before sending the logout request to TelenorID\+
-* The logout redirect url should not be to a page where the user is logged in automatically.
-* We recommend that the end-user is given information after the logout process about how to manage all tokens and logout of all Telenor services. See more information: [TelenorID\+ Manage my Telenor](TelenorID_Plus_-_ManageMyTelenor.md)
-*  We recommend that the end-user is given information on error pages about how to manage all tokens and logout of all Telenor services. See more information: [TelenorID\+ Manage my Telenor](TelenorID_Plus_-_ManageMyTelenor.md)
-
-We recommand this, but Clients can diviate from this if they require it.
-
-The logout flow is complex with many involved parties and a logout locally first will ensure a more robust system then if the logout locally is dependent on all other moving parts. By informing the end-user about [Manage my Telenor](TelenorID_Plus_-_ManageMyTelenor.md) after logout and on error pages the end-user can follow-up on errors that occur and  make sure that the logout is complete after logging out locally. The logout page presented to the end-user after logout shouldn't try to log in the user automatically again because this can break the logout process if errors occur.
 
 #### 1.2 Input/output
 
@@ -70,6 +58,19 @@ The response can contain the following parameter:
 | ------------- |:-------------:|:-------------:|:-------------:|
 | state | The value specificed by the client on the request | String | False | 
 
+## Recommandations 
+
+The TelenorID\+ logout flow has the following recommendations for the RP.
+These recommendations extend the OpenID Connect standard.
+
+* We recommend logging out of the local session before sending the logout request to TelenorID\+
+* The logout redirect url should not be to a page where the user is logged in automatically.
+* We recommend that the end-user is given information after the logout process about how to manage all tokens and logout of all Telenor services. See more information: [TelenorID\+ Manage my Telenor](TelenorID_Plus_-_ManageMyTelenor.md)
+*  We recommend that the end-user is given information on error pages about how to manage all tokens and logout of all Telenor services. See more information: [TelenorID\+ Manage my Telenor](TelenorID_Plus_-_ManageMyTelenor.md)
+
+We recommand this, but Clients can diviate from this if they require it.
+
+The logout flow is complex with many involved parties and a logout locally first will ensure a more robust system then if the logout locally is dependent on all other moving parts. By informing the end-user about [Manage my Telenor](TelenorID_Plus_-_ManageMyTelenor.md) after logout and on error pages the end-user can follow-up on errors that occur and  make sure that the logout is complete after logging out locally. The logout page presented to the end-user after logout shouldn't try to log in the user automatically again because this can break the logout process if errors occur.
 
 
 ## Error handling
@@ -77,15 +78,17 @@ The response can contain the following parameter:
 The logout request can (as all requests) fail, this can result in one of the following states:
 
 
-* An error pages from TelenorID\+
+* An error page/message from TelenorID\+
   * Example: Input error from the client results in a HTTP 4xx error message
-  * Example: a fatal error in TelenorID\+ results in a HTTP 5xx error page
+  * 401 "Invalid token" if the signature of the ID-token doesn't validate
+  * 401 "logout failed" if the sessionid isn't found or has expired in our system or if the logout at [TelenorID](TelenorID_TelenorID_Plus_-_term.md) failed 
+  * Example: a fatal error in TelenorID\+ results in a HTTP 5xx error message/page
 * An error page from the end-users browser
   * Example: if the request towards TelenorID\+ times out
 
 For several of the cases the RP can't do much. We recommend the following errorhandling on the RP:
 
-* We recommend that the end-user is given information on how to manage all tokens and logout of all Telenor services if the logout flow fails
+* We recommend that the end-user is given information on how to manage all tokens ([Manage my Telenor](TelenorID_Plus_-_ManageMyTelenor.md)) and logout of all Telenor services if the logout flow fails
 * Some RP has the possibility to handle a missing response from TelenorID\+, for these types of clients we recommand that the RP implements a timout and that the end-user is given the same information
 
 
