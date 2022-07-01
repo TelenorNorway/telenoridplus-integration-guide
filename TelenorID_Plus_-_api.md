@@ -12,7 +12,7 @@ See: [TelenorID\+ introduction](README.md)
   * [Force authentication](TelenorID_Plus_-_authorize.md#force-authentication-and-ignore-sso)
 * [Token endpoint](TelenorID_Plus_-_token.md)
   * [Access Token](TelenorID_Plus_-_accesstokens.md)
-  * ID Token
+  * [ID Token](TelenorID_Plus_-_idtokens.md)
   * [TelenorID\+ Token refresh](TelenorID_Plus_-_token_refresh.md)
 * [Userinfo endpoint](TelenorID_Plus_-_userinfo.md)
 * [End session endpoint (Logout)](TelenorID_Plus_-_logout.md)

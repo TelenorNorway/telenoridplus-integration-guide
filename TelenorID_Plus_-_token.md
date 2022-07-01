@@ -1,6 +1,7 @@
 # TelenorID\+ Token endpoint
 
-The ```token_endpoint``` is used to retrieve ID-Token, [Access Token](TelenorID_Plus_-_accesstokens.md) and in some cases Refresh Tokens. Read more about the [TelenorID\+ Token refresh](TelenorID_Plus_-_token_refresh.md).
+The ```token_endpoint``` is used to retrieve [ID-Token](TelenorID_Plus_-_idtokens.md), [Access Token](TelenorID_Plus_-_accesstokens.md) and in some cases Refresh Tokens. Read more about the [TelenorID\+ Token refresh](TelenorID_Plus_-_token_refresh.md).
+The [ID-Token](TelenorID_Plus_-_idtokens.md) is used by the client application and contains information about the end-user and the authentication, the [Access Token](TelenorID_Plus_-_accesstokens.md) is used by the client application to get access to other services/API. And the [Refresh Tokens](TelenorID_Plus_-_token_refresh.md) is used to get a new valid [Access Token](TelenorID_Plus_-_accesstokens.md) through the [token refresh process](TelenorID_Plus_-_token_refresh.md).
 
 URL's to the endpoint can be found through the [Discovery endpoint](TelenorID_Plus_-_discovery.md)
 

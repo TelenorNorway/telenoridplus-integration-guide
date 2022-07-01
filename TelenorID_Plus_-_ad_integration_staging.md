@@ -7,6 +7,10 @@ __Note__
 
 > This is the guide for setup in staging, you must complete the steps twice; once for STAGING (this guide) and once for PRODUCTION, instructions found [here](TelenorID_Plus_-_ad_integration_prod.md). Depending on your set up this may be separate Active Directories.
 
+<!---## prerequisit-->
+
+<!---all users must be licenced users, no use of....-->
+
 ## Before you begin
 
 Open a blank text file in your favourite editor. You will need to write down certain details and send them to us. All instructions that requires this are marked with <img src="images/ad/note.png" width="20" height="20">.

@@ -47,16 +47,21 @@ More information can be found here: [API doc for the framework used by TelenorID
 
 The endpoint supports only HTTP POST.
 
-| Parameter | Description | Type | Required |
-| ------------- |:-------------:|:-------------:|:-------------:|
-| id_token_hint | The valid ID token received from authentication | String | True |
-| state | This will be returned back to the client in the response body. Typically used by clients to round-trip state information if needed. | String | False |
+
+| HTTP header | Value | 
+| ------------- |:-------------:|
+| Content-Type | application/json |
+
+| Parameter | Description  | Required |
+| ------------- |:-------------:|:-------------:|
+| id_token_hint | The valid ID token received from authentication  | True |
+| state | This will be returned back to the client in the response body. Typically used by clients to round-trip state information if needed. | False |
 
 The response can contain the following parameter:
 
-| Parameter | Description | Type | Required |
-| ------------- |:-------------:|:-------------:|:-------------:|
-| state | The value specificed by the client on the request | String | False | 
+| Parameter | Description | Required |
+| ------------- |:-------------:|:-------------:|
+| state | The value specificed by the client on the request | False | 
 
 ## Recommandations 
 
