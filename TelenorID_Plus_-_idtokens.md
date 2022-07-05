@@ -2,13 +2,15 @@
 
 To request an ID Token, use the /token endpoint.
 
-## The ID token
+## The ID Token
 
-The ID token is primary extension that OpenID Connect makes to the oAuth standard.
-The ID Token is a security token that contains Claims about the Authentication of an End-User.
-Read more here: https://openid.net/specs/openid-connect-core-1_0.html#IDToken
+The ID Token is primary extension that OpenID Connect makes to the oAuth standard.
+The ID Token is a security token that contains Claims about the End-User.
+The [userinfo endpoint](TelenorID_Plus_-_userinfo.md) can be used to retrieve updated identity information about the end-user.
+Make sure to use the [userinfo endpoint](TelenorID_Plus_-_userinfo.md) if it's important for you to have updated and correct end-user information during the user session.
 
-TelenorID\+ issues ID tokens that is self-contained, meaning it contains all the relevant information about the end-user. 
+If updated end-user information is'nt critical for your services and it's more important to reduce dependencies and latency, then you could evaluate to only using the ID Token and ignore the [userinfo endpoint](TelenorID_Plus_-_userinfo.md)
+
 
 The token is a JWT with the following structure:
 
@@ -34,10 +36,10 @@ The token is a JWT with the following structure:
 | ```sid```                |                                                                                                                                                                                                                           | 70A6B33AB0D906BC3D203AE946CCC63B                 |
 | ```amr```                | Extended [Authentication Methods References](https://datatracker.ietf.org/doc/html/rfc8176)                                                                                                                               | `["urn:tnidplus:std"]` or `["urn:tnidplus:kyc"]` |
 | ```ibis.sid```           | Internal session id in TelenorID\+                                                                                                                                                                                        | cf2b1147-c2e7-4c74-a32e-3afdb034e181             |
-| ```analytics_uui```      | Internal session id in TelenorID\+                                                                                                                                                                                        | 7568fe50-217f-4ab8-a4e4-29cbe7e118c9             |
+| ```analytics_uuid```      | Internal session id in TelenorID\+                                                                                                                                                                                        | 7568fe50-217f-4ab8-a4e4-29cbe7e118c9             |
 | ```family_name```        | Lastname of end-user                                                                                                                                                                                                      | Rasmussen                                        |
 | ```given_name```         | First and possible midle name for end-user                                                                                                                                                                                | Tom Peter                                        |
-| ```preferred_username``` | Internal session id in TelenorID\+                                                                                                                                                                                        | 4799966634                                       |
+| ```preferred_username``` | The username used by the end-user during this session, can be a phonenumber or a email adress.                                                                                                                                                                                        | 4799966634                                       |
 
 ## Example
 
