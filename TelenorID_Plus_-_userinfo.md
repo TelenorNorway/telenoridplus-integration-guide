@@ -5,6 +5,8 @@ The information in this endpoint has overlap with the userinformation found in t
 
 If updated end-user information is'nt critical for your services and it's more important to reduce dependencies and latency, then you could evaluate to only using the [ID Token](TelenorID_Plus_-_idtokens.md) and ignore this userinfo endpoint.
 
+**NOTE:** The end-user information made available through this endpoint is only connected to the end-user authentication. Please make sure to use the correct API if you would like to retrieve adresses, contact information or other end-user profil information. See more information about relevant API's at the [developer portal](https://developer.corp.telenor.no/).
+
 The endpoint supports ```HTTP GET``` and ```HTTP POST```
 
 The client must provide the [Access Token](TelenorID_Plus_-_accesstokens.md) as a Authorization bearer token to use this endpoint.

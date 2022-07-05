@@ -5,11 +5,14 @@ To request an ID Token, use the /token endpoint.
 ## The ID Token
 
 The ID Token is primary extension that OpenID Connect makes to the oAuth standard.
-The ID Token is a security token that contains Claims about the End-User.
+The ID Token is a security token that contains Claims about the End-User identity.
+
 The [userinfo endpoint](TelenorID_Plus_-_userinfo.md) can be used to retrieve updated identity information about the end-user.
 Make sure to use the [userinfo endpoint](TelenorID_Plus_-_userinfo.md) if it's important for you to have updated and correct end-user information during the user session.
 
 If updated end-user information is'nt critical for your services and it's more important to reduce dependencies and latency, then you could evaluate to only using the ID Token and ignore the [userinfo endpoint](TelenorID_Plus_-_userinfo.md)
+
+**NOTE:** The end-user information made available through this token is only connected to the end-user authentication. Please make sure to use the correct API if you would like to retrieve adresses, contact information or other end-user profil information. See more information about relevant API's at the [developer portal](https://developer.corp.telenor.no/).
 
 
 The token is a JWT with the following structure:
