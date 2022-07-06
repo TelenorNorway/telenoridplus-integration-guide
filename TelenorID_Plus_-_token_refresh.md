@@ -1,7 +1,8 @@
 # TelenorID\+ Token Refresh
 
 Refresh tokens are typically longer-lived and can be used to request new access tokens after the shorter-lived access tokens expire.
-It is only specific [client types](TelenorID_Plus_-_clienttypes.md) that can get Refresh tokens.
+It is only specific [client types](TelenorID_Plus_-_clienttypes.md) that can get Refresh tokens and you need to include the ```offline_access``` [scope](TelenorID_Plus_-_scopes.md) when you initiate the [authentication request](TelenorID_Plus_-_authorize.md).
+
 The client will only get a new refresh token if the SSO session still is active. 
 
 ### Refresh token lifetime
@@ -25,7 +26,7 @@ The Client can, if the policy allows it, retrieve new refresh tokens through the
 
 #### Get refresh\_token
 
-To get a refresh token, you must include the ```offline_access``` scope when you initiate an authentication request through the /authorize endpoint.
+To get a refresh token, you must include the ```offline_access``` [scope](TelenorID_Plus_-_scopes.md) when you initiate an authentication request through the [authorize endpoint](TelenorID_Plus_-_authorize.md).
 
 Once the user authenticates successfully, the application will be redirected to the redirect\_uri, with an authorization code . You can exchange this code with an access token using the /token endpoint.
 
