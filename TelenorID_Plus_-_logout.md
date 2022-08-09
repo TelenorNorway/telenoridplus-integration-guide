@@ -7,10 +7,10 @@ This endpoints takes an ID token as input and logs the user out.
 
 **There is two endpoints for logout:**
 
-| Endpoint | description | status |
-| ------------- |:-------------:|:-------------:|
-| ```end_session_endpoint``` | This API follows the specification: [OpenID Connect RP-Initiated Logout 1.0](https://openid.net/specs/openid-connect-rpinitiated-1_0.html) | Implemented |
-| ```custom_logout_endpoint``` | This API is a custom API created to support native apps without a userbrowser | Only design draft, not implemented |
+| Endpoint | description |
+| ------------- |:-------------:|
+| ```end_session_endpoint``` | This API follows the specification: [OpenID Connect RP-Initiated Logout 1.0](https://openid.net/specs/openid-connect-rpinitiated-1_0.html) |
+| ```custom_logout_endpoint``` | This API is a custom API created to support native apps without a userbrowser | 
 
 * The service endpoint URLs can be retrieved from the [Discovery endpoint](TelenorID_Plus_-_discovery.md).
 
@@ -43,7 +43,7 @@ More information can be found here: [API doc for the framework used by TelenorID
 
 ### 2. TelenorID\+ custom_logout_endpoint
 
-#### 2.1 Input/output
+#### 2.1 Request
 
 The endpoint supports only HTTP POST.
 
@@ -57,11 +57,26 @@ The endpoint supports only HTTP POST.
 | id_token_hint | The valid ID token received from authentication  | True |
 | state | This will be returned back to the client in the response body. Typically used by clients to round-trip state information if needed. | False |
 
-The response can contain the following parameter:
+#### 2.2 Response
 
-| Parameter | Description | Required |
+If the request is successfully handled a OK HTTP 200 response will be:
+ 
+* Ok(state) if we find the end-user session and delete/logout
+* Ok("Already logged out")  if we don't find the session in our system and the end-user session allready is logged out
+
+If the request fails we will give one of the following responses:
+
+| HTTP errorcode | Error message  | Description |
 | ------------- |:-------------:|:-------------:|
-| state | The value specificed by the client on the request | False | 
+| 400 | BadRequest("id_token_hint is null")  | If the input is empty or we can't find it |
+| 401 | Unauthorized("Invalid token") | If we can't validate the id_token_hint, if the signature of the ID-token doesn't validate |
+| 424 | FailedDependency | If our dependency towards Telenor Digital fails, if the logout at [TelenorID](TelenorID_TelenorID_Plus_-_term.md) failed  |
+| 5xx | | a fatal internal error in TelenorID\+  |
+
+
+BadRequest("id_token_hint is null") hvis inputen ar tom
+Unauthorized("Invalid token") hvis vi ikke kan validera token
+FailedDependency 424 hvis det går feil mot telenorDigital
 
 ## Recommandations 
 
@@ -78,7 +93,7 @@ We recommand this, but Clients can diviate from this if they require it.
 The logout flow is complex with many involved parties and a logout locally first will ensure a more robust system then if the logout locally is dependent on all other moving parts. By informing the end-user about [Manage my Telenor](TelenorID_Plus_-_ManageMyTelenor.md) after logout and on error pages the end-user can follow-up on errors that occur and  make sure that the logout is complete after logging out locally. The logout page presented to the end-user after logout shouldn't try to log in the user automatically again because this can break the logout process if errors occur.
 
 
-## Error handling
+## OIDC Error handling
 
 The logout request can (as all requests) fail, this can result in one of the following states:
 
