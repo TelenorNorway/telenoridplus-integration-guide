@@ -33,7 +33,7 @@ The token is a JWT with the following structure:
 | ```iat```       | Timestamp when this token was issued.                                        | 1639039167                               |
 | ```scope```     | A list of scopes the access_token is bound to.                               | `["openid","profile","ial2"]`            |
 | ```amr```       | Contains information about the authentication methods used by the end-user in this session. [Authentication Methods References](https://datatracker.ietf.org/doc/html/rfc8176)    | [See more information](TelenorID_Plus_-_idtokens.md#authentication-methods-referencesamr) |
-| ```acr```       | [Authentication Context Class Reference](https://openid.net/specs/openid-connect-core-1_0.html#AuthRequest) sets the [authentication level (AAL)](TelenorID_Plus_-_assurance_level.md) achieved during this session | `["urn:telenor.identity.aal.1"]`,`["urn:telenor.identity.aal.2"]`,`["urn:telenor.identity.aal.3"]`, |
+| ```acr```       | [Authentication Context Class Reference](https://openid.net/specs/openid-connect-core-1_0.html#AuthRequest) sets the [authentication level (AAL)](TelenorID_Plus_-_assurance_level.md) achieved during this session | This depends on the [authentication providers](TelenorID_Plus_-_authentication_providers.md) used. `["urn:telenor.identity.aal.1"]`,`["urn:telenor.identity.aal.2"]`,`["urn:telenor.identity.aal.3"]`, |
 
 ## Access token validation
 

@@ -54,13 +54,11 @@ The token is a JWT with the following structure:
 
  | Authentication provider | prefix | Values | Description | 
   |--------------------------------------------------|--------------------------------------------------|--------------------------------------------------|--------------------------------------------------| 
- | Telenor Digital TelenorID  |  ```urn:telenor.identity.amr.td_``` | ```pwd```, ```otp```, ```sso```, ```ok```, ```hdr``` | https://docs.telenordigital.com/connect/id/id_token.html |
- |Microsoft Azure | ```urn:telenor.identity.amr.az_``` | ```pwd```, ```mfa```, ```otp```, ```rsa```, ```fed```, ```wia```, ```ngcmfa```, ```wiaormfa```, ```none``` | https://docs.microsoft.com/en-us/azure/active-directory/develop/access-tokens |
+ | Telenor Digital TelenorID  |  ```urn:telenor.identity.amr.td_``` | ```pwd```, ```otp```, ```sso```, ```ok```, ```hdr``` | example: ```urn:telenor.identity.amr.td_otp``` or ```urn:telenor.identity.amr.td_ok```, [https://docs.telenordigital.com/connect/id/id_token.html](More docs..) |
+ |Microsoft Azure | ```urn:telenor.identity.amr.az_``` | ```pwd```, ```mfa```, ```otp```, ```rsa```, ```fed```, ```wia```, ```ngcmfa```, ```wiaormfa```, ```none``` | Example: ```urn:telenor.identity.amr.az_pwd``` [https://docs.microsoft.com/en-us/azure/active-directory/develop/access-tokens](More docs...) |
  | BankID | ```urn:telenor.identity.amr.bankid``` | no values | always only ```urn:telenor.identity.amr.bankid``` |
  | BankID legacy impl | ```urn:tnidplus:kyc``` | no values | This is a deprecated legacy authentication method in TelenorID\+ only here for historic reasons | 
  | others |  ```urn:tnidplus:std``` | no values | TelenorID\+ has some other authentication providers and methods, they are mostly legacy and all default to the same value |
-
-
 
 
 ## Example
