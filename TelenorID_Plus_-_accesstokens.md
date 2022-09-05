@@ -1,4 +1,4 @@
-## Request
+## Access Token
 
 To request an access_token, use the /token endpoint.
 

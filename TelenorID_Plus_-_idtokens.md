@@ -1,4 +1,4 @@
-## Request
+## ID-Token
 
 To request an ID Token, use the /token endpoint.
 
@@ -47,7 +47,7 @@ The token is a JWT with the following structure:
 
 ## Authentication Methods References(AMR)
 
- In accordance with the [OpenID Connect Core spec](https://openid.net/specs/openid-connect-core-1_0.html), section 2, the "amr" claim contains values identifying the authentication methods used in the authentication of the user. Most of the values are taken direcly from the authentication providers, such as TelenorID or Azure.
+ In accordance with the [OpenID Connect Core spec](https://openid.net/specs/openid-connect-core-1_0.html), section 2, the ```amr``` claim contains values identifying the authentication methods used in the authentication of the user. Most of the values are taken direcly from the authentication providers, such as TelenorID or Azure.
 
  The following values are valid, new attributes can be added if the authentication providers expand their methods:
 

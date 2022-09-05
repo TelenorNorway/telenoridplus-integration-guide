@@ -27,10 +27,10 @@ The client should request the lowest IAL it can work with. TelenorID\+ will alwa
 Like identity assurance, TelenorID\+ recognizes three distinct levels of authentication assurance (AAL) as defined in the standard [NIST SP 800-63-3 Digital Identity Guidelines](https://pages.nist.gov/800-63-3/):
 
 
-| Level |                                                               Description                                                                | Examples |
+| Level |                                                               Description                                                                | [Authentication providers](TelenorID_Plus_-_authentication_providers.md) |
 |:-----:|:----------------------------------------------------------------------------------------------------------------------------------------:|:--------:|
-| AAL1  |                  A single authentication factor, such as password, OTP or line authentication (aka. header enrichment).                  |          |
-| AAL2  | two independent authentication factors, eg. "something you know" like a password, and "something you have" such as an OTP or a password. | TelenorID    |
+| AAL1  |                  A single authentication factor, such as password, OTP or line authentication (aka. header enrichment).                  | Azure, TelenorClientCerts         |
+| AAL2  | two independent authentication factors, eg. "something you know" like a password, and "something you have" such as an OTP or a password. | TelenorID, Nationalstorage    |
 | AAL3  |      an authenticator cryptographically linked to the account, such as a Bank ID dongle or SIM-card or a FIDO authenticator device.      | BankID         |
 
 Note that in [OIDC](OIDC_basics.md) or OAuth nomenclature, an AAL is typically expressed as an Authentication Context Reference (ACR).
