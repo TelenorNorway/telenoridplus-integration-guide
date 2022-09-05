@@ -27,13 +27,13 @@ The client should request the lowest IAL it can work with. TelenorID\+ will alwa
 Like identity assurance, TelenorID\+ recognizes three distinct levels of authentication assurance (AAL) as defined in the standard [NIST SP 800-63-3 Digital Identity Guidelines](https://pages.nist.gov/800-63-3/):
 
 
-| Level |                                                               Description                                                                | [Authentication providers](TelenorID_Plus_-_authentication_providers.md) |
-|:-----:|:----------------------------------------------------------------------------------------------------------------------------------------:|:--------:|
-| AAL1  |                  A single authentication factor, such as password, OTP or line authentication (aka. header enrichment).                  | Azure, TelenorClientCerts         |
-| AAL2  | two independent authentication factors, eg. "something you know" like a password, and "something you have" such as an OTP or a password. | TelenorID, Nationalstorage    |
-| AAL3  |      an authenticator cryptographically linked to the account, such as a Bank ID dongle or SIM-card or a FIDO authenticator device.      | BankID         |
+| Level |                                                               Description                                                                | [Authentication providers](TelenorID_Plus_-_authentication_providers.md) | [ACR value](TelenorID_Plus_-_idtokens.md#id-token-body)
+|:-----:|:------------------------------------------:|:--------:|:--------:|
+| AAL1  |                  A single authentication factor, such as password, OTP or line authentication (aka. header enrichment).                  | Azure, TelenorClientCerts         | `["urn:telenor.identity.aal.1"]` |
+| AAL2  | two independent authentication factors, eg. "something you know" like a password, and "something you have" such as an OTP or a password. | TelenorID, Nationalstorage    | `["urn:telenor.identity.aal.2"]` |
+| AAL3  |      an authenticator cryptographically linked to the account, such as a Bank ID dongle or SIM-card or a FIDO authenticator device.      | BankID         | `["urn:telenor.identity.aal.3"]` |
 
-Note that in [OIDC](OIDC_basics.md) or OAuth nomenclature, an AAL is typically expressed as an Authentication Context Reference (ACR).
+Note that in [OIDC](OIDC_basics.md) or OAuth nomenclature, an AAL is typically expressed as an [Authentication Context Reference (ACR)](TelenorID_Plus_-_idtokens.md#id-token-body). 
 
 By selecting the right AAL for a given service, we can make logging on as easy or as hard as it needs to be. Logging into an AAL1-service will be very simple and non-intrusive, while logging into an AAL3 service will require some effort from the end-user. AAL2 offers a good compromise between security and convenience for services that do not protect high value assets for the user.
 
