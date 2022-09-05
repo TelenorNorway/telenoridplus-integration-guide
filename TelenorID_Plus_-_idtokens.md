@@ -37,12 +37,30 @@ The token is a JWT with the following structure:
 | ```sub```                | “subject identifier” - an unique identifier for the authenticated user. The value is pairwise, meaning a given client will always get the same value, whilst different clients do not get equal values for the same user. | 2b424013-971b-4435-bdc1-d1075b05d0e9             |
 | ```idp```                |                                                                                                                                                                                                                           | no.telenor.id.proxy.tnn-mbn-android-test         |
 | ```sid```                |                                                                                                                                                                                                                           | 70A6B33AB0D906BC3D203AE946CCC63B                 |
-| ```amr```                | Extended [Authentication Methods References](https://datatracker.ietf.org/doc/html/rfc8176)                                                                                                                               | `["urn:tnidplus:std"]` or `["urn:tnidplus:kyc"]` |
+| ```amr```                | Extended [Authentication Methods References](https://datatracker.ietf.org/doc/html/rfc8176)                                                                                                                               | [See more information below](#authentication-methods-referencesamr) |
 | ```ibis.sid```           | Internal session id in TelenorID\+                                                                                                                                                                                        | cf2b1147-c2e7-4c74-a32e-3afdb034e181             |
 | ```analytics_uuid```      | Internal session id in TelenorID\+                                                                                                                                                                                        | 7568fe50-217f-4ab8-a4e4-29cbe7e118c9             |
 | ```family_name```        | Lastname of end-user                                                                                                                                                                                                      | Rasmussen                                        |
 | ```given_name```         | First and possible midle name for end-user                                                                                                                                                                                | Tom Peter                                        |
 | ```preferred_username``` | The username used by the end-user during this session, can be a phonenumber or a email adress.                                                                                                                                                                                        | 4799966634                                       |
+
+
+## Authentication Methods References(AMR)
+
+ In accordance with the [OpenID Connect Core spec](https://openid.net/specs/openid-connect-core-1_0.html), section 2, the "amr" claim contains values identifying the authentication methods used in the authentication of the user. Most of the values are taken direcly from the authentication providers, such as TelenorID or Azure.
+
+ The following values are valid, new attributes can be added if the authentication providers expand their methods:
+
+ | Authentication provider | prefix | Values | Description | 
+  |--------------------------------------------------|--------------------------------------------------|--------------------------------------------------|--------------------------------------------------| 
+ | Telenor Digital TelenorID  |  ```urn:telenor.identity.amr.td_``` | ```pwd```, ```otp```, ```sso```, ```ok```, ```hdr``` | https://docs.telenordigital.com/connect/id/id_token.html |
+ |Microsoft Azure | ```urn:telenor.identity.amr.az_``` | ```pwd```, ```mfa```, ```otp```, ```rsa```, ```fed```, ```wia```, ```ngcmfa```, ```wiaormfa```, ```none``` | https://docs.microsoft.com/en-us/azure/active-directory/develop/access-tokens |
+ | BankID | ```urn:telenor.identity.amr.bankid``` | no values | always only ```urn:telenor.identity.amr.bankid``` |
+ | BankID legacy impl | ```urn:tnidplus:kyc``` | no values | This is a deprecated legacy authentication method in TelenorID\+ only here for historic reasons | 
+ | others |  ```urn:tnidplus:std``` | no values | TelenorID\+ has some other authentication providers and methods, they are mostly legacy and all default to the same value |
+
+
+
 
 ## Example
 
@@ -85,7 +103,9 @@ In this example the ID-token contains the following:
   "analytics_uuid": "7568fe50-217f-4ab8-a4e4-29cbe7e118c9",
   "ial": "telenor.identity.ial2",
   "amr": [
-    "urn:tnidplus:std"
+    "urn:telenor.identity.amr.td_otp_pwd",
+    "urn:telenor.identity.amr.td_ok",
+    "urn:telenor.identity.amr.bankid"
   ]
 }
 ```

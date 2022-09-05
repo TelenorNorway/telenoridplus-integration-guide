@@ -30,8 +30,8 @@ Like identity assurance, TelenorID\+ recognizes three distinct levels of authent
 | Level |                                                               Description                                                                | Examples |
 |:-----:|:----------------------------------------------------------------------------------------------------------------------------------------:|:--------:|
 | AAL1  |                  A single authentication factor, such as password, OTP or line authentication (aka. header enrichment).                  |          |
-| AAL2  | two independent authentication factors, eg. "something you know" like a password, and "something you have" such as an OTP or a password. |          |
-| AAL3  |      an authenticator cryptographically linked to the account, such as a Bank ID dongle or SIM-card or a FIDO authenticator device.      |          |
+| AAL2  | two independent authentication factors, eg. "something you know" like a password, and "something you have" such as an OTP or a password. | TelenorID    |
+| AAL3  |      an authenticator cryptographically linked to the account, such as a Bank ID dongle or SIM-card or a FIDO authenticator device.      | BankID         |
 
 Note that in [OIDC](OIDC_basics.md) or OAuth nomenclature, an AAL is typically expressed as an Authentication Context Reference (ACR).
 
