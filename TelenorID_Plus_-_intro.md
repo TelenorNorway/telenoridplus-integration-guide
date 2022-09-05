@@ -4,6 +4,7 @@
 
 * [The difference between TelenorID and TelenorID\+](TelenorID_TelenorID_Plus_-_term.md)
 * [TelenorID\+ overarching introduction](TelenorID_Plus_-_overarching.md)
+* [TelenorID\+ supported authentication providers](TelenorID_Plus_-_authentication_providers.md)
 * [Identity and Authentication assurance levels (IAL/AAL)](TelenorID_Plus_-_assurance_level.md)
 
 
