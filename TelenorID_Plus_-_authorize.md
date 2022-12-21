@@ -3,6 +3,7 @@
 ## /authorize
 
 The ```/authorize``` API starts a login and if needed a user registration.
+This endpoint implements the [Authorize Endpoint](https://openid.net/specs/openid-connect-core-1_0.html#AuthorizationEndpoint) in the OpenID Connect Core standard.
 
 
 ## Input
@@ -14,7 +15,7 @@ The endpoint supports HTTP GET
 | ```client_id``` | identifier of the client | String | True |
 | ```scope```	| one or more registered scopes, see more info [here](TelenorID_Plus_-_scopes.md) | String | True |
 | ```redirect_uri``` | must exactly match one of the allowed preconfigured redirect URIs for that client | String | True |
-| ```response_type``` | see more information below | String | False |
+| ```response_type``` | Should be set to ```code``` as standard. see more information below | String | False |
 | ```response_mode``` | ```query``` (default) sends the token response as query string response,  ```form_post``` sends the token response as a form post instead of a fragment encoded redirect | String | False |
 | ```state``` | TelenorID\+ will echo back the state value on the token response, this is for round tripping state between client and provider, correlating request and response and CSRF/replay protection. (recommended) | String | False |
 | ```prompt``` | Values: ```none``` or ```login```, see more info below | String | False |
@@ -38,6 +39,8 @@ The ```response_type``` can have one of the following values:
 | ```code```          |                    requests an authorization code                     |
 | ```code id_token``` |           requests an authorization code and identity token           |
 | ```code id_token``` | token requests an authorization code, identity token and access token |
+
+In Telenor the value ```code```  is the recommended default flow that should be used.
 
 ## Check if user has Session
 

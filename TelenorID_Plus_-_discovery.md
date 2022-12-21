@@ -7,4 +7,7 @@ The discovery endpoints can be found here:
 | STAGING     | [https://id-test.telenor.no/.well-known/openid-configuration](https://id-test.telenor.no/.well-known/openid-configuration) |
 | PRODUCTION  | [https://id.telenor.no/.well-known/openid-configuration](https://id.telenor.no/.well-known/openid-configuration)  |
 
-More information about the endpoint can be found here: [API doc for the framework used by TelenorID\+](https://identityserver4.readthedocs.io/en/latest/endpoints/discovery.html)
+All our endpoints are described [here](TelenorID_Plus_-_API.md)
+
+
+More information about the endpoints can be found here: [API doc for the framework used by TelenorID\+](https://docs.duendesoftware.com/identityserver/v6/reference/endpoints/)

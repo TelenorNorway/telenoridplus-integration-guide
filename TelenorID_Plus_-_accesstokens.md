@@ -28,6 +28,7 @@ The token is a JWT with the following structure:
 | ```auth_time``` | Timestamp when this token was created.                                       | 1639039166                               |
 | ```idp```       |                                                                              | no.telenor.id.proxy.tnn-mbn-android-test |
 | ```ibis.sid```  | Internal session id in TelenorID\+                                           | cf2b1147-c2e7-4c74-a32e-3afdb034e181     |
+| ```extsub```    | Identifier recieved from external authentication provider, only added if request contains scope=extsub and only possible to use in conjuntion with TelenorID logins | 6975060342938292224     |
 | ```jti```       | jwt id - unique identifer for a given token                                  | 597ED8B9720FE0CBFC844063D7FED863         |
 | ```sid```       |                                                                              | 70A6B33AB0D906BC3D203AE946CCC63B         |
 | ```iat```       | Timestamp when this token was issued.                                        | 1639039167                               |

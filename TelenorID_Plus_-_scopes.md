@@ -20,7 +20,7 @@ Claims are returned either directly in the id\_token or can be fetched via the /
 | phone             | /userinfo     | phone number                  |
 | tnn.ids           | access\_token | kurtid, tnuid                 |
 | offline\_access   |               | to get a refresh token, [read more](TelenorID_Plus_-_token_refresh.md).       |
-| extsub            | access\_token | used towards tsl.capture, this will add the attributes ```aud``` and ```extsub``` to the access\_token  |
+| extsub            | access\_token | used towards tsl.capture, this will add the attributes ```aud``` and ```extsub``` to the access\_token, only in use with TelenorID logins  |
 | tnn.legacy        | /userinfo     | adds the following attributes to the userinfo: ```legacy_username```, ```legacy_usertype```, ```legacy_status```, ```legacy_roles``` |
 | account.profiles  | /userinfo     | Gives access to all profiles associated with the given Account. Only needed if you use [token exchange](TelenorID_Plus_-_token_exchange.md) |
 
