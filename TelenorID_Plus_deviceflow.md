@@ -62,8 +62,7 @@ The endpoint supports HTTP GET
 | ```user_code```	| A 9 digit verification code | False |
 | ```verification_uri```	| The end-user verification URI on the authorization server. Default to: https://id.telenor.no/activate  |  True |
 | ```verification_uri_complete```	| ```verification_uri``` + ```user_code```, can be used to generate a QR-code that can be scanned by the end-user |  True |
-| ``` expires_in```	| The lifetime in seconds of the ```device_code``` and
-      ```user_code```. Default value: ```1800``` - 30 minutes.  |  True |
+| ``` expires_in```	| The lifetime in seconds of the ```device_code``` and ```user_code```. Default value: ```1800``` - 30 minutes.  |  True |
 | ```interval```	| The minimum amount of time in seconds that the client SHOULD wait between polling requests to the token endpoint. Default value:  |  True |
 
 

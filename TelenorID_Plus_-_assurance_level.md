@@ -10,7 +10,7 @@ In TelenorID\+ we recognize three distinct identity assurance levels (IAL) as de
 
 | Level |                                                                                                         Description                                                                                                         |              Examples               |
 |:-----:|:-------------------------------:|:-----------------------------------:|
-| IAL0  | A shared identity                                                                     | Telenor ID, Facebook, Apple, Google |
+| IAL0  | A shared account not connected to an identity.                                                                     | A shared service phone used by several persons, a shared T-We setupbox  |
 | IAL1  | A self asserted identity with no effort made to ensure that the identity is real.                                                                      | Telenor ID, Facebook, Apple, Google |
 | IAL2  |  It has been established that the asserted identity is in fact a real identity, and some effort has been made to ensure that the identity belongs to the entity claiming it.                         |            Telenor ID\+.            |
 | IAL3  | It has been established that the asserted identity is in fact a real identity. Documentation proving the relationship between the identity and the entity claiming it has been provided and verified by a competent entity. |              BankID.               |
