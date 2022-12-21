@@ -1,7 +1,10 @@
 # TelenorID\+ Token endpoint
 
 The ```token_endpoint``` is used to retrieve [ID-Token](TelenorID_Plus_-_idtokens.md), [Access Token](TelenorID_Plus_-_accesstokens.md) and in some cases Refresh Tokens. Read more about the [TelenorID\+ Token refresh](TelenorID_Plus_-_token_refresh.md).
-The [ID-Token](TelenorID_Plus_-_idtokens.md) is used by the client application and contains information about the end-user and the authentication, the [Access Token](TelenorID_Plus_-_accesstokens.md) is used by the client application to get access to other services/API. And the [Refresh Tokens](TelenorID_Plus_-_token_refresh.md) is used to get a new valid [Access Token](TelenorID_Plus_-_accesstokens.md) through the [token refresh process](TelenorID_Plus_-_token_refresh.md).
+
+ * The [ID-Token](TelenorID_Plus_-_idtokens.md) is used by the client application and contains information about the end-user and the authentication, 
+ * the [Access Token](TelenorID_Plus_-_accesstokens.md) is used by the client application to get access to other services/API. 
+ * And the [Refresh Tokens](TelenorID_Plus_-_token_refresh.md) is used to get a new valid [Access Token](TelenorID_Plus_-_accesstokens.md) through the [token refresh process](TelenorID_Plus_-_token_refresh.md).
 
 URL's to the endpoint can be found through the [Discovery endpoint](TelenorID_Plus_-_discovery.md)
 
@@ -16,11 +19,13 @@ The endpoint supports HTTP POST
 | ```client_secret``` | Client secret either in the post body, or as a basic authentication header.  | String | False |
 | ```scope```	| one or more registered scopes, see more info [here](TelenorID_Plus_-_scopes.md) | String | True |
 | ```redirect_uri``` | must exactly match one of the allowed preconfigured redirect URIs for that client. required for the ```authorization_code``` grant type | String | False |
-| ```code``` | the authorization code (required for ```authorization_code grant``` type) | String | False |
+| ```code``` | the authorization code (required for ```authorization_code grant``` type). NOTE: This code is one-time-use only. Never try to a authorization code more than once.  | String | False |
 | ```code_verifier``` | PKCE proof key | String | False |
 | ```refresh_token``` | the refresh token (required for ```refresh_token grant``` type) | String | False |
 | ```device_code``` | the device code (required for ```urn:ietf:params:oauth:grant-type:device_code``` grant type) | String | False |
 | ```tnuId``` | Only used when you want to do a [token exchange](TelenorID_Plus_-_token_refresh.md). Requries that ```grant_type``` is ```refresh_token``` (deprecated) | String | False |
+
+
 
 ## Example
 

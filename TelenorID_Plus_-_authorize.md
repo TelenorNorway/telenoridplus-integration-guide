@@ -4,7 +4,7 @@
 
 The ```/authorize``` API starts a login and if needed a user registration.
 This endpoint implements the [Authorize Endpoint](https://openid.net/specs/openid-connect-core-1_0.html#AuthorizationEndpoint) in the OpenID Connect Core standard.
-
+See the [Standard OIDC Authorization Code Flow](TelenorID_Plus__-_standard_oidc_flows.md) for a sequence diagram showing the process and usage of this API.
 
 ## Input
 
@@ -40,7 +40,7 @@ The ```response_type``` can have one of the following values:
 | ```code id_token``` |           requests an authorization code and identity token           |
 | ```code id_token``` | token requests an authorization code, identity token and access token |
 
-In Telenor the value ```code```  is the recommended default flow that should be used.
+In Telenor the value ```code```  is the recommended default flow that should always be used.
 
 ## Check if user has Session
 

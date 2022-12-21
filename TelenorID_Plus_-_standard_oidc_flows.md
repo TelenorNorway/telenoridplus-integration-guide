@@ -1,12 +1,13 @@
 # TelenorID\+ Standard OpenID Connect \(OIDC\) Flows
 
-  * [Standard OIDC Authorization Code Flow](#standard-oidc-authorization-code-flow)
-  * [Standard OIDC Authorization Code Flow \(PKCE\)](#standard-oidc-authorization-code-flow-pkce)
+- [TelenorID+ Standard OpenID Connect (OIDC) Flows](#telenorid-standard-openid-connect-oidc-flows)
+  - [Standard OIDC Authorization Code Flow](#standard-oidc-authorization-code-flow)
+  - [Standard OIDC Authorization Code Flow (PKCE)](#standard-oidc-authorization-code-flow-pkce)
 
 
 ## Standard OIDC Authorization Code Flow
 
-![TelenorID Pluss OIDC Authorization Code FLow Client Secret](https://www.websequencediagrams.com/files/render?link=iuABiysNv1svNezK5AJXxSw18XNwkC05MB7EK8dx2PMoN7W33tqbOkg1MejqYkOB)
+![TelenorID Pluss OIDC Authorization Code FLow Client Secret](images/Telenorid_openid_authcode_flow.png)
 
 
 ## Standard OIDC Authorization Code Flow \(PKCE\)
