@@ -13,6 +13,3 @@ TelenorID\+ supports the following authentication providers:
 
 Each authentication providers can have several authentication methods, more information about those: [See more information](TelenorID_Plus_-_idtokens_.md#authentication-methods-referencesamr)
 
-
-Deprecated:
-- Use  value ```acr_values``` =  ```urn:tnidplus:kyc``` to start BankID login, see more information [here](TelenorID_Plus_-_kyc_bankid_-_integration_example_step_by_step.md). 

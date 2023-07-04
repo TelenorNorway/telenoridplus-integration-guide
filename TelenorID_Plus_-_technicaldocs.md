@@ -41,7 +41,6 @@ All public clients (i.e. "PKCE clients") are configured to work with the debugge
 ## Examples
 
  * [Simple User Login Example using the open TelenorID\+ debugger](TelenorID_Plus_-_user_login_-_integration_example_step_by_step.md)
- * [TelenorID\+ BankId / "Know Your Customer (KYC)" example](TelenorID_Plus_-_kyc_bankid_-_integration_example_step_by_step.md)
 
 ## Historic topics
 
