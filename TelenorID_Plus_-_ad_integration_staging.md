@@ -1,63 +1,38 @@
 # How-to setup Azure AD integration towards TelenorID\+ - staging
 
-Step by step instructions for technical personal at customers who wants to setup a integration from their Azure AD towards Telenor ID\+.
+Step by step instructions for personal at customers who wants to setup a integration from their Azure AD towards Telenor ID\+.
 If you have any questions or trouble with this guide please contact us: [our contact details](TelenorID_Plus_-_help.md).
 
 __Note__
 
-> This is the guide for setup in staging, you must complete the steps twice; once for STAGING (this guide) and once for PRODUCTION, instructions found [here](TelenorID_Plus_-_ad_integration_prod.md). Depending on your set up this may be separate Active Directories.
+> This is the guide for setup in staging, it can be that you setup these steps twice; once for STAGING (this guide) and once for PRODUCTION, instructions found [here](TelenorID_Plus_-_ad_integration_prod.md). 
+> It depends on your setup, if you have separate Active Directories.
 
-<!---## prerequisit-->
-
-<!---all users must be licenced users, no use of....-->
-
-## Before you begin
-
-Open a blank text file in your favourite editor. You will need to write down certain details and send them to us. All instructions that requires this are marked with <img src="images/ad/note.png" width="20" height="20">.
 
 # Step-by-step instruction
 
-1. Create a blank text file and start adding company name and contact information
-    * <img src="images/ad/note.png" width="20" height="20"> Company: *My company name*
-    * <img src="images/ad/note.png" width="20" height="20"> Contact information: *e-mail*  (this should not be a personal email, but a email that can be used also when we need to get i contact several years later) 
-1. Log in to the Azure Portal
-1. Find Azure Active Directory,
-    * then App Registrations and
-    * finally New registration
-1. New registration;
-    * Name: Enter a name for the application. E.g. *telenorid-staging-oidc*
-    * Supported account types: This depends on your set up and which users you will allow to login with Telenor ID.
-      * If you're not sure, select *single tenant*.
-    * Redirect URI
-      * For staging this is: https://id-test.telenor.no/signin-{company-name}
-      * Note: Company name can only contain lower case letters and hyphens. E.g: https://id-test.telenor.no/signin-real-power-tools-inc
-      * <img src="images/ad/note.png" width="20" height="20"> write down the URI you've chosen
-1. After completing the initial registration you should be redirected to the newly created client's Overview page.
-    * <img src="images/ad/note.png" width="20" height="20"> Copy "*Application (client) ID*" and paste them in the text file.
-    * <img src="images/ad/note.png" width="20" height="20"> Copy "*Directory (tenant) ID*"and paste them in the text file.
-1. Go to "Certificates & secrets", Click "New client secret".
-    * These steps are specific for staging
-    * Fill in an appropriate description
-    * Set:Expires to *24 months*.
-    * <img src="images/ad/note.png" width="20" height="20"> Copy the client secret and put it in the same file as your client- and tenant ids. Prefix it with "Secret:"
-    * <img src="images/ad/note.png" width="20" height="20"> Add the expiration date to the text file
-1. <img src="images/ad/note.png" width="20" height="20"> Save the text file as *telenorid-staging-{company-name}.txt*.
-    * The text file should be something like the example below
-8. Exchange the file with the client information and client secret
-   * [See details on how to exchange sensitive information with us](TelenorID_Plus_sensitive_data_exchange.md)
-9. Set up a reminder in approx 23 months reminding you to create a new client secret
-    * Take contact with us before the client secret expires to coordinate the renewal process
+
+1. Find your Azure AD TenantID / directoryID
+   1. go to portal.azure.com
+   2. Login with your local business account
+   3. find Azure Active Directory
+   4. Copy the TenantID / DirectoryID and use in the next step
+2. Send this identifier to Telenor as part of the registration
+   1. More info....
+3. wait for confirmation that the Azure AD setup is done and that your azure integration is setup
+4. Try your first login towards the Telenor business service in staging
+   1. dependent on your Azure AD tenant -> enterprise application -> consent and permissions setting you have three different options on the next step.
+5. The consent screen that is shown is one of the following:
+   1. End-users can approve the new Telenor enterprise application in your tenant
+      1. the first end-user approves this for all users in the tenant
+   2. End-user can apply to approve this application
+      1. The end-user is stopped and can not continue before a local administrator has approved this application
+      2. a notification is sent to an tenant administrator in your local Azure
+      3. The administrator in your local tenant needs to approve this new Telenor enterprise application for us in your tenant
+   3. End-user can not approv or apply for approval of this application
+      1. The end-user is stopped and can not continue before a local administrator has approved this application
+      2. The end-user must manualy contact local administrator that needs to go through this login process with a privlieged account and approve the new Telenor enterprise application
+   
 
 
-## Example file
-The content of your text file (*telenorid-staging-{company-name}.txt*) should be something like this:
 
-```
-  Company: My company name
-  Contact information: persistantemail@company.no
-  Redirect url: https://id-test.telenor.no/signin-real-power-tools-inc
-  Application (client) ID:  3ffebade-dd8f-460d-bee9-b82e8a4edae7
-  Directory (tenant) ID: 3a238dd1-86d1-49ce-9beb-3f8453b0cb21
-  Client secret: Secret:b82e8ab82e8a4edae74edae7
-  Client secret expiration date: 2025-02-12 12:23:23
-```

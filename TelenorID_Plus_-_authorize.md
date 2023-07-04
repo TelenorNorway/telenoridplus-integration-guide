@@ -23,8 +23,8 @@ The endpoint supports HTTP GET
 | ```code_challenge_method``` | Only allowed value: ```S256``` | String | False |
 | ```login_hint``` | Can be used to prefill the MSISDN | String | False |
 | ```ui_locales``` | Use  value ```no``` to choose Norwegian language. | String | False |
-| ```acr_values``` | Use  value ```urn:tnidplus:kyc``` to start BankID login, see more information [here](TelenorID_Plus_-_kyc_bankid_-_integration_example_step_by_step.md). Use prefix ```idp:``` if you need a login with a specific identity provider. The  name for the different identity providers are unique for each ```client_id```. please take contact with us to get your relevant identity provider names.  | String | False |
-| ```context``` | Default ```login``` Use value ```kyc``` to get a ID\+ customized for confirmation of identity and not authentication | String | False |
+| ```acr_values``` | Used to specify a [authentication assurance level](TelenorID_Plus_-_assurance_level.md#) OR specify a [authentication provider](TelenorID_Plus_-_authentication_providers.md). Should only be used if you NEED to control this.  | String | False |
+| ```context``` | Deprecated. Default ```login``` Use value ```kyc``` to get a ID\+ customized for confirmation of identity and not authentication | String | False |
 
 
 __response_type__

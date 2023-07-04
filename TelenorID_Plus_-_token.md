@@ -19,7 +19,7 @@ The endpoint supports HTTP POST
 | ```client_secret``` | Client secret either in the post body, or as a basic authentication header.  | String | False |
 | ```scope```	| one or more registered scopes, see more info [here](TelenorID_Plus_-_scopes.md) | String | True |
 | ```redirect_uri``` | must exactly match one of the allowed preconfigured redirect URIs for that client. required for the ```authorization_code``` grant type | String | False |
-| ```code``` | the authorization code (required for ```authorization_code grant``` type). NOTE: This code is one-time-use only. Never try to a authorization code more than once.  | String | False |
+| ```code``` | the authorization code (required for ```authorization_code grant``` type). NOTE: This code is __one-time-use only__. Never try to use a authorization code more than once.  | String | False |
 | ```code_verifier``` | PKCE proof key | String | False |
 | ```refresh_token``` | the refresh token (required for ```refresh_token grant``` type) | String | False |
 | ```device_code``` | the device code (required for ```urn:ietf:params:oauth:grant-type:device_code``` grant type) | String | False |

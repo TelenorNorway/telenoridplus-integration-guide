@@ -29,9 +29,9 @@ Like identity assurance, TelenorID\+ recognizes three distinct levels of authent
 
 | Level |   Description   | [Authentication providers](TelenorID_Plus_-_authentication_providers.md) | [ACR value](TelenorID_Plus_-_idtokens.md#id-token-body) |
 |-------|-----------------|--------|--------|
-| AAL1  |                  A single authentication factor, such as password, OTP or line authentication (aka. header enrichment).                  | Azure, TelenorClientCerts         | `["urn:telenor.identity.aal.1"]` |
-| AAL2  | two independent authentication factors, eg. "something you know" like a password, and "something you have" such as an OTP or a password. | TelenorID, Nationalstorage    | `["urn:telenor.identity.aal.2"]` |
-| AAL3  |      an authenticator cryptographically linked to the account, such as a Bank ID dongle or SIM-card or a FIDO authenticator device.      | BankID         | `["urn:telenor.identity.aal.3"]` |
+| AAL1  |  A single authentication factor, such as password, OTP or line authentication (aka. header enrichment).                  | Azure, TelenorClientCerts         | `["urn:telenor.identity.aal.1"]` |
+| AAL2  | two independent authentication factors, eg. "something you know" like a password, and "something you have" such as an OTP or a password. | Telenor ID  | `["urn:telenor.identity.aal.2"]` |
+| AAL3  | an authenticator cryptographically linked to the account, such as a Bank ID dongle or SIM-card or a FIDO authenticator device.      | BankID         | `["urn:telenor.identity.aal.3"]` |
 
 Note that in [OIDC](OIDC_basics.md) or OAuth nomenclature, an AAL is typically expressed as an [Authentication Context Reference (ACR)](TelenorID_Plus_-_idtokens.md#id-token-body). 
 
@@ -47,12 +47,3 @@ Under the [eIDAS Regulation (EU)](http://eur-lex.europa.eu/legal-content/EN/TXT/
 |    High     |                         for instance, enrolment is performed by registering in person in an office, and authentication by using a smartcard, like a National ID Card.                          |
 
 This law is regulated through the Norwegian law [lov om elektroniske tillitstjenester LOV-2018-06-15-44](https://lovdata.no/dokument/LTI/lov/2018-06-15-44) and is assumed required for Telenor in a updated ekom law in the future: [Høring - Forslag til ny ekomlov](https://www.regjeringen.no/no/dokumenter/horing-forslag-til-ny-ekomlov-ny-ekomforskrift-og-endringer-i-nummerforskriften/id2864853/)
-
-## Mapping between IAL, AAL, eidas LoA
-
-
-| IAL  | AAL  |  eIDAS LoA  |
-|:----:|:----:|:-----------:|
-| IAL1 | AAL1 |     Low     |
-| IAL2 | AAL2 | Substantial |
-| IAL3 | AAL3 |    High     |
