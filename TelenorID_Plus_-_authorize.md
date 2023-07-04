@@ -23,7 +23,7 @@ The endpoint supports HTTP GET
 | ```code_challenge_method``` | Only allowed value: ```S256``` | String | False |
 | ```login_hint``` | Can be used to prefill the MSISDN | String | False |
 | ```ui_locales``` | Use  value ```no``` to choose Norwegian language. | String | False |
-| ```acr_values``` | Used to specify a [authentication assurance level](TelenorID_Plus_-_assurance_level.md#) OR specify a [authentication provider](TelenorID_Plus_-_authentication_providers.md). Should only be used if you NEED to control this.  | String | False |
+| ```acr_values``` | Used to specify a [authentication assurance level](TelenorID_Plus_-_assurance_level.md#authentication-assurance-aal) OR specify a [authentication provider](TelenorID_Plus_-_authentication_providers.md#authentication-providers) . Should only be used if you NEED to control this.  | String | False |
 | ```context``` | Deprecated. Default ```login``` Use value ```kyc``` to get a ID\+ customized for confirmation of identity and not authentication | String | False |
 
 
