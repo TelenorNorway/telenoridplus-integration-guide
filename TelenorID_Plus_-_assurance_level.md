@@ -10,7 +10,7 @@ In TelenorID\+ we recognize three distinct identity assurance levels (IAL) as de
 
 | Level |                                                                                                         Description                                                                                                         |              Examples               |
 |:-----:|:-------------------------------:|:-----------------------------------:|
-| IAL0  | A shared account not connected to an identity.                                                                     | A shared service phone used by several persons, a shared T-We setupbox  |
+| IAL0  | A shared account not connected to an identity.                                                                     | A shared service phone used by several persons, a shared T-We set top box  |
 | IAL1  | A self asserted identity with no effort made to ensure that the identity is real.                                                                      | Telenor ID, Facebook, Apple, Google |
 | IAL2  |  It has been established that the asserted identity is in fact a real identity, and some effort has been made to ensure that the identity belongs to the entity claiming it.                         |            Telenor ID\+.            |
 | IAL3  | It has been established that the asserted identity is in fact a real identity. Documentation proving the relationship between the identity and the entity claiming it has been provided and verified by a competent entity. |              BankID.               |
@@ -29,7 +29,7 @@ Like identity assurance, TelenorID\+ recognizes three distinct levels of authent
 
 | Level |   Description   | [Authentication providers](TelenorID_Plus_-_authentication_providers.md) | [ACR value](TelenorID_Plus_-_idtokens.md#id-token-body) |
 |-------|-----------------|--------|--------|
-| AAL1  |  A single authentication factor, such as password, OTP or line authentication (aka. header enrichment).                  | Azure, TelenorClientCerts         | `["urn:telenor.identity.aal.1"]` |
+| AAL1  |  A single authentication factor, such as password or a OneTimePassword               | Telenor ID one-factor, Telenor ClientCerts for Partners, T-we set top box, Azure AD for Business  | `["urn:telenor.identity.aal.1"]` |
 | AAL2  | two independent authentication factors, eg. "something you know" like a password, and "something you have" such as an OTP or a password. | Telenor ID  | `["urn:telenor.identity.aal.2"]` |
 | AAL3  | an authenticator cryptographically linked to the account, such as a Bank ID dongle or SIM-card or a FIDO authenticator device.      | BankID         | `["urn:telenor.identity.aal.3"]` |
 
