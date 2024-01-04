@@ -38,9 +38,9 @@ __Send a small file step-by-step instruction__
 
 
 ## PGP encryption
-Using GPG/PGP encrypt your content with our key and email the encrypted file to: [dc_security@telenor.no](mailto:dc_security@telenor.no)
+Using GPG/PGP encrypt your content with our key and email the encrypted file to: [telenorid@telenor.no](mailto:telenorid@telenor.no)
 
-__PGP Public Key for dc_security@telenor.no__
+__PGP Public Key for telenorid@telenor.no__
 
     -----BEGIN PGP PUBLIC KEY BLOCK-----
     mQINBF7zHogBEADKdJ+TgRG96UO27tXxD5wg39J27t45Pgzvm/fO6ssREFpRUqb6
