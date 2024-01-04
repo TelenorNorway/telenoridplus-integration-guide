@@ -14,7 +14,7 @@ We provide SDKs to integrate Android and iOS applications with TelenorID\+.
 If you have native clients and want to use our SDK for Android and/or iOS,
 you need to request access to the Telenor Norway repository (if not already member of TelenorNorway).
 
-Send the github account that require access to **dc\_security@telenor.com**, 
+Send the github account that require access to **telenorid@telenor.no**, 
 or request access on Slack [#dc-telenorid-integration-support](https://thedoozers.slack.com/archives/C01DHF39NDA).
 
 
