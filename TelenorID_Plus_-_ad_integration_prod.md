@@ -15,7 +15,7 @@ __Note__
    1. Go to portal.azure.com
    2. Login with your local business account
    3. Find Microsoft Entra ID
-   4. Copy the ````Tenant ID``` and use in the next step
+   4. Copy the ```Tenant ID``` and use in the next step
 2. Send this identifier to Telenor as part of the registration
    1. More info....
 wait for confirmation that the Microsoft Entra ID setup is done and that your Entra ID integration is setup
