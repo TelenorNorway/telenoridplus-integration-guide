@@ -1,6 +1,6 @@
-# How-to setup Azure AD integration towards TelenorID\+ - staging
+# How-to setup Microsoft Entra ID integration towards TelenorID\+ - staging
 
-Step by step instructions for personal at customers who wants to setup a integration from their Azure AD towards Telenor ID\+.
+Step by step instructions for personal at customers who wants to setup a integration from their Microsoft Entra ID towards Telenor ID\+.
 If you have any questions or trouble with this guide please contact us: [our contact details](TelenorID_Plus_-_help.md).
 
 __Note__
@@ -12,25 +12,25 @@ __Note__
 # Step-by-step instruction
 
 
-## Phase 1 - Find your Azure AD Tenant ID
-1. Find your Azure AD Tenant ID / directory ID
+## Phase 1 - Find your Microsoft Entra ID Tenant ID
+1. Find your Microsoft Entra ID Tenant ID 
    1. go to portal.azure.com
    2. Login with your local business account
-   3. find Azure Active Directory
-   4. Copy the TenantID / DirectoryID and use in the next step
+   3. find Microsoft Entra ID
+   4. Copy the TenantID  and use in the next step
 2. Send this identifier to Telenor as part of the registration
    1. More info....
-wait for confirmation that the Azure AD setup is done and that your azure integration is setup
+wait for confirmation that the Microsoft Entra ID setup is done and that your Entra ID integration is setup
 
 ## Phase 2 - Approve new Telenor Enterprise Application in your tenant
-The steps in this phase is all dependent on your Azure tenant configuration.
-It all depends on your setting for "consent and permissions" for "enterprise application" in your "Azure AD tenant"
+The steps in this phase is all dependent on your Microsoft Entra ID tenant configuration.
+It all depends on your setting for "consent and permissions" for "enterprise application" in your "Microsoft Entra ID tenant"
 It is three options:
 1. End-users can approve the new Telenor enterprise application in your tenant
    - The first end-user logging in to Telenor can approve the new Telenor Enterprise Application for all users in the tenant
 2. End-user can apply to approve this application
    - The end-users are stopped and can not login before a local administrator has approved the new Telenor Enterprise Application
-   - End-users can apply for approval and a notification is sent to an tenant administrator in your local Azure
+   - End-users can apply for approval and a notification is sent to an tenant administrator in your local Entra ID
    - The administrator in your local tenant needs to approve this new Telenor enterprise application for us in your tenant
 3. End-user can not approve or apply for approval of this application
    - The end-users are stopped and can not login before a local administrator has approved this application
