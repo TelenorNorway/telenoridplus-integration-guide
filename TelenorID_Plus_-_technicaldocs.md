@@ -21,6 +21,7 @@
 * revocation_endpoint (todo)
 * introspection_endpoint (todo)
 * [Device authorization endpoint](TelenorID_Plus_deviceflow.md)
+* [CIBA authorization](TelenorID_Plus_-_CIBA.md)
 * [selfservice endpoint (Manage my Telenor)](TelenorID_Plus_-_ManageMyTelenor.md)
 
 The API doc for Telenor Digital Telenor ID can be found [here](https://docs.telenordigital.com/connect/id).
