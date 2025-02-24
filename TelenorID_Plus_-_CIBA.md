@@ -5,6 +5,8 @@ To start using the ciba flows there are a few requirements that have to be met a
 2. This client needs to have the vipps scope enabled for it.
 3. The client also has to be a confidential client.
 
+(NOTE: Enabling CIBA flow will disable the normal front-channel flow.)
+
 To start a ciba request the endpoint is ```https://id-test.telenor.no/connect/ciba```. The endpoint expects a POST request with an application/x-www-form-urlencoded body.
 The body should have the following content key/value entries:
 
