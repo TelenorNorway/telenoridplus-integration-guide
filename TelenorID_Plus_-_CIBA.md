@@ -2,7 +2,7 @@
 
 To start using the ciba flows there are a few requirements that have to be met ahead of time, these are as follows:
 1. Client with CIBA-flow enabled.
-2. This client needs to have the vipps scope enabled for it.
+2. This client needs to have the vipps and phone scopes enabled for it. These are mandatory scopes for the CIBA flow.
 3. The client also has to be a confidential client.
 
 (NOTE: Enabling CIBA flow will disable the normal front-channel flow.)
@@ -11,13 +11,13 @@ To start a ciba request the endpoint is ```https://id-test.telenor.no/connect/ci
 The body should have the following content key/value entries:
 
 
-| Key                    | Value                 | Explanation                                                                     |
-|------------------------|-----------------------|---------------------------------------------------------------------------------|
-| ```client_id```        | id of your client     | The id you were provided when you receive your client                           |
-| ```client_secret```    | secret of your client | The secret you were provided when you receive your client                       |
-| ```scope```            | your requested scopes | vipps is a mandatory scope for now - currently only ciba auth method            |
-| ```login_hint```       | phone number          | phone number of the person you are authenticating                               |
-| ```requested_expiry``` | number between 1-300  | OPTIONAL - lifetime of the ciba request, defaults to 300 and max is 300 seconds |
+| Key                    | Value                 | Explanation                                                                                  |
+|------------------------|-----------------------|----------------------------------------------------------------------------------------------|
+| ```client_id```        | id of your client     | The id you were provided when you receive your client                                        |
+| ```client_secret```    | secret of your client | The secret you were provided when you receive your client                                    |
+| ```scope```            | your requested scopes | vipps and phone are mandatory scopes for now - currently only have vipps as ciba auth method |
+| ```login_hint```       | phone number          | phone number of the person you are authenticating                                            |
+| ```requested_expiry``` | number between 1-300  | OPTIONAL - lifetime of the ciba request, defaults to 300 and max is 300 seconds              |
 
 This request will return a JSON body:
 ```
