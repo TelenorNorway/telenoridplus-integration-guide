@@ -18,6 +18,7 @@ The body should have the following content key/value entries:
 | ```scope```            | your requested scopes | vipps and phone are mandatory scopes for now - currently only have vipps as ciba auth method |
 | ```login_hint```       | phone number          | phone number of the person you are authenticating                                            |
 | ```requested_expiry``` | number between 1-300  | OPTIONAL - lifetime of the ciba request, defaults to 300 and max is 300 seconds              |
+(NOTE: It is also valid to send client credentials as a basic auth header and omit them from the body.)
 
 This request will return a JSON body:
 ```
@@ -41,6 +42,7 @@ Once you have these values, you need to wait the specified time in the interval 
 | ```client_id```     | id of your client                    | The id you were provided when you receive your client     |
 | ```client_secret``` | secret of your client                | The secret you were provided when you receive your client |
 | ```auth_req_id```   | the value the first request returned | your reference to the auth context                        |
+(NOTE: It is also valid to send client credentials as a basic auth header and omit them from the body.)
 
 Once you start polling the token endpoint will simply return a HTTP 400 - Bad Request with the body:
 ```
