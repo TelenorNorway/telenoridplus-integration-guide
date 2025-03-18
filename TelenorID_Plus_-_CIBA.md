@@ -76,4 +76,8 @@ or
     "error": "invalid_grant"
 }
 ```
+The most common reasons for the id to become invalid is because the request towards identity provider that handles the communication towards Vipps failed.
+The reasons for this could be the identity provider is down or refusing the request for any reason or the user is not eligible to use vipps.
 
+Currently the lack of direct feedback on the initial request is a technical limitation we are aware of. 
+It will be solved in the future with the Telenor ID and Idplus consolidation.
