@@ -11,14 +11,16 @@ To start a ciba request the endpoint is ```https://id-test.telenor.no/connect/ci
 The body should have the following content key/value entries:
 
 
-| Key                    | Value                 | Explanation                                                                                  |
-|------------------------|-----------------------|----------------------------------------------------------------------------------------------|
-| ```client_id```        | id of your client     | The id you were provided when you receive your client                                        |
-| ```client_secret```    | secret of your client | The secret you were provided when you receive your client                                    |
-| ```scope```            | your requested scopes | vipps and phone are mandatory scopes for now - currently only have vipps as ciba auth method |
-| ```login_hint```       | phone number          | phone number of the person you are authenticating                                            |
-| ```requested_expiry``` | number between 1-300  | OPTIONAL - lifetime of the ciba request, defaults to 300 and max is 300 seconds              |
+| Key                    | Value                 | Explanation                                                                                                                   |
+|------------------------|-----------------------|-------------------------------------------------------------------------------------------------------------------------------|
+| ```client_id```        | id of your client     | The id you were provided when you receive your client                                                                         |
+| ```client_secret```    | secret of your client | The secret you were provided when you receive your client                                                                     |
+| ```scope```            | your requested scopes | vipps and phone are mandatory scopes for now - currently only have vipps as ciba auth method. This is a space-separated list. |
+| ```login_hint```       | phone number          | phone number of the person you are authenticating                                                                             |
+| ```requested_expiry``` | number between 1-300  | OPTIONAL - lifetime of the ciba request, defaults to 300 and max is 300 seconds                                               |
 (NOTE: It is also valid to send client credentials as a basic auth header and omit them from the body.)
+
+(NOTE2: "openid" is assumed to be among your requested scopes as it is mandatory in OIDC. "profile" is also necessary for basic user information.)
 
 This request will return a JSON body:
 ```
