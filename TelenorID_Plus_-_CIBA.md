@@ -17,7 +17,6 @@ To start using the ciba flow there are a few requirements that have to be met ah
 To start a vipps ciba request the endpoint is ```https://id-test.telenor.no/connect/ciba```. The endpoint expects a POST request with an application/x-www-form-urlencoded body.
 The body should have the following content key/value entries:
 
-
 | Key                    | Value                 | Explanation                                                                       |
 |------------------------|-----------------------|-----------------------------------------------------------------------------------|
 | ```client_id```        | id of your client     | The id you were provided when you receive your client                             |
@@ -25,6 +24,7 @@ The body should have the following content key/value entries:
 | ```scope```            | your requested scopes | vipps and phone are mandatory for the vipps flow. This is a space-separated list. |
 | ```login_hint```       | phone number          | phone number of the person you are authenticating                                 |
 | ```requested_expiry``` | number between 1-300  | OPTIONAL - lifetime of the ciba request, defaults to 300 and max is 300 seconds   |
+
 (NOTE: It is also valid to send client credentials as a basic auth header and omit them from the body.)
 
 (NOTE2: "openid" is assumed to be among your requested scopes as it is mandatory in OIDC. "profile" is also necessary for basic user information.)
