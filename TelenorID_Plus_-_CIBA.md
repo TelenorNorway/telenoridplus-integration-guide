@@ -88,6 +88,7 @@ Once you have these values, you need to wait the specified time in the interval 
 | ```client_id```     | id of your client                    | The id you were provided when you receive your client     |
 | ```client_secret``` | secret of your client                | The secret you were provided when you receive your client |
 | ```auth_req_id```   | the value the first request returned | your reference to the auth context                        |
+
 (NOTE: It is also valid to send client credentials as a basic auth header and omit them from the body.)
 
 Once you start polling the token endpoint will simply return a HTTP 400 - Bad Request with the body:
