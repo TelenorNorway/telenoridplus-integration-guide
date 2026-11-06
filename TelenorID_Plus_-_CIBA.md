@@ -40,6 +40,13 @@ The body should have the following content key/value entries:
 |-----------------------|-----------|-------------------------------------------------------------|
 | ```kurt_id```         | a kurt id | This is the kurt id of the person you want to authenticate. |
 
+OR, if providing a norwegian identity number instead:
+
+| Key                   | Value          | Explanation                                                 |
+|-----------------------|----------------|-------------------------------------------------------------|
+| ```nin```             | a personnummer | This is the nin of the person you want to authenticate.     |
+
+
 This request will return a JSON body:
 ```
 {
